@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dekk tilhenger — Finn riktige tilhengerdekk</title>
+<meta name="description" content="Kalkulator for tilhengerdekk. Sammenlign dekkdimensjoner, se avvik i prosent og finn lovlige dekk til tilhengeren din. Prøv nå!">
+<link rel="canonical" href="https://dekkalkulator.no/dekk-tilhenger">
+<meta property="og:title" content="Dekk tilhenger — Finn riktige tilhengerdekk">
+<meta property="og:description" content="Kalkulator for tilhengerdekk. Sammenlign dekkdimensjoner, se avvik i prosent og finn lovlige dekk til tilhengeren din. Prøv nå!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dekkalkulator.no/dekk-tilhenger">
+<meta name="robots" content="index,follow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #f3f4f6;height:56px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#111827}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.9rem;color:#6b7280;transition:color .15s}
+.nav-links a:hover{color:#111827}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger svg{display:block}
+@media(max-width:680px){
+  .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:16px 24px;gap:12px;align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-hamburger{display:block}
+}
+
+/* HERO */
+.hero{padding:56px 0 40px;text-align:center}
+.hero-badge{display:inline-block;background:#f3f4f6;color:#6b7280;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:99px;margin-bottom:16px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;color:#111827;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:1.05rem;color:#6b7280;max-width:600px;margin:0 auto}
+
+/* AD */
+.ad-slot{background:#f9fafb;border:1px dashed #d1d5db;border-radius:8px;padding:16px;text-align:center;color:#9ca3af;font-size:.8rem;margin:24px 0}
+
+/* CALC CARD */
+.calc-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px #e5e7eb;padding:32px;margin-bottom:32px}
+.calc-card h2{font-size:1.2rem;font-weight:700;margin-bottom:24px;color:#111827}
+.calc-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:600px){.calc-cols{grid-template-columns:1fr}}
+.calc-group h3{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:12px}
+.input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.input-row label{font-size:.75rem;color:#6b7280;display:block;margin-bottom:4px}
+.input-row select{width:100%;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;font-size:.9rem;color:#111827;background:#fff;cursor:pointer}
+.input-row select:focus{outline:2px solid #6366f1;outline-offset:1px}
+.tire-label{font-family:ui-monospace,monospace;font-size:.95rem;background:#f9fafb;border-radius:8px;padding:8px 12px;margin-top:8px;color:#374151;text-align:center}
+
+/* RESULTS */
+.result-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem}
+.result-table th{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#6b7280;font-weight:600;text-align:left;padding:8px 12px;border-bottom:1px solid #f3f4f6}
+.result-table td{padding:10px 12px;border-bottom:1px solid #f9fafb;color:#111827}
+.result-table tr:last-child td{border-bottom:none}
+.diff-pos{color:#059669;font-weight:600}
+.diff-neg{color:#dc2626;font-weight:600}
+.diff-zero{color:#6b7280;font-weight:600}
+
+/* BADGE */
+.badge-legal{background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;padding:16px 20px;text-align:center;margin:16px 0}
+.badge-legal strong{color:#065f46;font-size:1rem}
+.badge-legal p{color:#047857;font-size:.85rem;margin-top:4px}
+.badge-warn{background:#fff7ed;border:1px solid #fed7aa}
+.badge-warn strong{color:#9a3412}
+.badge-warn p{color:#c2410c}
+
+/* RELATED */
+.related{margin:48px 0}
+.related h2{font-size:1.2rem;font-weight:700;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.related-card{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;transition:box-shadow .15s,transform .15s;cursor:pointer}
+.related-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-1px)}
+.related-card span{font-weight:600;font-size:.9rem;color:#111827}
+.related-card svg{color:#6366f1;flex-shrink:0}
+
+/* FAQ */
+.faq{margin:48px 0}
+.faq h2{font-size:1.2rem;font-weight:700;margin-bottom:20px}
+.faq details{border:1px solid #e5e7eb;border-radius:12px;margin-bottom:8px;overflow:hidden}
+.faq summary{padding:16px 20px;font-weight:600;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#111827}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'＋';font-size:1.1rem;color:#6366f1;transition:transform .2s}
+.faq details[open] summary::after{content:'－'}
+.faq-body{padding:0 20px 16px;color:#374151;font-size:.95rem;line-height:1.7}
+
+/* FOOTER */
+.footer{background:#111827;color:#9ca3af;margin-top:64px;padding:48px 0 24px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.f-grid{grid-template-columns:1fr}}
+.f-logo{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.f-brand p{font-size:.85rem;line-height:1.6}
+.f-col h3{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:12px}
+.f-col a{display:block;font-size:.85rem;margin-bottom:8px;color:#9ca3af;transition:color .15s}
+.f-col a:hover{color:#fff}
+.f-copy{border-top:1px solid #1f2937;padding-top:20px;text-align:center;font-size:.8rem}
+
+/* CALC BUTTON */
+.calc-btn{background:#6366f1;color:#fff;border:none;border-radius:10px;padding:12px 32px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:16px;transition:background .15s}
+.calc-btn:hover{background:#4f46e5}
+.results-wrap{margin-top:24px}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Hovednavigasjon">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">Dekkalkulator</a>
+    <div class="nav-links" id="navLinks">
+      <a href="/dekkdimensjon">Dekkdimensjon</a>
+      <a href="/felg-kalkulator">Felg kalkulator</a>
+      <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+      <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+      <a href="/speedometer-avvik">Speedometeravvik</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="Åpne meny" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="hero-badge">Tilhengerdekk kalkulator</div>
+      <h1>Dekk tilhenger — Kalkulator og størrelser for tilhenger</h1>
+      <p>Sammenlign tilhengerdekk, sjekk avvik i prosent og finn ut om nye dekk er lovlige på tilhengeren din.</p>
+    </section>
+
+    <div class="ad-slot">Annonse</div>
+
+    <section class="calc-card">
+      <h2>Sammenlign tilhengerdekk</h2>
+      <div class="calc-cols">
+        <div class="calc-group">
+          <h3>Originaldekk</h3>
+          <div class="input-row">
+            <div>
+              <label for="ow">Bredde (mm)</label>
+              <select id="ow"></select>
+            </div>
+            <div>
+              <label for="op">Profil (%)</label>
+              <select id="op"></select>
+            </div>
+            <div>
+              <label for="or_">Felg (tommer)</label>
+              <select id="or_"></select>
+            </div>
+          </div>
+          <div class="tire-label" id="origLabel">175/70 R14</div>
+        </div>
+        <div class="calc-group">
+          <h3>Nytt dekk</h3>
+          <div class="input-row">
+            <div>
+              <label for="nw">Bredde (mm)</label>
+              <select id="nw"></select>
+            </div>
+            <div>
+              <label for="np">Profil (%)</label>
+              <select id="np"></select>
+            </div>
+            <div>
+              <label for="nr">Felg (tommer)</label>
+              <select id="nr"></select>
+            </div>
+          </div>
+          <div class="tire-label" id="newLabel">185/65 R14</div>
+        </div>
+      </div>
+      <button class="calc-btn" id="calcBtn">Beregn tilhengerdekk</button>
+
+      <div class="results-wrap" id="resultsWrap" style="display:none">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Mål</th>
+              <th>Original</th>
+              <th>Nytt dekk</th>
+              <th>Differanse</th>
+            </tr>
+          </thead>
+          <tbody id="resultBody"></tbody>
+        </table>
+        <div id="legalBadge"></div>
+      </div>
+    </section>
+
+    <div class="ad-slot">Annonse</div>
+
+    <section class="related">
+      <h2>Relaterte verktøy</h2>
+      <div class="related-grid">
+        <a href="/" class="related-card">
+          <span>Dekkdimensjon kalkulator</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M9 3l6 6-6 6"/></svg>
+        </a>
+        <a href="/load-index-dekk" class="related-card">
+          <span>Load index dekk</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M9 3l6 6-6 6"/></svg>
+        </a>
+        <a href="/lovlig-avvik-dekkdimensjon" class="related-card">
+          <span>Lovlig avvik dekkdimensjon</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M9 3l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>Ofte stilte spørsmål om tilhengerdekk</h2>
+
+      <details open>
+        <summary>Hvilken dekkdimensjon passer til tilhengeren min?</summary>
+        <div class="faq-body">
+          <p>Sjekk typeskiltet på tilhengeren — der står godkjent dekkdimensjon. Vanlige størrelser er 175/70 R13, 185/70 R14 og 195/70 R15. Du kan bytte til annen dimensjon så lenge avviket er innenfor ±5 % av originalt rulleomkrets og lastindeksen er minst like høy. Bruk kalkulatoren over for å sjekke avviket.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Kan jeg bruke bildekk på tilhengeren?</summary>
+        <div class="faq-body">
+          <p>Nei. Tilhengerdekk (ST-dekk i USA, CP-dekk i Europa) er spesialkonstruert for de belastningene en tilhenger utsettes for: høy statisk last, varmeutvikling ved lave hastigheter og svingebevegelser. Bildekk har annen konstruksjon og gir dårligere kjørestabilitet og kortere levetid på tilhenger. I Norge anbefales dedikerte tilhengerdekk med riktig lastindeks.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Hva er riktig dekktrykk for tilhengerdekk i Norge?</summary>
+        <div class="faq-body">
+          <p>Dekktrykket avhenger av lastindeksen og tilhengerens nyttelast. Sjekk tilhengerens typeskilt eller bruksanvisning for anbefalt trykk. Generelt: de fleste tilhengerdekk i størrelse 175–195 mm kjøres på 3,0–3,5 bar. Tilhengerdekk skal alltid pumpes til maks tillatt trykk for å tåle full last og unngå overoppheting.</p>
+        </div>
+      </details>
+    </section>
+
+    <div class="ad-slot">Annonse</div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="f-logo">Dekkalkulator</div>
+        <p>Gratis kalkulatorer og verktøy for norske bilister. Finn riktige dekk til bilen eller tilhengeren din.</p>
+      </div>
+      <div class="f-col">
+        <h3>Kalkulatorer</h3>
+        <a href="/">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+        <a href="/dekktrykk-tabell">Dekktrykk</a>
+      </div>
+      <div class="f-col">
+        <h3>Verktøy</h3>
+        <a href="/dekk-merking">Dekk merking</a>
+        <a href="/load-index-dekk">Load index</a>
+        <a href="/hastighetskode-dekk">Hastighetskode</a>
+        <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik</a>
+        <a href="/dekk-tilhenger">Tilhengerdekk</a>
+        <a href="/dekk-mc">MC dekk</a>
+        <a href="/dekk-suv">SUV dekk</a>
+      </div>
+    </div>
+    <div class="f-copy">© 2026 Dekkalkulator.no</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Dekk tilhenger kalkulator",
+  "url": "https://dekkalkulator.no/dekk-tilhenger",
+  "description": "Kalkulator for tilhengerdekk. Sammenlign dekkdimensjoner og sjekk avvik i prosent.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "inLanguage": "nb"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvilken dekkdimensjon passer til tilhengeren min?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sjekk typeskiltet på tilhengeren — der står godkjent dekkdimensjon. Vanlige størrelser er 175/70 R13, 185/70 R14 og 195/70 R15. Du kan bytte til annen dimensjon så lenge avviket er innenfor ±5 % av originalt rulleomkrets og lastindeksen er minst like høy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg bruke bildekk på tilhengeren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. Tilhengerdekk er spesialkonstruert for de belastningene en tilhenger utsettes for. Bildekk gir dårligere kjørestabilitet og kortere levetid på tilhenger. I Norge anbefales dedikerte tilhengerdekk med riktig lastindeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er riktig dekktrykk for tilhengerdekk i Norge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dekktrykket avhenger av lastindeksen og tilhengerens nyttelast. Sjekk tilhengerens typeskilt for anbefalt trykk. Generelt kjøres tilhengerdekk i størrelse 175–195 mm på 3,0–3,5 bar, alltid til maks tillatt trykk for å tåle full last."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var WIDTHS=[145,155,165,175,185,195,205,215,225];
+  var PROFILES=[55,60,65,70,75,80];
+  var RIMS=[13,14,15,16];
+
+  function populate(id, arr, def){
+    var sel=document.getElementById(id);
+    arr.forEach(function(v){
+      var o=document.createElement('option');
+      o.value=v; o.textContent=v;
+      if(v===def) o.selected=true;
+      sel.appendChild(o);
+    });
+  }
+  populate('ow',WIDTHS,175);
+  populate('op',PROFILES,70);
+  populate('or_',RIMS,14);
+  populate('nw',WIDTHS,185);
+  populate('np',PROFILES,65);
+  populate('nr',RIMS,14);
+
+  function tireDiameter(w,p,r){ return 2*(w*p/100)+(r*25.4); }
+  function tireCircumference(w,p,r){ return Math.PI*tireDiameter(w,p,r); }
+  function fmt(n,d){ return n.toLocaleString('nb-NO',{minimumFractionDigits:d||0,maximumFractionDigits:d||0}); }
+
+  function updateLabel(wId,pId,rId,lblId){
+    var w=document.getElementById(wId).value;
+    var p=document.getElementById(pId).value;
+    var r=document.getElementById(rId).value;
+    document.getElementById(lblId).textContent=w+'/'+p+' R'+r;
+  }
+
+  ['ow','op','or_'].forEach(function(id){
+    document.getElementById(id).addEventListener('change',function(){ updateLabel('ow','op','or_','origLabel'); });
+  });
+  ['nw','np','nr'].forEach(function(id){
+    document.getElementById(id).addEventListener('change',function(){ updateLabel('nw','np','nr','newLabel'); });
+  });
+
+  function diffCell(val, unit){
+    var s=val>=0?'+':'';
+    var cls=val>0?'diff-pos':val<0?'diff-neg':'diff-zero';
+    return '<span class="'+cls+'">'+s+fmt(val,2)+' '+unit+'</span>';
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', function(){
+    var ow=+document.getElementById('ow').value;
+    var op=+document.getElementById('op').value;
+    var or_=+document.getElementById('or_').value;
+    var nw=+document.getElementById('nw').value;
+    var np=+document.getElementById('np').value;
+    var nr=+document.getElementById('nr').value;
+
+    var od=tireDiameter(ow,op,or_);
+    var nd=tireDiameter(nw,np,nr);
+    var oc=tireCircumference(ow,op,or_);
+    var nc=tireCircumference(nw,np,nr);
+    var os=ow*op/100;
+    var ns=nw*np/100;
+    var avvik=((nc-oc)/oc)*100;
+
+    var rows=[
+      ['Diameter', fmt(od/10,2)+' cm', fmt(nd/10,2)+' cm', diffCell((nd-od)/10,'cm')],
+      ['Rulleomkrets', fmt(oc/10,1)+' cm', fmt(nc/10,1)+' cm', diffCell((nc-oc)/10,'cm')],
+      ['Flankehøyde', fmt(os/10,2)+' cm', fmt(ns/10,2)+' cm', diffCell((ns-os)/10,'cm')],
+      ['Avvik', '—', '—', diffCell(avvik,'+')+'%'.replace('++','%')]
+    ];
+    // fix avvik display
+    var avvikFormatted = (avvik>=0?'+':'')+fmt(avvik,2)+' %';
+    rows[3][3]='<span class="'+(Math.abs(avvik)<=5?'diff-pos':'diff-neg')+'">'+avvikFormatted+'</span>';
+
+    var tbody=document.getElementById('resultBody');
+    tbody.innerHTML='';
+    rows.forEach(function(r){
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td>';
+      tbody.appendChild(tr);
+    });
+
+    var badge=document.getElementById('legalBadge');
+    if(Math.abs(avvik)<=5){
+      badge.className='badge-legal';
+      badge.innerHTML='<strong>✓ Lovlig avvik (±5 % STRO)</strong><p>Avviket på '+fmt(avvik,2)+' % er innenfor tillatt grense for Norge.</p>';
+    } else {
+      badge.className='badge-legal badge-warn';
+      badge.innerHTML='<strong>⚠ Avvik utenfor tillatt grense</strong><p>Avviket på '+fmt(avvik,2)+' % overskrider ±5 % STRO-grensen. Anbefales ikke for tilhenger.</p>';
+    }
+
+    document.getElementById('resultsWrap').style.display='block';
+  });
+
+  document.getElementById('navToggle').addEventListener('click', function(){
+    var links=document.getElementById('navLinks');
+    var open=links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+})();
+</script>
+</body>
+</html>

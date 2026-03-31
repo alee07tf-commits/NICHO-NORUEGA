@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dekk og felg tabell — Finn riktig dekkbredde</title>
+  <meta name="description" content="Dekk og felg tabell med kompatible dekkbredder for alle felgstørrelser. Finn riktig min, ideal og maks dekkbredde for din felg. Gratis og oppdatert.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/dekk-felg-tabell">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dekk og felg tabell — Finn riktig dekkbredde">
+  <meta property="og:description" content="Dekk og felg tabell med kompatible dekkbredder for alle felgstørrelser. Finn riktig min, ideal og maks dekkbredde for din felg.">
+  <meta property="og:url" content="https://dekkalkulator.no/dekk-felg-tabell">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dekk og felg tabell",
+    "description": "Interaktiv tabell som viser kompatible dekkbredder for alle felgstørrelser fra 4 til 13 tommer.",
+    "url": "https://dekkalkulator.no/dekk-felg-tabell",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    /* ── LAYOUT ── */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    /* ── NAV ── */
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-links a[aria-current="page"]{color:#6366f1;font-weight:600}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    /* ── HERO ── */
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    /* ── TABLE TOOL ── */
+    .tool{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.tool{padding:20px 16px;border-radius:12px}}
+
+    .filter-bar{display:flex;gap:16px;flex-wrap:wrap;align-items:end;margin-bottom:24px}
+    .filter-bar .input-group{flex:1;min-width:180px}
+    .filter-bar .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .filter-bar .input-group select,
+    .filter-bar .input-group input{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;transition:border-color .2s}
+    .filter-bar .input-group select:focus,
+    .filter-bar .input-group input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .filter-bar .input-group select{cursor:pointer;appearance:auto}
+    .btn-reset{padding:10px 20px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;background:#f9fafb;color:#6b7280;cursor:pointer;transition:all .2s;align-self:flex-end;white-space:nowrap}
+    .btn-reset:hover{background:#f3f4f6;color:#111827;border-color:#d1d5db}
+
+    .table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:12px}
+    table.felg-table{width:100%;border-collapse:collapse;min-width:500px}
+    table.felg-table th{background:#f9fafb;padding:12px 16px;text-align:center;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.05em;position:sticky;top:0;z-index:2;border-bottom:2px solid #e5e7eb}
+    table.felg-table th:first-child{text-align:left}
+    table.felg-table td{padding:12px 16px;text-align:center;font-size:14px;border-bottom:1px solid #f3f4f6;transition:background .15s}
+    table.felg-table td:first-child{text-align:left;font-weight:700;color:#111827;white-space:nowrap}
+    table.felg-table tbody tr:last-child td{border-bottom:none}
+    table.felg-table tbody tr:hover{background:#f8fafc}
+    table.felg-table tbody tr.highlight{background:#eef2ff}
+    table.felg-table tbody tr.highlight td{font-weight:700}
+    table.felg-table tbody tr.highlight td:first-child{color:#6366f1}
+
+    .td-min{color:#92400e}
+    .td-ideal{color:#166534;font-weight:700}
+    .td-max{color:#dc2626}
+
+    .table-footer{text-align:center;padding:16px 0 4px;font-size:13px;color:#9ca3af}
+
+    /* ── RELATED TOOLS ── */
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    /* ── FAQ ── */
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    /* ── FOOTER ── */
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    /* ── UTILITIES ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell" aria-current="page">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO -->
+      <div class="hero">
+        <span class="hero-badge">Dekk og felg kompatibilitet</span>
+        <h1>Dekk og felg tabell — Finn riktig dekkbredde for din felg</h1>
+        <p>Bruk denne dekk og felg tabellen til å finne kompatibel dekkbredde for din felgstørrelse. Velg felgbredde og se minimum, ideell og maksimal dekkbredde. Filtrer etter felg eller dekkbredde for rask oversikt.</p>
+      </div>
+
+      <!-- TABLE TOOL -->
+      <div class="tool">
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar">
+          <div class="input-group">
+            <label for="filterFelg">Filtrer etter felgbredde</label>
+            <select id="filterFelg" aria-label="Velg felgbredde for å filtrere tabellen">
+              <option value="alle">Alle felgbredder</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="searchDekk">Søk etter dekkbredde (mm)</label>
+            <input type="number" id="searchDekk" placeholder="F.eks. 225" min="100" max="400" aria-label="Skriv inn dekkbredde i mm for å søke">
+          </div>
+          <button class="btn-reset" id="btnReset" type="button">Nullstill</button>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-wrap">
+          <table class="felg-table" id="felgTable" aria-label="Dekk og felg kompatibilitetstabell">
+            <thead>
+              <tr>
+                <th scope="col">Felgbredde (tommer)</th>
+                <th scope="col">Dekkbredde min (mm)</th>
+                <th scope="col">Dekkbredde ideell (mm)</th>
+                <th scope="col">Dekkbredde maks (mm)</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="table-footer" id="tableFooter"></div>
+
+      </div><!-- /.tool -->
+
+      <!-- RELATED TOOLS -->
+      <div class="related">
+        <h2>Relaterte verktøy</h2>
+        <div class="rel-grid">
+          <a href="/felg-kalkulator">Felg kalkulator <span class="arrow">&rarr;</span></a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq">
+        <h2>Vanlige spørsmål om dekk og felg tabell</h2>
+        <details open>
+          <summary>Hvilken dekkbredde passer til min felg?</summary>
+          <p>Finn felgbredden din i tabellen over, og sjekk kolonnene for minimum, ideell og maksimal dekkbredde. Den ideelle dekkbredden gir best veiegenskaper og komfort. Har du en 7-tommers felg, er ideell dekkbredde 215 mm, men du kan bruke alt fra 195 til 225 mm. Bruk <a href="/felg-kalkulator">felg kalkulatoren</a> for å beregne innpress og total bredde.</p>
+        </details>
+        <details>
+          <summary>Kan jeg montere smalere dekk enn anbefalt?</summary>
+          <p>Det frarådes å montere dekk smalere enn minimumsbredden i tabellen. For smale dekk på en bred felg gir dårlig veikontakt, ustabilt kjøremønster og økt risiko for at dekket løsner fra felgen. Hold deg alltid innenfor angitt minimum- og maksimumsbredde for din felgstørrelse.</p>
+        </details>
+        <details>
+          <summary>Hvordan velger jeg mellom smal og bred dekkbredde?</summary>
+          <p>Smalere dekk innenfor felgens kompatibilitet gir lavere rullemotstand og bedre drivstofføkonomi, mens bredere dekk gir mer grep og stabilitet i svinger. For vinterkjøring i Norge anbefales ofte smalere dekk for bedre kontakt med veien gjennom snø. Sjekk <a href="/felg-kalkulator">felg kalkulatoren</a> for å se hvordan ulike dekkbredder påvirker bilens ytelse.</p>
+        </details>
+      </div>
+
+      <!-- FAQPage Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Hvilken dekkbredde passer til min felg?","acceptedAnswer":{"@type":"Answer","text":"Finn felgbredden din i tabellen, og sjekk kolonnene for minimum, ideell og maksimal dekkbredde. Den ideelle dekkbredden gir best veiegenskaper og komfort. Har du en 7-tommers felg, er ideell dekkbredde 215 mm, men du kan bruke alt fra 195 til 225 mm."}},
+          {"@type":"Question","name":"Kan jeg montere smalere dekk enn anbefalt?","acceptedAnswer":{"@type":"Answer","text":"Det frarådes å montere dekk smalere enn minimumsbredden i tabellen. For smale dekk på en bred felg gir dårlig veikontakt, ustabilt kjøremønster og økt risiko for at dekket løsner fra felgen. Hold deg alltid innenfor angitt minimum- og maksimumsbredde."}},
+          {"@type":"Question","name":"Hvordan velger jeg mellom smal og bred dekkbredde?","acceptedAnswer":{"@type":"Answer","text":"Smalere dekk innenfor felgens kompatibilitet gir lavere rullemotstand og bedre drivstofføkonomi, mens bredere dekk gir mer grep og stabilitet i svinger. For vinterkjøring i Norge anbefales ofte smalere dekk for bedre kontakt med veien gjennom snø."}}
+        ]
+      }
+      </script>
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/dekk-og-felg-kalkulator">Dekk og felg kalkulator</a>
+          <a href="/hvilke-dekk-passer-min-bil">Hvilke dekk passer min bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">&copy; 2026 Dekkalkulator.no — Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ══════════════════════════════════════════════
+// DEKK OG FELG TABELL — Interaktiv table lookup
+// Vanilla JS, 0 dependencias
+// ══════════════════════════════════════════════
+
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── DATA: Felgbredde → [min, ideell, maks] dekkbredde ──
+var TABLE_DATA = [
+  { felg: '4.0',  min: 135, ideal: 155, max: 165 },
+  { felg: '4.5',  min: 145, ideal: 165, max: 175 },
+  { felg: '5.0',  min: 155, ideal: 175, max: 185 },
+  { felg: '5.5',  min: 165, ideal: 185, max: 195 },
+  { felg: '6.0',  min: 175, ideal: 195, max: 205 },
+  { felg: '6.5',  min: 185, ideal: 205, max: 215 },
+  { felg: '7.0',  min: 195, ideal: 215, max: 225 },
+  { felg: '7.5',  min: 205, ideal: 225, max: 235 },
+  { felg: '8.0',  min: 215, ideal: 235, max: 245 },
+  { felg: '8.5',  min: 225, ideal: 245, max: 255 },
+  { felg: '9.0',  min: 235, ideal: 255, max: 265 },
+  { felg: '9.5',  min: 245, ideal: 265, max: 275 },
+  { felg: '10.0', min: 255, ideal: 275, max: 285 },
+  { felg: '10.5', min: 265, ideal: 285, max: 295 },
+  { felg: '11.0', min: 275, ideal: 295, max: 305 },
+  { felg: '11.5', min: 285, ideal: 305, max: 315 },
+  { felg: '12.0', min: 295, ideal: 315, max: 335 },
+  { felg: '12.5', min: 305, ideal: 325, max: 345 },
+  { felg: '13.0', min: 315, ideal: 335, max: 355 }
+];
+
+// ── POPULATE FILTER SELECT ──
+var filterFelg = document.getElementById('filterFelg');
+for (var i = 0; i < TABLE_DATA.length; i++) {
+  var opt = document.createElement('option');
+  opt.value = TABLE_DATA[i].felg;
+  opt.textContent = TABLE_DATA[i].felg + '"';
+  filterFelg.appendChild(opt);
+}
+
+// ── RENDER TABLE ──
+function renderTable() {
+  var selectedFelg = filterFelg.value;
+  var searchValue = document.getElementById('searchDekk').value.trim();
+  var searchNum = searchValue ? parseInt(searchValue) : null;
+  var tbody = document.getElementById('tableBody');
+  var html = '';
+  var visibleCount = 0;
+
+  for (var i = 0; i < TABLE_DATA.length; i++) {
+    var row = TABLE_DATA[i];
+
+    // Filter by felgbredde
+    if (selectedFelg !== 'alle' && row.felg !== selectedFelg) continue;
+
+    // Filter by dekkbredde search
+    if (searchNum) {
+      if (searchNum < row.min || searchNum > row.max) continue;
+    }
+
+    var isHighlight = (selectedFelg !== 'alle' && row.felg === selectedFelg);
+    var trClass = isHighlight ? ' class="highlight"' : '';
+
+    html += '<tr' + trClass + '>';
+    html += '<td>' + row.felg + '"</td>';
+    html += '<td class="td-min">' + row.min + ' mm</td>';
+    html += '<td class="td-ideal">' + row.ideal + ' mm</td>';
+    html += '<td class="td-max">' + row.max + ' mm</td>';
+    html += '</tr>';
+    visibleCount++;
+  }
+
+  if (visibleCount === 0) {
+    html = '<tr><td colspan="4" style="text-align:center;color:#9ca3af;padding:24px">Ingen felgstørrelser funnet med valgte filtre</td></tr>';
+  }
+
+  tbody.innerHTML = html;
+
+  // Footer info
+  var footer = document.getElementById('tableFooter');
+  if (selectedFelg !== 'alle' || searchNum) {
+    footer.textContent = 'Viser ' + visibleCount + ' av ' + TABLE_DATA.length + ' felgstørrelser';
+  } else {
+    footer.textContent = 'Viser alle ' + TABLE_DATA.length + ' felgstørrelser';
+  }
+}
+
+// ── RESET ──
+function resetFilters() {
+  filterFelg.value = 'alle';
+  document.getElementById('searchDekk').value = '';
+  renderTable();
+}
+
+// ── EVENT LISTENERS ──
+filterFelg.addEventListener('change', renderTable);
+document.getElementById('searchDekk').addEventListener('input', renderTable);
+document.getElementById('btnReset').addEventListener('click', resetFilters);
+
+// ── INITIAL RENDER ──
+renderTable();
+</script>
+</body>
+</html>

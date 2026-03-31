@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hastighetskode dekk — Tabell over hastighetskoder</title>
+  <meta name="description" content="Finn hastighetskode for ditt dekk. Komplett tabell med alle hastighetskoder (L–Y) og tilhørende maks hastighet i km/t. Søk og finn riktig kode. Prøv nå!">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/hastighetskode-dekk">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hastighetskode dekk — Tabell over hastighetskoder">
+  <meta property="og:description" content="Komplett tabell med alle hastighetskoder for dekk. Finn maks hastighet for din hastighetskode.">
+  <meta property="og:url" content="https://dekkalkulator.no/hastighetskode-dekk">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Hastighetskode dekk tabell","description":"Komplett tabell over hastighetskoder for dekk med maks hastighet og typisk bruk.","url":"https://dekkalkulator.no/hastighetskode-dekk","applicationCategory":"UtilityApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"NOK"},"inLanguage":"nb-NO"}
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){.hero{padding:40px 0 32px}.hero h1{font-size:32px}.hero p{font-size:16px}}
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+    .search-row{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+    .search-row label{font-size:14px;font-weight:600;color:#4b5563}
+    .search-row select,.search-row input{padding:10px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;font-weight:600;color:#111827;background:#fff;transition:border-color .2s;min-width:120px}
+    .search-row select:focus,.search-row input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .result-card{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:14px;padding:24px 28px;margin-bottom:24px;display:none}
+    .result-card.visible{display:block}
+    .result-code{font-size:56px;font-weight:800;color:#166534;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1}
+    .result-speed{font-size:24px;font-weight:700;color:#4b5563;margin-top:8px}
+    .result-use{font-size:14px;color:#6b7280;margin-top:6px}
+    table.spec-table{width:100%;border-collapse:collapse}
+    table.spec-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em;position:sticky;top:0}
+    table.spec-table td{padding:12px 16px;border-bottom:1px solid #f3f4f6;font-size:14px}
+    table.spec-table tbody tr:hover{background:#f0f4ff;cursor:pointer}
+    table.spec-table .code-cell{font-size:20px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#6366f1}
+    table.spec-table .speed-cell{font-weight:700;color:#16a34a}
+    table.spec-table tr.highlighted td{background:#f0fdf4}
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0}
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0}
+    details[open] summary::after{content:'\2212'}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px}
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <main>
+    <div class="wrap">
+      <div class="hero">
+        <span class="hero-badge">Hastighetskode oversikt</span>
+        <h1>Hastighetskode dekk — Komplett tabell og forklaring</h1>
+        <p>Finn hastighetskoden på dekket ditt og se hvilken maksimal hastighet den tillater. Søk etter kode eller bla gjennom hele tabellen fra L (120 km/t) til Y (300 km/t).</p>
+      </div>
+      <div class="calc">
+        <div class="search-row">
+          <label for="codeSelect">Velg hastighetskode:</label>
+          <select id="codeSelect"><option value="">— Velg kode —</option></select>
+        </div>
+        <div class="result-card" id="resultCard">
+          <div class="result-code" id="resCode"></div>
+          <div class="result-speed" id="resSpeed"></div>
+          <div class="result-use" id="resUse"></div>
+        </div>
+        <table class="spec-table" id="specTable" aria-label="Hastighetskoder for dekk">
+          <thead><tr><th>Kode</th><th>Maks hastighet</th><th>Typisk bruk</th></tr></thead>
+          <tbody id="specBody"></tbody>
+        </table>
+      </div>
+      <div class="related">
+        <h2>Relaterte verktøy</h2>
+        <div class="rel-grid">
+          <a href="/load-index-dekk">Load index dekk <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-merking">Dekk merking <span class="arrow">&rarr;</span></a>
+          <a href="/speedometer-avvik">Speedometer avvik <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="faq">
+        <h2>Vanlige spørsmål om hastighetskode på dekk</h2>
+        <details open>
+          <summary>Hva er hastighetskoden på et dekk?</summary>
+          <p>Hastighetskoden er en bokstav på dekksideveggen som angir den maksimale tillatte hastigheten for dekket. Du finner den etter load index-nummeret, for eksempel i "205/55 R16 91<strong>H</strong>". Søk opp din kode i tabellen over for å se maks hastighet. Se også <a href="/dekk-merking">dekk merking</a> for å forstå alle kodene.</p>
+        </details>
+        <details>
+          <summary>Kan jeg bruke dekk med lavere hastighetskode enn originalt?</summary>
+          <p>Nei, du skal alltid bruke dekk med hastighetskode som er lik eller høyere enn bilprodusentens krav. Unntak gjelder vinterdekk, der Q (160 km/t) kan godkjennes på biler med høyere krav — men du må da begrense farten til 160 km/t og merke rattstammen. Se bilens vognkort for krav.</p>
+        </details>
+        <details>
+          <summary>Hvilken hastighetskode er vanligst i Norge?</summary>
+          <p>T (190 km/t) og H (210 km/t) er de vanligste kodene på norske personbiler. Vinterdekk har ofte Q (160 km/t). Sportsbiler og SUV-er bruker gjerne V (240 km/t) eller W (270 km/t). Sjekk <a href="/load-index-dekk">load index</a> for bæreevne og <a href="/hvilke-dekk-passer-min-bil">hvilke dekk passer min bil</a> for komplette spesifikasjoner.</p>
+        </details>
+      </div>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hva er hastighetskoden på et dekk?","acceptedAnswer":{"@type":"Answer","text":"Hastighetskoden er en bokstav etter load index på dekksideveggen (f.eks. H i 91H) som angir maks tillatt hastighet."}},{"@type":"Question","name":"Kan jeg bruke dekk med lavere hastighetskode enn originalt?","acceptedAnswer":{"@type":"Answer","text":"Nei, hastighetskoden må være lik eller høyere enn bilprodusentens krav. Unntak: vinterdekk Q med fartsgrense."}},{"@type":"Question","name":"Hvilken hastighetskode er vanligst i Norge?","acceptedAnswer":{"@type":"Answer","text":"T (190 km/t) og H (210 km/t) er vanligst på norske personbiler. Vinterdekk har ofte Q (160 km/t)."}}]}
+      </script>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/dekk-merking">Dekk merking</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/hastighetskode-dekk" aria-current="page">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">&copy; 2026 Dekkalkulator.no &mdash; Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+<script>
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+var SPEED_INDEX = [
+  {code:'L', speed:120, use:'Lette lastebiler og terrengkjøretøy'},
+  {code:'M', speed:130, use:'Vinterdekk og reservedekk'},
+  {code:'N', speed:140, use:'Eldre kjøretøy og lavhastighetskjøring'},
+  {code:'P', speed:150, use:'Lavhastighetsbiler'},
+  {code:'Q', speed:160, use:'Vinterdekk for personbiler'},
+  {code:'R', speed:170, use:'Tunge kjøretøy'},
+  {code:'S', speed:180, use:'Familie- og kompaktbiler'},
+  {code:'T', speed:190, use:'Familiebiler og mellomklassebiler'},
+  {code:'U', speed:200, use:'Sport- og luksus kompaktbiler'},
+  {code:'H', speed:210, use:'Sport sedan og coupé'},
+  {code:'V', speed:240, use:'Sportsbiler og høyytelsesbiler'},
+  {code:'W', speed:270, use:'Eksklusive sportsbiler'},
+  {code:'Y', speed:300, use:'Superbiler og race-orienterte biler'},
+  {code:'Z', speed:'240+', use:'Høyhastighets sportsbiler (bekreft med produsent)'}
+];
+
+var sel = document.getElementById('codeSelect');
+SPEED_INDEX.forEach(function(s) {
+  var opt = document.createElement('option');
+  opt.value = s.code;
+  opt.textContent = s.code + ' — ' + s.speed + ' km/t';
+  sel.appendChild(opt);
+});
+
+function buildTable(highlight) {
+  var html = '';
+  SPEED_INDEX.forEach(function(s) {
+    var cls = highlight === s.code ? ' class="highlighted"' : '';
+    html += '<tr' + cls + ' onclick="selectCode(\'' + s.code + '\')" style="cursor:pointer">';
+    html += '<td class="code-cell">' + s.code + '</td>';
+    html += '<td class="speed-cell">' + s.speed + ' km/t</td>';
+    html += '<td>' + s.use + '</td></tr>';
+  });
+  document.getElementById('specBody').innerHTML = html;
+}
+
+function selectCode(code) {
+  var found = SPEED_INDEX.find(function(s){return s.code===code;});
+  if (!found) { document.getElementById('resultCard').classList.remove('visible'); buildTable(null); return; }
+  document.getElementById('resCode').textContent = found.code;
+  document.getElementById('resSpeed').textContent = 'Maks hastighet: ' + found.speed + ' km/t';
+  document.getElementById('resUse').textContent = found.use;
+  document.getElementById('resultCard').classList.add('visible');
+  document.getElementById('codeSelect').value = code;
+  buildTable(code);
+}
+
+sel.addEventListener('change', function(){ selectCode(this.value); });
+buildTable(null);
+</script>
+</body>
+</html>

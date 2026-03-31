@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load index dekk — Tabell og kalkulator for lasteindeks</title>
+  <meta name="description" content="Slå opp load index for dekk i komplett tabell (60–120). Finn bæreevne i kg per dekk og totalt for 4 hjul. Gratis og enkel kalkulator.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/load-index-dekk">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Load index dekk — Tabell og kalkulator for lasteindeks">
+  <meta property="og:description" content="Slå opp load index for dekk i komplett tabell (60–120). Finn bæreevne i kg per dekk og totalt for 4 hjul.">
+  <meta property="og:url" content="https://dekkalkulator.no/load-index-dekk">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Load index dekk — Kalkulator",
+    "description": "Slå opp load index for dekk og finn bæreevne i kg. Komplett tabell fra 60 til 120.",
+    "url": "https://dekkalkulator.no/load-index-dekk",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    /* ── LAYOUT ── */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    /* ── NAV ── */
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    /* ── HERO ── */
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    /* ── CALCULATOR / TOOL ── */
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+
+    /* ── SEARCH INPUT ── */
+    .search-wrap{max-width:420px;margin:0 auto 32px;text-align:center}
+    .search-wrap label{display:block;font-size:14px;font-weight:600;color:#4b5563;margin-bottom:8px}
+    .search-input{width:100%;padding:14px 20px;border:2px solid #e5e7eb;border-radius:12px;font-size:20px;font-weight:700;text-align:center;color:#111827;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;transition:border-color .2s,box-shadow .2s}
+    .search-input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,0.1)}
+    .search-input::placeholder{color:#d1d5db;font-weight:400;font-family:system-ui,sans-serif;font-size:16px}
+
+    /* ── RESULT DISPLAY ── */
+    .result-display{max-width:540px;margin:0 auto 32px;padding:28px 24px;background:#f0fdf4;border:2px solid #bbf7d0;border-radius:16px;text-align:center;display:none}
+    .result-display.active{display:block}
+    .result-main{font-size:32px;font-weight:800;color:#111827;letter-spacing:-0.02em;line-height:1.2}
+    .result-main .li-num{color:#6366f1}
+    .result-main .li-kg{color:#16a34a}
+    .result-total{margin-top:12px;font-size:18px;font-weight:600;color:#4b5563}
+    .result-total span{color:#111827;font-weight:800}
+    @media(max-width:640px){
+      .result-main{font-size:24px}
+      .result-total{font-size:16px}
+    }
+
+    /* ── COMMON EXAMPLES ── */
+    .examples-card{max-width:540px;margin:0 auto 32px;padding:16px 20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}
+    .examples-card h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9ca3af;margin-bottom:10px}
+    .examples-list{display:flex;flex-wrap:wrap;gap:8px}
+    .example-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:500;color:#374151;cursor:pointer;transition:all .15s}
+    .example-chip:hover{border-color:#6366f1;background:#f5f3ff}
+    .example-chip strong{font-weight:700;color:#111827}
+
+    /* ── LOAD INDEX TABLE ── */
+    .li-table-section{margin-top:8px}
+    .li-table-section h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
+    .li-table-wrap{max-height:520px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:12px}
+    table.li-table{width:100%;border-collapse:collapse}
+    table.li-table th{background:#f3f4f6;padding:12px 16px;text-align:center;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.04em;position:sticky;top:0;z-index:2}
+    table.li-table td{padding:10px 16px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:14px;font-weight:500;color:#374151;transition:background .15s}
+    table.li-table tbody tr:hover{background:#f5f3ff}
+    table.li-table tbody tr.highlighted{background:#eef2ff;outline:2px solid #6366f1;outline-offset:-2px}
+    table.li-table tbody tr.highlighted td{font-weight:700;color:#111827}
+    table.li-table td:first-child{font-weight:700;color:#6366f1;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:16px}
+    table.li-table td:nth-child(2){font-weight:700;color:#111827}
+    table.li-table td:nth-child(3){color:#6b7280}
+    .no-results{text-align:center;color:#9ca3af;padding:24px;font-size:14px}
+
+    /* ── RELATED TOOLS ── */
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    /* ── FAQ ── */
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    /* ── FOOTER ── */
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    /* ── UTILITIES ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO -->
+      <div class="hero">
+        <span class="hero-badge">Komplett load index tabell</span>
+        <h1>Load index dekk — Finn bæreevne for dine dekk</h1>
+        <p>Slå opp load index (lasteindeks) og finn hvor mange kilo hvert dekk tåler. Skriv inn nummeret fra dekket ditt og se bæreevne per dekk og totalt for 4 hjul.</p>
+      </div>
+
+      <!-- TOOL -->
+      <div class="calc">
+
+        <!-- SEARCH INPUT -->
+        <div class="search-wrap">
+          <label for="liSearch">Skriv inn load index nummer (60–120)</label>
+          <input type="number" id="liSearch" class="search-input" min="60" max="120" placeholder="F.eks. 91" inputmode="numeric">
+        </div>
+
+        <!-- RESULT DISPLAY -->
+        <div class="result-display" id="resultDisplay">
+          <div class="result-main">Load index <span class="li-num" id="resIndex"></span> = <span class="li-kg" id="resKg"></span> kg per dekk</div>
+          <div class="result-total">4 dekk = <span id="resTotal"></span> kg total bæreevne</div>
+        </div>
+
+        <!-- COMMON EXAMPLES -->
+        <div class="examples-card">
+          <h3>Vanlige load index for norske biler</h3>
+          <div class="examples-list">
+            <button class="example-chip" data-li="91"><strong>91</strong> — VW Golf</button>
+            <button class="example-chip" data-li="94"><strong>94</strong> — Toyota RAV4</button>
+            <button class="example-chip" data-li="99"><strong>99</strong> — BMW X5</button>
+          </div>
+        </div>
+
+        <!-- LOAD INDEX TABLE -->
+        <div class="li-table-section">
+          <h2>Komplett load index tabell (60–120)</h2>
+          <div class="li-table-wrap">
+            <table class="li-table" aria-label="Load index tabell med bæreevne i kg">
+              <thead>
+                <tr>
+                  <th>Load Index</th>
+                  <th>Kg per dekk</th>
+                  <th>Kg totalt (×4)</th>
+                </tr>
+              </thead>
+              <tbody id="liBody"></tbody>
+            </table>
+            <div class="no-results" id="noResults" style="display:none">Ingen treff — prøv et tall mellom 60 og 120</div>
+          </div>
+        </div>
+
+      </div><!-- /.calc -->
+
+      <!-- RELATED TOOLS -->
+      <div class="related">
+        <h2>Flere dekk verktøy</h2>
+        <div class="rel-grid">
+          <a href="/hastighetskode-dekk">Hastighetskode dekk <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-merking">Dekk merking <span class="arrow">&rarr;</span></a>
+          <a href="/">Dekkalkulator <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq">
+        <h2>Vanlige spørsmål om load index dekk</h2>
+        <details open>
+          <summary>Hvordan finner jeg load index på dekket mitt?</summary>
+          <p>Load index står på sideveggen av dekket, rett etter dekkdimensjonen. For eksempel, i merking 205/55 R16 <strong>91</strong>V er tallet 91 load index. Det betyr at hvert dekk tåler 615 kg. Skriv inn nummeret i søkefeltet ovenfor for å slå opp bæreevnen med en gang.</p>
+        </details>
+        <details>
+          <summary>Kan jeg bruke dekk med en annen load index?</summary>
+          <p>Du kan bruke dekk med lik eller høyere load index enn det som er spesifisert for bilen din. Det er aldri lovlig eller trygt å bruke dekk med lavere load index, fordi det betyr at dekket ikke tåler vekten. Sjekk bilens brukerhåndbok eller dørkarmen for riktig load index.</p>
+        </details>
+        <details>
+          <summary>Hvilken load index anbefales for min biltype?</summary>
+          <p>Anbefalt load index avhenger av bilens vekt og bruk. Små personbiler bruker typisk 82–91, mellomklasse SUV-er 94–99, og store SUV-er eller varebiler 100–112. Sjekk alltid bilens typegodkjenning for riktig verdi. Bruk <a href="/hvilke-dekk-passer-min-bil">hvilke dekk passer min bil</a> for mer informasjon om riktige dekk.</p>
+        </details>
+      </div>
+
+      <!-- FAQPage Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Hvordan finner jeg load index på dekket mitt?","acceptedAnswer":{"@type":"Answer","text":"Load index står på sideveggen av dekket, rett etter dekkdimensjonen. For eksempel, i merking 205/55 R16 91V er tallet 91 load index. Det betyr at hvert dekk tåler 615 kg. Skriv inn nummeret i søkefeltet for å slå opp bæreevnen."}},
+          {"@type":"Question","name":"Kan jeg bruke dekk med en annen load index?","acceptedAnswer":{"@type":"Answer","text":"Du kan bruke dekk med lik eller høyere load index enn det som er spesifisert for bilen din. Det er aldri lovlig eller trygt å bruke dekk med lavere load index, fordi det betyr at dekket ikke tåler vekten. Sjekk bilens brukerhåndbok eller dørkarmen for riktig load index."}},
+          {"@type":"Question","name":"Hvilken load index anbefales for min biltype?","acceptedAnswer":{"@type":"Answer","text":"Anbefalt load index avhenger av bilens vekt og bruk. Små personbiler bruker typisk 82–91, mellomklasse SUV-er 94–99, og store SUV-er eller varebiler 100–112. Sjekk alltid bilens typegodkjenning for riktig verdi."}}
+        ]
+      }
+      </script>
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/dekk-og-felg-kalkulator">Dekk og felg kalkulator</a>
+          <a href="/hvilke-dekk-passer-min-bil">Hvilke dekk passer min bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">&copy; 2026 Dekkalkulator.no — Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ══════════════════════════════════════════════
+// LOAD INDEX DEKK — Tabell og kalkulator
+// Vanilla JS, 0 dependencias
+// ══════════════════════════════════════════════
+
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── LOAD INDEX DATA ──
+var LOAD_INDEX = {
+  60:250, 61:257, 62:265, 63:272, 64:280, 65:290, 66:300, 67:307, 68:315, 69:325,
+  70:335, 71:345, 72:355, 73:365, 74:375, 75:387, 76:400, 77:412, 78:425, 79:437,
+  80:450, 81:462, 82:475, 83:487, 84:500, 85:515, 86:530, 87:545, 88:560, 89:580,
+  90:600, 91:615, 92:630, 93:650, 94:670, 95:690, 96:710, 97:730, 98:750, 99:775,
+  100:800, 101:825, 102:850, 103:875, 104:900, 105:925, 106:950, 107:975, 108:1000,
+  109:1030, 110:1060, 111:1090, 112:1120, 113:1150, 114:1180, 115:1215, 116:1250,
+  117:1285, 118:1320, 119:1360, 120:1400
+};
+
+// ── FORMAT ──
+function fmtKg(n) {
+  return n.toLocaleString('nb-NO');
+}
+
+// ── BUILD TABLE ──
+function buildTable(filter) {
+  var tbody = document.getElementById('liBody');
+  var noResults = document.getElementById('noResults');
+  var html = '';
+  var count = 0;
+
+  for (var li = 60; li <= 120; li++) {
+    var kg = LOAD_INDEX[li];
+    if (kg === undefined) continue;
+
+    // Filter: if user typed a number, only show matching rows
+    if (filter !== null && filter !== '') {
+      var filterStr = String(filter);
+      var liStr = String(li);
+      if (liStr.indexOf(filterStr) === -1) continue;
+    }
+
+    var total = kg * 4;
+    var highlighted = (filter !== null && filter !== '' && String(li) === String(filter)) ? ' class="highlighted"' : '';
+    html += '<tr' + highlighted + '>';
+    html += '<td>' + li + '</td>';
+    html += '<td>' + fmtKg(kg) + ' kg</td>';
+    html += '<td>' + fmtKg(total) + ' kg</td>';
+    html += '</tr>';
+    count++;
+  }
+
+  tbody.innerHTML = html;
+  noResults.style.display = count === 0 ? 'block' : 'none';
+}
+
+// ── UPDATE RESULT DISPLAY ──
+function updateResult(li) {
+  var display = document.getElementById('resultDisplay');
+  if (li === null || li === '' || LOAD_INDEX[li] === undefined) {
+    display.classList.remove('active');
+    return;
+  }
+  var kg = LOAD_INDEX[li];
+  var total = kg * 4;
+  document.getElementById('resIndex').textContent = li;
+  document.getElementById('resKg').textContent = fmtKg(kg);
+  document.getElementById('resTotal').textContent = fmtKg(total);
+  display.classList.add('active');
+}
+
+// ── SCROLL TO HIGHLIGHTED ROW ──
+function scrollToHighlighted() {
+  var row = document.querySelector('tr.highlighted');
+  if (row) {
+    var wrap = document.querySelector('.li-table-wrap');
+    var rowTop = row.offsetTop - wrap.offsetTop;
+    wrap.scrollTop = rowTop - wrap.clientHeight / 2 + row.clientHeight / 2;
+  }
+}
+
+// ── SEARCH EVENT ──
+var searchInput = document.getElementById('liSearch');
+searchInput.addEventListener('input', function() {
+  var val = this.value.trim();
+  var num = val === '' ? null : parseInt(val, 10);
+
+  if (val === '') {
+    buildTable(null);
+    updateResult(null);
+  } else if (!isNaN(num)) {
+    buildTable(val);
+    updateResult(num);
+    setTimeout(scrollToHighlighted, 50);
+  }
+});
+
+// ── EXAMPLE CHIPS ──
+var chips = document.querySelectorAll('.example-chip');
+for (var i = 0; i < chips.length; i++) {
+  chips[i].addEventListener('click', function() {
+    var li = this.getAttribute('data-li');
+    searchInput.value = li;
+    buildTable(li);
+    updateResult(parseInt(li, 10));
+    setTimeout(scrollToHighlighted, 50);
+    searchInput.focus();
+  });
+}
+
+// ── INITIAL BUILD ──
+buildTable(null);
+</script>
+</body>
+</html>

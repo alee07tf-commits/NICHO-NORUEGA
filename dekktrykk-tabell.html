@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dekktrykk tabell — Riktig lufttrykk for alle dekk</title>
+  <meta name="description" content="Dekktrykk tabell med anbefalt lufttrykk for alle dekkbredder og biltyper. Finn riktig dekktrykk for personbil, SUV og varebil — gratis og raskt.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/dekktrykk-tabell">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dekktrykk tabell — Riktig lufttrykk for alle dekk">
+  <meta property="og:description" content="Dekktrykk tabell med anbefalt lufttrykk for alle dekkbredder og biltyper. Finn riktig dekktrykk for personbil, SUV og varebil.">
+  <meta property="og:url" content="https://dekkalkulator.no/dekktrykk-tabell">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dekktrykk tabell",
+    "description": "Interaktiv dekktrykk tabell — finn anbefalt lufttrykk for alle dekk­bredder og biltyper.",
+    "url": "https://dekkalkulator.no/dekktrykk-tabell",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+
+    .filters{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;align-items:flex-end}
+    .filter-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
+    .filter-group select{padding:10px 12px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:600;color:#111827;background:#fff;cursor:pointer;appearance:auto;transition:border-color .2s;min-width:160px}
+    .filter-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+
+    .result-highlight{background:#f0fdf4;border:1.5px solid #86efac;border-radius:14px;padding:20px 24px;margin-bottom:24px;display:none}
+    .result-highlight.visible{display:block}
+    .rh-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#15803d;margin-bottom:12px}
+    .rh-values{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+    .rh-val{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:12px 14px;text-align:center}
+    .rh-val .val-num{font-size:24px;font-weight:900;color:#15803d;line-height:1;margin-bottom:4px}
+    .rh-val .val-lbl{font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em}
+
+    .table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:12px}
+    table.pres-table{width:100%;border-collapse:collapse;font-size:14px}
+    table.pres-table thead th{background:#f9fafb;padding:12px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#6b7280;border-bottom:2px solid #e5e7eb;white-space:nowrap}
+    table.pres-table tbody td{padding:10px 16px;border-bottom:1px solid #f3f4f6;vertical-align:middle}
+    table.pres-table tbody tr:last-child td{border-bottom:none}
+    table.pres-table tbody tr:hover{background:#f8fafc}
+    table.pres-table tbody tr.highlighted-row{background:#f0fdf4}
+    table.pres-table tbody tr.highlighted-row td{font-weight:700}
+    .badge-ok{display:inline-block;background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
+    .badge-ref{display:inline-block;background:#eff6ff;color:#1d4ed8;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
+
+    .note-box{margin-top:20px;padding:14px 18px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;font-size:14px;color:#92400e;line-height:1.6}
+    .note-box strong{color:#78350f}
+
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <div class="hero">
+        <span class="hero-badge">Gratis dekkverktøy for Norge</span>
+        <h1>Dekktrykk tabell — Oversikt over anbefalt dekktrykk</h1>
+        <p>Velg biltype og dekkbredde for å se anbefalt lufttrykk. Komplett tabell med minimum, anbefalt og maksimalt dekktrykk for alle vanlige dekk­størrelser.</p>
+      </div>
+
+      <div class="calc">
+        <div class="filters">
+          <div class="filter-group">
+            <label for="carType">Biltype</label>
+            <select id="carType">
+              <option value="personbil">Personbil</option>
+              <option value="suv">SUV</option>
+              <option value="varebil">Varebil</option>
+              <option value="motorsykkel">Motorsykkel</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="widthFilter">Dekkbredde (mm)</label>
+            <select id="widthFilter">
+              <option value="">Alle bredder</option>
+              <option value="155">155</option>
+              <option value="165">165</option>
+              <option value="175">175</option>
+              <option value="185">185</option>
+              <option value="195">195</option>
+              <option value="205">205</option>
+              <option value="215">215</option>
+              <option value="225">225</option>
+              <option value="235">235</option>
+              <option value="245">245</option>
+              <option value="255">255</option>
+              <option value="265">265</option>
+              <option value="275">275</option>
+              <option value="285">285</option>
+              <option value="295">295</option>
+              <option value="305">305</option>
+              <option value="315">315</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="result-highlight" id="resultHighlight">
+          <div class="rh-title" id="rhTitle">Anbefalt dekktrykk</div>
+          <div class="rh-values" id="rhValues"></div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="pres-table" id="pressTable" aria-label="Dekktrykk tabell">
+            <thead>
+              <tr>
+                <th>Dekkbredde (mm)</th>
+                <th>Anbefalt trykk (bar)</th>
+                <th>Min trykk (bar)</th>
+                <th>Maks trykk (bar)</th>
+                <th>Kald/Varm</th>
+                <th>Biltype</th>
+              </tr>
+            </thead>
+            <tbody id="pressBody"></tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          <strong>Viktig:</strong> Tabellen viser generelle anbefalinger basert på dekkbredde og biltype. <strong>Sjekk alltid bilen din spesifikke krav på dørstolpen</strong> (B-søylen) eller i servicehåndboken — dette er produsentens eksakte krav for din bil og last.
+        </div>
+      </div>
+
+      <div class="related">
+        <h2>Relaterte verktøy</h2>
+        <div class="rel-grid">
+          <a href="/">Dekkdimensjon kalkulator <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-merking">Dekk merking guide <span class="arrow">&rarr;</span></a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="faq">
+        <h2>Vanlige spørsmål om dekktrykk</h2>
+        <details open>
+          <summary>Hva er riktig dekktrykk for min bil?</summary>
+          <p>Riktig dekktrykk varierer etter biltype, dekkbredde og last. Generelt ligger anbefalt trykk mellom <strong>2,0 og 2,6 bar</strong> for personbiler, og noe høyere for SUV-er og varebiler. Bruk filteret ovenfor for å finne anbefalt trykk for ditt dekk. Husk alltid å dobbeltsjekke mot <strong>klistremerket på B-søylen</strong> (innvendig på dørkarmen) — dette er den eksakte anbefalingen fra produsenten for akkurat din bil.</p>
+        </details>
+        <details>
+          <summary>Hva skjer hvis dekktrykket er for lavt eller høyt?</summary>
+          <p><strong>For lavt trykk</strong> øker slitasjen på skuldrene av dekket, senker drivstoff­effektiviteten og kan føre til overoppheting ved høy hastighet — i verste fall sprekker dekket. <strong>For høyt trykk</strong> gjør at midten av dekket bærer mest vekt, noe som gir raskere slitasje i midten og dårligere grep fordi kontakt­flaten mot asfalten minker. Begge deler er farlig og dyrt i lengden. Sjekk trykket minst én gang i måneden.</p>
+        </details>
+        <details>
+          <summary>Hvor ofte bør jeg sjekke dekktrykket?</summary>
+          <p>Fageksperter anbefaler å sjekke dekktrykket <strong>minst én gang i måneden</strong> og alltid <strong>før lange turer</strong>. Lufttrykket synker naturlig med ca. 0,1 bar per måned, og faller ytterligere i kaldt vær (ca. 0,1 bar per 6 °C temperaturfall). Sjekk alltid <strong>kalde dekk</strong> — vent minst 3 timer etter kjøring, eller mål før bilen er kjørt mer enn 2 km. Husk å sjekke reservehjulet også.</p>
+        </details>
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hva er riktig dekktrykk for min bil?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Riktig dekktrykk varierer etter biltype, dekkbredde og last. Generelt ligger anbefalt trykk mellom 2,0 og 2,6 bar for personbiler, og noe høyere for SUV og varebiler. Sjekk alltid klistremerket på B-søylen (dørkarmen) for produsentens eksakte anbefaling."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hva skjer hvis dekktrykket er for lavt eller høyt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For lavt trykk øker slitasjen på skuldrene av dekket, senker drivstoffeffektiviteten og kan føre til overoppheting. For høyt trykk gir raskere slitasje i midten og dårligere grep. Begge deler er farlig og dyrt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvor ofte bør jeg sjekke dekktrykket?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sjekk dekktrykket minst én gang i måneden og alltid før lange turer. Mål alltid på kalde dekk (minst 3 timer etter kjøring). Trykket faller ca. 0,1 bar per måned naturlig, og ytterligere i kaldt vær."
+            }
+          }
+        ]
+      }
+      </script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/dekk-og-felg-kalkulator">Dekk og felg kalkulator</a>
+          <a href="/hvilke-dekk-passer-min-bil">Hvilke dekk passer min bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">© 2026 Dekkalkulator.no — Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── DATA ──
+// [width, rec_personbil, min_personbil, max_personbil, suv_add]
+var PRESSURE_DATA = [
+  [155, 2.0, 1.8, 2.4],
+  [165, 2.0, 1.8, 2.4],
+  [175, 2.1, 1.9, 2.5],
+  [185, 2.2, 2.0, 2.5],
+  [195, 2.2, 2.0, 2.5],
+  [205, 2.3, 2.1, 2.6],
+  [215, 2.3, 2.1, 2.6],
+  [225, 2.4, 2.2, 2.7],
+  [235, 2.4, 2.2, 2.7],
+  [245, 2.5, 2.3, 2.8],
+  [255, 2.5, 2.3, 2.8],
+  [265, 2.6, 2.4, 2.9],
+  [275, 2.6, 2.4, 2.9],
+  [285, 2.7, 2.5, 3.0],
+  [295, 2.7, 2.5, 3.0],
+  [305, 2.8, 2.5, 3.1],
+  [315, 2.8, 2.6, 3.1]
+];
+
+var VAREBIL_ADD = 0.4; // varebiler trenger generelt mer trykk
+
+function getSuvAdd(carType) {
+  if (carType === 'suv') return 0.2;
+  if (carType === 'varebil') return VAREBIL_ADD;
+  if (carType === 'motorsykkel') return 0; // egne verdier
+  return 0;
+}
+
+function getMotoData(width) {
+  // Motorcycles have different pressure ranges
+  if (width <= 120) return [2.0, 1.8, 2.4];
+  if (width <= 150) return [2.2, 2.0, 2.6];
+  return [2.5, 2.2, 2.9];
+}
+
+function fmt(n) { return n.toFixed(1); }
+
+function renderTable() {
+  var carType = document.getElementById('carType').value;
+  var widthFilter = document.getElementById('widthFilter').value;
+  var tbody = document.getElementById('pressBody');
+  var highlight = document.getElementById('resultHighlight');
+  var rhTitle = document.getElementById('rhTitle');
+  var rhValues = document.getElementById('rhValues');
+  var add = getSuvAdd(carType);
+  var carLabel = {personbil:'Personbil',suv:'SUV',varebil:'Varebil',motorsykkel:'Motorsykkel'}[carType];
+
+  var rows = PRESSURE_DATA.filter(function(row){
+    return !widthFilter || String(row[0]) === widthFilter;
+  });
+
+  if (widthFilter && rows.length === 1) {
+    var r = rows[0];
+    var rec = carType === 'motorsykkel' ? getMotoData(r[0]) : [r[1]+add, r[2]+add, r[3]+add];
+    highlight.classList.add('visible');
+    rhTitle.textContent = 'Anbefalt dekktrykk — ' + r[0] + ' mm — ' + carLabel;
+    rhValues.innerHTML =
+      '<div class="rh-val"><div class="val-num">' + fmt(rec[0]) + '</div><div class="val-lbl">Anbefalt (bar)</div></div>' +
+      '<div class="rh-val"><div class="val-num">' + fmt(rec[1]) + '</div><div class="val-lbl">Minimum (bar)</div></div>' +
+      '<div class="rh-val"><div class="val-num">' + fmt(rec[2]) + '</div><div class="val-lbl">Maksimum (bar)</div></div>' +
+      '<div class="rh-val"><div class="val-num">Kald</div><div class="val-lbl">Måletidspunkt</div></div>';
+  } else {
+    highlight.classList.remove('visible');
+  }
+
+  tbody.innerHTML = rows.map(function(row){
+    var rec = carType === 'motorsykkel' ? getMotoData(row[0]) : [row[1]+add, row[2]+add, row[3]+add];
+    var isHighlighted = widthFilter && String(row[0]) === widthFilter;
+    return '<tr' + (isHighlighted ? ' class="highlighted-row"' : '') + '>' +
+      '<td><strong>' + row[0] + ' mm</strong></td>' +
+      '<td>' + fmt(rec[0]) + ' bar ' + (isHighlighted ? '<span class="badge-ok">Anbefalt</span>' : '') + '</td>' +
+      '<td>' + fmt(rec[1]) + ' bar</td>' +
+      '<td>' + fmt(rec[2]) + ' bar</td>' +
+      '<td><span class="badge-ref">Kald</span></td>' +
+      '<td>' + carLabel + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+document.getElementById('carType').addEventListener('change', renderTable);
+document.getElementById('widthFilter').addEventListener('change', renderTable);
+
+window.addEventListener('DOMContentLoaded', renderTable);
+</script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dekktabell — Komplett tabell over dekkdimensjoner</title>
+  <meta name="description" content="Dekktabell med komplette dekkdimensjoner, diameter, rulleomkrets og flankehøyde for alle vanlige størrelser. Finn dine mål enkelt — helt gratis.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/dekktabell">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dekktabell — Komplett tabell over dekkdimensjoner">
+  <meta property="og:description" content="Dekktabell med komplette dekkdimensjoner, diameter, rulleomkrets og flankehøyde for alle vanlige størrelser. Finn dine mål enkelt.">
+  <meta property="og:url" content="https://dekkalkulator.no/dekktabell">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dekktabell",
+    "description": "Komplett dekktabell med dekkdimensjoner, diameter, rulleomkrets og flankehøyde for alle vanlige størrelser.",
+    "url": "https://dekkalkulator.no/dekktabell",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    /* ── LAYOUT ── */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    /* ── NAV ── */
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    /* ── HERO ── */
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    /* ── SECTION SPACING ── */
+    .section-spacer{padding:64px 0}
+    .section-spacer + .section-spacer{padding-top:0}
+
+    /* ── SECTION LABELS ── */
+    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px;text-align:center}
+
+    /* ── TOOL CARD ── */
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+
+    /* ── TABS ── */
+    .tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px}
+    .tabs button{padding:10px 18px;border:1.5px solid #e5e7eb;border-radius:8px;background:#fff;font-size:14px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    .tabs button:hover{border-color:#6366f1;color:#6366f1}
+    .tabs button.active{background:#6366f1;color:#fff;border-color:#6366f1}
+    @media(max-width:640px){
+      .tabs button{padding:8px 14px;font-size:13px}
+    }
+
+    /* ── SEARCH ── */
+    .search-wrap{margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto}
+    .search-wrap input{width:100%;padding:10px 14px 10px 38px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:500;color:#111827;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cline x1='11' y1='11' x2='15' y2='15'/%3E%3C/svg%3E") no-repeat 12px center;transition:border-color .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    .search-wrap input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .search-wrap input::placeholder{color:#9ca3af}
+
+    /* ── DIMENSION TABLE ── */
+    .dim-table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:10px}
+    table.dim-table{width:100%;border-collapse:collapse;font-size:14px;min-width:600px}
+    table.dim-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em;position:sticky;top:0;border-bottom:2px solid #e5e7eb}
+    table.dim-table td{padding:8px 12px;border-bottom:1px solid #f3f4f6;white-space:nowrap}
+    table.dim-table tbody tr:hover{background:#f0f4ff}
+    table.dim-table td:first-child{font-weight:700;color:#111827}
+    .dim-count{text-align:center;font-size:13px;color:#9ca3af;margin-top:12px}
+
+    /* ── RESULTS TABLE (reused from index) ── */
+    table.res{width:100%;border-collapse:collapse}
+    table.res th,table.res td{padding:10px 12px;text-align:center;font-size:14px}
+    table.res th{font-weight:600;color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
+    table.res td{border-bottom:1px solid #f3f4f6}
+
+    /* ── RELATED TOOLS ── */
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    /* ── FAQ ── */
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    /* ── FOOTER ── */
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    /* ── UTILITIES ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO -->
+      <div class="hero">
+        <span class="hero-badge">Komplett dekktabell</span>
+        <h1>Dekktabell — Komplett oversikt over dekkdimensjoner og mål</h1>
+        <p>Finn diameter, rulleomkrets, flankehøyde og omdreininger per kilometer for alle vanlige dekkstørrelser. Velg felgstørrelse og søk etter dimensjon.</p>
+      </div>
+
+      <!-- TOOL: DEKKTABELL -->
+      <div class="calc">
+
+        <!-- SEARCH INPUT -->
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="Søk etter dimensjon, f.eks. 205/55..." aria-label="Søk etter dekkdimensjon">
+        </div>
+
+        <!-- TABS: Felg sizes -->
+        <div class="tabs" id="rimTabs" role="tablist" aria-label="Velg felgstørrelse"></div>
+
+        <!-- TABLE -->
+        <div class="dim-table-wrap">
+          <table class="dim-table" aria-label="Dekktabell med alle dekkdimensjoner">
+            <thead>
+              <tr>
+                <th>Dimensjon</th>
+                <th>Bredde (cm)</th>
+                <th>Profil (%)</th>
+                <th>Diameter (cm)</th>
+                <th>Rulleomkrets (cm)</th>
+                <th>Flankehøyde (cm)</th>
+                <th>Omdr./km</th>
+              </tr>
+            </thead>
+            <tbody id="dimBody"></tbody>
+          </table>
+        </div>
+        <div class="dim-count" id="dimCount"></div>
+
+      </div><!-- /.calc -->
+
+      <!-- RELATED TOOLS -->
+      <div class="related">
+        <h2>Relaterte verktøy</h2>
+        <div class="rel-grid">
+          <a href="/overgangstabell-dekk">Overgangstabell dekk <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-storrelser">Dekk størrelser <span class="arrow">&rarr;</span></a>
+          <a href="/">Dekkalkulator <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq">
+        <h2>Vanlige spørsmål om dekktabellen</h2>
+        <details open>
+          <summary>Hvordan bruker jeg dekktabellen for å finne dimensjonene til dekket mitt?</summary>
+          <p>Finn dekkstørrelsen som står på siden av dekket ditt, for eksempel 205/55 R16. Klikk på felgstørrelsen (16") i fanene øverst, og finn raden med bredde 205 og profil 55 i tabellen. Der ser du alle mål: total diameter i cm, rulleomkrets, flankehøyde og omdreininger per kilometer. Du kan også bruke søkefeltet og skrive inn hele eller deler av dimensjonen for å filtrere tabellen raskt.</p>
+        </details>
+        <details>
+          <summary>Hva betyr diameter og rulleomkrets i tabellen?</summary>
+          <p>Diameteren er den totale høyden på dekket fra bunn til topp, målt i centimeter. Rulleomkretsen er avstanden dekket tilbakelegger per omdreining — denne verdien er avgjørende for speedometeravvik og lovlighetssjekk. Større rulleomkrets betyr at speedometeret viser lavere hastighet enn du faktisk kjører. Bruk <a href="/rulleomkrets-kalkulator">rulleomkrets-kalkulatoren</a> for å sammenligne to dekk og beregne nøyaktig avvik.</p>
+        </details>
+        <details>
+          <summary>Hvordan finner jeg alternative størrelser med lignende dimensjoner?</summary>
+          <p>Se etter dekk med lignende diameter og rulleomkrets i tabellen. Dekk innenfor ±5 % i rulleomkrets er lovlige i Norge ifølge Statens vegvesen. For eksempel: 205/55 R16 og 225/45 R17 har nesten lik diameter. Bruk <a href="/overgangstabell-dekk">overgangstabellen for dekk</a> for å finne alle godkjente alternativer for din dekkstørrelse automatisk.</p>
+        </details>
+      </div>
+
+      <!-- FAQPage Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Hvordan bruker jeg dekktabellen for å finne dimensjonene til dekket mitt?","acceptedAnswer":{"@type":"Answer","text":"Finn dekkstørrelsen som står på siden av dekket ditt, for eksempel 205/55 R16. Klikk på felgstørrelsen (16\") i fanene øverst, og finn raden med bredde 205 og profil 55 i tabellen. Der ser du alle mål: total diameter i cm, rulleomkrets, flankehøyde og omdreininger per kilometer. Du kan også bruke søkefeltet og skrive inn hele eller deler av dimensjonen for å filtrere tabellen raskt."}},
+          {"@type":"Question","name":"Hva betyr diameter og rulleomkrets i tabellen?","acceptedAnswer":{"@type":"Answer","text":"Diameteren er den totale høyden på dekket fra bunn til topp, målt i centimeter. Rulleomkretsen er avstanden dekket tilbakelegger per omdreining — denne verdien er avgjørende for speedometeravvik og lovlighetssjekk. Større rulleomkrets betyr at speedometeret viser lavere hastighet enn du faktisk kjører. Bruk rulleomkrets-kalkulatoren for å sammenligne to dekk og beregne nøyaktig avvik."}},
+          {"@type":"Question","name":"Hvordan finner jeg alternative størrelser med lignende dimensjoner?","acceptedAnswer":{"@type":"Answer","text":"Se etter dekk med lignende diameter og rulleomkrets i tabellen. Dekk innenfor ±5 % i rulleomkrets er lovlige i Norge ifølge Statens vegvesen. For eksempel: 205/55 R16 og 225/45 R17 har nesten lik diameter. Bruk overgangstabellen for dekk for å finne alle godkjente alternativer for din dekkstørrelse automatisk."}}
+        ]
+      }
+      </script>
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/dekk-og-felg-kalkulator">Dekk og felg kalkulator</a>
+          <a href="/hvilke-dekk-passer-min-bil">Hvilke dekk passer min bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">&copy; 2026 Dekkalkulator.no — Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ══════════════════════════════════════════════
+// DEKKTABELL — Komplett referansetabell
+// Vanilla JS, 0 dependencias
+// ══════════════════════════════════════════════
+
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── TIRE DATA ──
+var RIM_SIZES = [13, 14, 15, 16, 17, 18, 19, 20];
+
+// Common width×profile combos per rim size (realistic market combinations)
+var COMBOS = {
+  13: [
+    [145,70],[145,80],[155,65],[155,70],[155,80],[165,60],[165,65],[165,70],[165,80],
+    [175,55],[175,60],[175,65],[175,70],[185,55],[185,60],[185,65],[185,70]
+  ],
+  14: [
+    [155,65],[155,70],[165,60],[165,65],[165,70],[175,55],[175,60],[175,65],[175,70],
+    [185,55],[185,60],[185,65],[185,70],[195,55],[195,60],[195,65],[195,70],
+    [205,55],[205,60],[205,70]
+  ],
+  15: [
+    [165,60],[165,65],[175,55],[175,60],[175,65],[185,50],[185,55],[185,60],[185,65],
+    [195,45],[195,50],[195,55],[195,60],[195,65],[205,45],[205,50],[205,55],[205,60],[205,65],
+    [215,45],[215,50],[215,55],[215,60],[215,65],[225,50],[225,55],[225,60],
+    [235,55],[235,60],[245,50]
+  ],
+  16: [
+    [185,50],[185,55],[185,60],[195,45],[195,50],[195,55],[195,60],
+    [205,40],[205,45],[205,50],[205,55],[205,60],[215,40],[215,45],[215,50],[215,55],[215,60],
+    [225,40],[225,45],[225,50],[225,55],[225,60],[235,40],[235,45],[235,50],[235,55],[235,60],
+    [245,40],[245,45],[245,50],[255,45],[255,50],[265,45],[265,50],
+    [275,45],[285,40]
+  ],
+  17: [
+    [205,40],[205,45],[205,50],[205,55],[215,40],[215,45],[215,50],[215,55],
+    [225,35],[225,40],[225,45],[225,50],[225,55],[235,35],[235,40],[235,45],[235,50],[235,55],
+    [245,35],[245,40],[245,45],[245,50],[255,35],[255,40],[255,45],[255,50],
+    [265,35],[265,40],[265,45],[275,35],[275,40],[275,45],
+    [285,35],[285,40],[295,35],[295,40]
+  ],
+  18: [
+    [215,35],[215,40],[215,45],[225,35],[225,40],[225,45],[225,50],
+    [235,35],[235,40],[235,45],[235,50],[245,35],[245,40],[245,45],[245,50],
+    [255,30],[255,35],[255,40],[255,45],[265,30],[265,35],[265,40],[265,45],
+    [275,30],[275,35],[275,40],[275,45],[285,30],[285,35],[285,40],
+    [295,30],[295,35],[295,40],[305,30],[305,35],[315,30],[315,35]
+  ],
+  19: [
+    [225,35],[225,40],[225,45],[235,30],[235,35],[235,40],[235,45],
+    [245,30],[245,35],[245,40],[245,45],[255,30],[255,35],[255,40],[255,45],
+    [265,30],[265,35],[265,40],[275,30],[275,35],[275,40],
+    [285,30],[285,35],[285,40],[295,30],[295,35],[305,30],[305,35],
+    [315,30],[315,35]
+  ],
+  20: [
+    [235,30],[235,35],[245,30],[245,35],[245,40],[245,45],
+    [255,30],[255,35],[255,40],[255,45],[265,30],[265,35],[265,40],[265,45],
+    [275,30],[275,35],[275,40],[275,45],[285,25],[285,30],[285,35],[285,40],
+    [295,25],[295,30],[295,35],[295,40],[305,25],[305,30],[305,35],
+    [315,25],[315,30],[315,35],[325,25],[325,30]
+  ]
+};
+
+// ── FORMULAS ──
+function tireDiameterMm(w, p, r) {
+  return 2 * (w * p / 100) + (r * 25.4);
+}
+function tireCircMm(w, p, r) {
+  return Math.PI * tireDiameterMm(w, p, r);
+}
+function tireSidewallMm(w, p) {
+  return w * p / 100;
+}
+function tireRevsKm(w, p, r) {
+  return 1000000 / tireCircMm(w, p, r);
+}
+
+// ── FORMAT (nb-NO) ──
+function fmt(n, d) {
+  d = d === undefined ? 1 : d;
+  return n.toLocaleString('nb-NO', {minimumFractionDigits: d, maximumFractionDigits: d});
+}
+function fmtI(n) {
+  return Math.round(n).toLocaleString('nb-NO');
+}
+
+// ── STATE ──
+var activeRim = 16;
+var searchTerm = '';
+
+// ── BUILD TABS ──
+function buildTabs() {
+  var container = document.getElementById('rimTabs');
+  var html = '';
+  for (var i = 0; i < RIM_SIZES.length; i++) {
+    var rim = RIM_SIZES[i];
+    var cls = rim === activeRim ? 'active' : '';
+    html += '<button role="tab" class="' + cls + '" data-rim="' + rim + '" aria-selected="' + (rim === activeRim) + '">' + rim + '"</button>';
+  }
+  container.innerHTML = html;
+
+  // Event listeners
+  var buttons = container.querySelectorAll('button');
+  for (var j = 0; j < buttons.length; j++) {
+    buttons[j].addEventListener('click', function() {
+      activeRim = parseInt(this.getAttribute('data-rim'));
+      buildTabs();
+      renderTable();
+    });
+  }
+}
+
+// ── RENDER TABLE ──
+function renderTable() {
+  var tbody = document.getElementById('dimBody');
+  var combos = COMBOS[activeRim] || [];
+  var html = '';
+  var count = 0;
+
+  // Sort combos: by width, then by profile
+  var sorted = combos.slice().sort(function(a, b) {
+    if (a[0] !== b[0]) return a[0] - b[0];
+    return a[1] - b[1];
+  });
+
+  for (var i = 0; i < sorted.length; i++) {
+    var w = sorted[i][0];
+    var p = sorted[i][1];
+    var dim = w + '/' + p + ' R' + activeRim;
+
+    // Search filter
+    if (searchTerm && dim.toLowerCase().indexOf(searchTerm) === -1) continue;
+
+    var diamMm = tireDiameterMm(w, p, activeRim);
+    var circMm = tireCircMm(w, p, activeRim);
+    var sideMm = tireSidewallMm(w, p);
+    var revs = tireRevsKm(w, p, activeRim);
+
+    html += '<tr>';
+    html += '<td>' + dim + '</td>';
+    html += '<td>' + fmt(w / 10, 1) + '</td>';
+    html += '<td>' + p + ' %</td>';
+    html += '<td>' + fmt(diamMm / 10, 2) + '</td>';
+    html += '<td>' + fmt(circMm / 10, 1) + '</td>';
+    html += '<td>' + fmt(sideMm / 10, 2) + '</td>';
+    html += '<td>' + fmtI(revs) + '</td>';
+    html += '</tr>';
+    count++;
+  }
+
+  if (count === 0) {
+    html = '<tr><td colspan="7" style="text-align:center;color:#9ca3af;padding:20px">Ingen dimensjoner funnet' + (searchTerm ? ' for "' + searchTerm + '"' : '') + '</td></tr>';
+  }
+
+  tbody.innerHTML = html;
+  document.getElementById('dimCount').textContent = count + ' dekkdimensjoner' + (searchTerm ? ' (filtrert)' : ' for ' + activeRim + '" felg');
+}
+
+// ── SEARCH ACROSS ALL TABS ──
+function searchAllTabs() {
+  var input = document.getElementById('searchInput');
+  searchTerm = input.value.trim().toLowerCase();
+
+  if (searchTerm.length >= 2) {
+    // Find best matching rim tab
+    var bestRim = activeRim;
+    var bestCount = 0;
+
+    for (var r = 0; r < RIM_SIZES.length; r++) {
+      var rim = RIM_SIZES[r];
+      var combos = COMBOS[rim] || [];
+      var matchCount = 0;
+      for (var c = 0; c < combos.length; c++) {
+        var dim = combos[c][0] + '/' + combos[c][1] + ' R' + rim;
+        if (dim.toLowerCase().indexOf(searchTerm) !== -1) matchCount++;
+      }
+      if (matchCount > bestCount) {
+        bestCount = matchCount;
+        bestRim = rim;
+      }
+    }
+
+    if (bestCount > 0 && bestRim !== activeRim) {
+      activeRim = bestRim;
+      buildTabs();
+    }
+  }
+
+  renderTable();
+}
+
+// ── EVENT LISTENERS ──
+document.getElementById('searchInput').addEventListener('input', searchAllTabs);
+
+// ── INIT ──
+buildTabs();
+renderTable();
+</script>
+</body>
+</html>

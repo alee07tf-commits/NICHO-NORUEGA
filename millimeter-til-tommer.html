@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millimeter til tommer — Konverter mm til tommer</title>
+  <meta name="description" content="Konverter millimeter til tommer enkelt og raskt. Finn dekkbredde i tommer med vår gratis kalkulator. Tabeller for vanlige dekkmål. Prøv nå!">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/millimeter-til-tommer">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Millimeter til tommer — Konverter mm til tommer">
+  <meta property="og:description" content="Konverter millimeter til tommer enkelt og raskt. Finn dekkbredde i tommer med vår gratis kalkulator. Tabeller for vanlige dekkmål.">
+  <meta property="og:url" content="https://dekkalkulator.no/millimeter-til-tommer">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Millimeter til tommer konverter",
+    "description": "Gratis konverter for å regne om millimeter til tommer. Perfekt for dekkbredde og felgmål.",
+    "url": "https://dekkalkulator.no/millimeter-til-tommer",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    /* ── LAYOUT ── */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    /* ── NAV ── */
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    /* ── HERO ── */
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    /* ── SECTION SPACING ── */
+    .section-spacer{padding:64px 0}
+    .section-spacer + .section-spacer{padding-top:0}
+
+    /* ── SECTION LABELS ── */
+    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px;text-align:center}
+
+    /* ── CALCULATOR ── */
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+
+    /* ── CONVERTER INPUT AREA ── */
+    .converter-input{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+    .converter-input label{font-size:14px;font-weight:600;color:#4b5563}
+    .converter-input input[type="number"]{width:140px;padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:20px;font-weight:700;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;color:#111827;text-align:center;transition:border-color .2s}
+    .converter-input input[type="number"]:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .converter-input .unit-label{font-size:16px;font-weight:700;color:#6b7280}
+
+    /* ── RESULT CARD ── */
+    .result-card{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:16px;padding:32px;text-align:center;margin-bottom:8px}
+    .result-card .result-value{font-size:48px;font-weight:800;color:#166534;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;line-height:1.2}
+    .result-card .result-unit{font-size:18px;font-weight:600;color:#4ade80;margin-left:4px}
+    .result-card .result-formula{font-size:14px;color:#6b7280;margin-top:12px}
+    .result-card .result-secondary{font-size:15px;color:#6b7280;margin-top:8px}
+    @media(max-width:640px){
+      .result-card{padding:20px 16px}
+      .result-card .result-value{font-size:36px}
+    }
+
+    /* ── REVERSE LINK ── */
+    .reverse-link{text-align:center;margin-top:16px;margin-bottom:8px}
+    .reverse-link a{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:999px;font-size:14px;font-weight:600;color:#6366f1;transition:all .2s}
+    .reverse-link a:hover{background:#eef2ff;border-color:#c7d2fe}
+
+    /* ── QUICK TABLE ── */
+    .quick-table-wrap{margin-top:32px}
+    .quick-table-wrap h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
+    table.quick-table{width:100%;border-collapse:collapse;max-width:700px;margin:0 auto}
+    table.quick-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em}
+    table.quick-table td{padding:10px 16px;font-size:14px;border-bottom:1px solid #f3f4f6}
+    table.quick-table tbody tr:nth-child(even){background:#f9fafb}
+    table.quick-table tbody tr:hover{background:#f0f4ff}
+    table.quick-table td:first-child{font-weight:700;color:#111827}
+    table.quick-table td:nth-child(2){font-weight:600;color:#16a34a;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
+    table.quick-table td:nth-child(3){color:#6b7280;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
+    table.quick-table td a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    table.quick-table td a:hover{text-decoration-color:#6366f1}
+
+    /* ── RELATED TOOLS ── */
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    /* ── FAQ ── */
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    /* ── FOOTER ── */
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    /* ── UTILITIES ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO -->
+      <div class="hero">
+        <span class="hero-badge">Gratis konverter for Norge</span>
+        <h1>Millimeter til tommer — Konverter millimeter til tommer</h1>
+        <p>Regn om millimeter til tommer umiddelbart. Skriv inn antall mm og se resultatet i tommer og centimeter. Praktisk for dekkbredde, felgstørrelse og andre mål på bilen.</p>
+      </div>
+
+      <!-- CONVERTER -->
+      <div class="calc">
+
+        <div class="converter-input">
+          <label for="mmInput">Millimeter:</label>
+          <input type="number" id="mmInput" value="205" min="0" step="any" aria-label="Antall millimeter">
+          <span class="unit-label">mm</span>
+        </div>
+
+        <div class="result-card" id="resultCard">
+          <div class="result-value" id="resultValue">8,07</div>
+          <span class="result-unit">tommer (″)</span>
+          <div class="result-formula" id="resultFormula">205 mm ÷ 25,4 = 8,07 tommer</div>
+          <div class="result-secondary" id="resultSecondary">= 20,5 cm</div>
+        </div>
+
+        <div class="reverse-link">
+          <a href="/tommer-til-mm">Konverter tommer til mm &rarr;</a>
+        </div>
+
+        <!-- QUICK TABLE -->
+        <div class="quick-table-wrap">
+          <h2>Vanlige dekkbredder i mm → tommer</h2>
+          <table class="quick-table" aria-label="Konverteringstabell dekkbredde mm til tommer">
+            <thead>
+              <tr>
+                <th>Dekkbredde (mm)</th>
+                <th>Tommer (″)</th>
+                <th>Centimeter</th>
+              </tr>
+            </thead>
+            <tbody id="quickTableBody"></tbody>
+          </table>
+        </div>
+
+      </div><!-- /.calc -->
+
+      <!-- RELATED TOOLS -->
+      <div class="related">
+        <h2>Flere konverteringsverktøy</h2>
+        <div class="rel-grid">
+          <a href="/tommer-til-mm">Tommer til mm <span class="arrow">&rarr;</span></a>
+          <a href="/tommer-til-cm">Tommer til cm <span class="arrow">&rarr;</span></a>
+          <a href="/cm-til-tommer">Cm til tommer <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq">
+        <h2>Vanlige spørsmål om millimeter til tommer</h2>
+        <details open>
+          <summary>Hva er 205 mm i tommer?</summary>
+          <p>205 mm tilsvarer <strong>8,07 tommer</strong>. Regnestykket er: 205 ÷ 25,4 = 8,07″. Dette er den vanligste dekkbredden for personbiler i Europa — men husk at dekkbredde i mm og felgstørrelse i tommer er to forskjellige mål. Felgstørrelsen (for eksempel 16″) beskriver diameteren på felgen, ikke bredden. Bruk <a href="/dekkdimensjon">dekkdimensjon kalkulatoren</a> for å se hele dekkets mål.</p>
+        </details>
+        <details>
+          <summary>Hvilken felgstørrelse passer til X mm dekk?</summary>
+          <p>Dekkbredde i mm bestemmer ikke felgstørrelse alene — du trenger hele dimensjonen (bredde/profil R felg). En 205/55 R16 monteres på en 16-tommers felg, uavhengig av at bredden er 205 mm (8,07″). Se <a href="/dekk-felg-tabell">dekk og felg tabellen</a> for en full oversikt over hvilke dekkmål som passer til ulike felgstørrelser.</p>
+        </details>
+        <details>
+          <summary>Hva er forskjellen på dekkbredde i mm og felgstørrelse i tommer?</summary>
+          <p>Dekkbredde (mm) er hvor bredt dekket er — altså tverrsnittets bredde fra side til side. Felgstørrelse (tommer) er diameteren på felgen dekket monteres på. Et dekk merket 205/55 R16 har en bredde på 205 mm (8,07″), men felgdiameteren er 16 tommer (40,64 cm). De to målene bruker ulike enheter bevisst — dette er internasjonal standard for dekk. Konverter med vår kalkulator for å sammenligne tallene direkte.</p>
+        </details>
+      </div>
+
+      <!-- FAQPage Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Hva er 205 mm i tommer?","acceptedAnswer":{"@type":"Answer","text":"205 mm tilsvarer 8,07 tommer. Regnestykket er: 205 ÷ 25,4 = 8,07″. Dette er den vanligste dekkbredden for personbiler i Europa — men husk at dekkbredde i mm og felgstørrelse i tommer er to forskjellige mål."}},
+          {"@type":"Question","name":"Hvilken felgstørrelse passer til X mm dekk?","acceptedAnswer":{"@type":"Answer","text":"Dekkbredde i mm bestemmer ikke felgstørrelse alene — du trenger hele dimensjonen (bredde/profil R felg). En 205/55 R16 monteres på en 16-tommers felg, uavhengig av at bredden er 205 mm (8,07″). Se dekk og felg tabellen for en full oversikt."}},
+          {"@type":"Question","name":"Hva er forskjellen på dekkbredde i mm og felgstørrelse i tommer?","acceptedAnswer":{"@type":"Answer","text":"Dekkbredde (mm) er hvor bredt dekket er. Felgstørrelse (tommer) er diameteren på felgen dekket monteres på. Et dekk merket 205/55 R16 har en bredde på 205 mm (8,07″), men felgdiameteren er 16 tommer (40,64 cm)."}}
+        ]
+      }
+      </script>
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/millimeter-til-tommer">Millimeter til tommer</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">&copy; 2026 Dekkalkulator.no — Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ══════════════════════════════════════════════
+// MILLIMETER TIL TOMMER — Konverter
+// Vanilla JS, 0 dependencias
+// ══════════════════════════════════════════════
+
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── FORMAT ──
+function fmtNb(n, d) {
+  d = d === undefined ? 2 : d;
+  return n.toLocaleString('nb-NO', {minimumFractionDigits: d, maximumFractionDigits: d});
+}
+
+// ── CONVERSION ──
+function convertMmTilTommer() {
+  var input = document.getElementById('mmInput');
+  var mm = parseFloat(input.value);
+  if (isNaN(mm) || mm < 0) {
+    document.getElementById('resultValue').textContent = '—';
+    document.getElementById('resultFormula').textContent = 'Skriv inn et gyldig tall';
+    document.getElementById('resultSecondary').textContent = '';
+    return;
+  }
+  var tommer = mm / 25.4;
+  var cm = mm / 10;
+  document.getElementById('resultValue').textContent = fmtNb(tommer);
+  document.getElementById('resultFormula').textContent = fmtNb(mm, mm % 1 === 0 ? 0 : 1) + ' mm \u00F7 25,4 = ' + fmtNb(tommer) + ' tommer';
+  document.getElementById('resultSecondary').textContent = '= ' + fmtNb(cm, 1) + ' cm';
+}
+
+// ── QUICK TABLE ──
+function buildQuickTable() {
+  var widths = [145, 155, 165, 175, 185, 195, 205, 215, 225, 235, 245, 255, 265];
+  var tbody = document.getElementById('quickTableBody');
+  var html = '';
+  for (var i = 0; i < widths.length; i++) {
+    var mm = widths[i];
+    var tommer = mm / 25.4;
+    var cm = mm / 10;
+    html += '<tr>';
+    html += '<td>' + mm + ' mm</td>';
+    html += '<td>' + fmtNb(tommer) + '″</td>';
+    html += '<td>' + fmtNb(cm, 1) + ' cm</td>';
+    html += '</tr>';
+  }
+  tbody.innerHTML = html;
+}
+
+// ── EVENT LISTENERS ──
+document.getElementById('mmInput').addEventListener('input', convertMmTilTommer);
+
+// ── INIT ──
+convertMmTilTommer();
+buildQuickTable();
+</script>
+</body>
+</html>

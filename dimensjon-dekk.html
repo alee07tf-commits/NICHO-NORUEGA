@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dimensjon dekk — Finn og beregn dekkdimensjoner</title>
+  <meta name="description" content="Beregn alle dimensjoner på dekket ditt: total diameter, rulleomkrets, flankehøyde og omdreininger per km. Gratis dekkdimensjon kalkulator for alle størrelser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/dimensjon-dekk">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dimensjon dekk — Finn og beregn dekkdimensjoner">
+  <meta property="og:description" content="Beregn alle dimensjoner på dekket ditt: total diameter, rulleomkrets, flankehøyde og omdreininger per km. Gratis og raskt.">
+  <meta property="og:url" content="https://dekkalkulator.no/dimensjon-dekk">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dimensjon dekk kalkulator",
+    "description": "Beregn total diameter, rulleomkrets, flankehøyde, profilhøyde og omdreininger per km for alle dekkdimensjoner.",
+    "url": "https://dekkalkulator.no/dimensjon-dekk",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+
+    .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+    @media(max-width:480px){.input-row{grid-template-columns:1fr}}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
+    .input-group select{width:100%;padding:12px 10px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:16px;font-weight:700;background:#fff;color:#111827;cursor:pointer;appearance:auto;transition:border-color .2s}
+    .input-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+
+    .tire-label{text-align:center;font-size:22px;font-weight:800;color:#111827;padding:12px;background:#f9fafb;border-radius:10px;margin-bottom:24px;letter-spacing:1px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
+
+    .results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px}
+    .res-card{background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:18px 14px;text-align:center;transition:border-color .2s,box-shadow .2s}
+    .res-card:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08)}
+    .res-card.primary{background:#f0f0fe;border-color:#c7d2fe}
+    .res-card .res-num{font-size:30px;font-weight:900;color:#6366f1;line-height:1;margin-bottom:6px}
+    .res-card.primary .res-num{color:#4338ca}
+    .res-card .res-unit{font-size:12px;font-weight:600;color:#9ca3af;margin-bottom:4px}
+    .res-card .res-label{font-size:13px;font-weight:600;color:#374151}
+
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <div class="hero">
+        <span class="hero-badge">Gratis dekkverktøy for Norge</span>
+        <h1>Dimensjon dekk — Kalkulator og oversikt over dekkdimensjoner</h1>
+        <p>Velg bredde, profil og felgstørrelse for å beregne alle dimensjoner på dekket ditt — total diameter, rulleomkrets, flankehøyde og omdreininger per km.</p>
+      </div>
+
+      <div class="calc">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="sW">Bredde (mm)</label>
+            <select id="sW"></select>
+          </div>
+          <div class="input-group">
+            <label for="sP">Profil (%)</label>
+            <select id="sP"></select>
+          </div>
+          <div class="input-group">
+            <label for="sR">Felg (tommer)</label>
+            <select id="sR"></select>
+          </div>
+        </div>
+
+        <div class="tire-label" id="tireLabel">205/55 R16</div>
+
+        <div class="results-grid" id="resultsGrid" aria-live="polite"></div>
+      </div>
+
+      <div class="related">
+        <h2>Relaterte verktøy</h2>
+        <div class="rel-grid">
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator <span class="arrow">&rarr;</span></a>
+          <a href="/dekktabell">Dekktabell <span class="arrow">&rarr;</span></a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="faq">
+        <h2>Vanlige spørsmål om dekkdimensjoner</h2>
+        <details open>
+          <summary>Hva er dimensjonene på et dekk?</summary>
+          <p>Et dekk har flere viktige dimensjoner: <strong>bredde</strong> (seksjonbredde i mm), <strong>profilhøyde</strong> (flankehøyde = bredde × profil%), <strong>total diameter</strong> (felgdiameter + 2 × flankehøyde), <strong>rulleomkrets</strong> (π × diameter) og <strong>omdreininger per km</strong> (1 000 000 mm ÷ rulleomkrets). Bruk kalkulatoren ovenfor for å se alle verdier for akkurat din dekkstørrelse.</p>
+        </details>
+        <details>
+          <summary>Hvilke dimensjoner er viktigst å sammenligne?</summary>
+          <p>Når du bytter dekkstørrelse, er <strong>total diameter</strong> og <strong>rulleomkrets</strong> de aller viktigste verdiene å sammenligne — de avgjør om dekkene er innenfor lovlig avvik (±5 %) og påvirker speedometeravviket. Bruk <a href="/">dekkdimensjon kalkulatoren</a> for å sammenligne original og ny størrelse side om side og se eksakt prosentavvik.</p>
+        </details>
+        <details>
+          <summary>Hva er et lovlig dimensjonsavvik i Norge?</summary>
+          <p>Statens vegvesen og STRO (Scandinavian Tire and Rim Organization) tillater et avvik på inntil <strong>±5 % i rulleomkrets</strong> sammenlignet med originaldekket. Det er rulleomkretsen — ikke diameteren eller bredden alene — som avgjør lovligheten. Les mer og sjekk avviket ditt på <a href="/lovlig-avvik-dekkdimensjon">lovlig avvik dekkdimensjon</a>.</p>
+        </details>
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hva er dimensjonene på et dekk?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Et dekk har flere viktige dimensjoner: bredde (mm), profilhøyde (bredde × profil%), total diameter (felgdiameter + 2 × flankehøyde), rulleomkrets (π × diameter) og omdreininger per km (1 000 000 mm ÷ rulleomkrets)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvilke dimensjoner er viktigst å sammenligne?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Total diameter og rulleomkrets er de viktigste verdiene å sammenligne ved dekkbytte — de avgjør om dekkene er innenfor lovlig avvik (±5 %) og påvirker speedometeravviket."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hva er et lovlig dimensjonsavvik i Norge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Statens vegvesen og STRO tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket. Det er rulleomkretsen som avgjør lovligheten, ikke diameter eller bredde alene."
+            }
+          }
+        ]
+      }
+      </script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/dekk-og-felg-kalkulator">Dekk og felg kalkulator</a>
+          <a href="/hvilke-dekk-passer-min-bil">Hvilke dekk passer min bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">© 2026 Dekkalkulator.no — Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── DATA ──
+var WIDTHS   = [145,155,165,175,185,195,205,215,225,235,245,255,265,275,285,295,305,315,325,335,345];
+var PROFILES = [25,30,35,40,45,50,55,60,65,70,75,80,85,90];
+var RIMS     = [12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
+
+function populateSelect(id, values, defaultVal) {
+  var sel = document.getElementById(id);
+  values.forEach(function(v){
+    var opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    if (v === defaultVal) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+populateSelect('sW', WIDTHS, 205);
+populateSelect('sP', PROFILES, 55);
+populateSelect('sR', RIMS, 16);
+
+// ── FORMULAS — all results in cm ──
+function calc(w, p, r) {
+  var sidewallMm = w * p / 100;              // mm
+  var rimMm      = r * 25.4;                 // mm
+  var diamMm     = 2 * sidewallMm + rimMm;   // mm
+  var circMm     = Math.PI * diamMm;         // mm
+
+  return {
+    diameter:     diamMm / 10,              // cm
+    circumference:circMm / 10,              // cm
+    sidewall:     sidewallMm / 10,          // cm
+    width:        w / 10,                   // cm
+    profileHeight:sidewallMm / 10,          // cm (same as sidewall)
+    revsPerKm:    1000000 / circMm          // omdreininger/km
+  };
+}
+
+function f2(n) { return n.toFixed(2); }
+function f1(n) { return n.toFixed(1); }
+function f0(n) { return Math.round(n).toString(); }
+
+function renderResults() {
+  var w = parseInt(document.getElementById('sW').value);
+  var p = parseInt(document.getElementById('sP').value);
+  var r = parseInt(document.getElementById('sR').value);
+
+  document.getElementById('tireLabel').textContent = w + '/' + p + ' R' + r;
+
+  var d = calc(w, p, r);
+  var grid = document.getElementById('resultsGrid');
+
+  grid.innerHTML =
+    '<div class="res-card primary">' +
+      '<div class="res-num">' + f1(d.diameter) + '</div>' +
+      '<div class="res-unit">cm</div>' +
+      '<div class="res-label">Total diameter</div>' +
+    '</div>' +
+    '<div class="res-card primary">' +
+      '<div class="res-num">' + f1(d.circumference) + '</div>' +
+      '<div class="res-unit">cm</div>' +
+      '<div class="res-label">Rulleomkrets</div>' +
+    '</div>' +
+    '<div class="res-card">' +
+      '<div class="res-num">' + f1(d.sidewall) + '</div>' +
+      '<div class="res-unit">cm</div>' +
+      '<div class="res-label">Flankehøyde</div>' +
+    '</div>' +
+    '<div class="res-card">' +
+      '<div class="res-num">' + f1(d.width) + '</div>' +
+      '<div class="res-unit">cm</div>' +
+      '<div class="res-label">Bredde</div>' +
+    '</div>' +
+    '<div class="res-card">' +
+      '<div class="res-num">' + f1(d.profileHeight) + '</div>' +
+      '<div class="res-unit">cm</div>' +
+      '<div class="res-label">Profilhøyde</div>' +
+    '</div>' +
+    '<div class="res-card">' +
+      '<div class="res-num">' + f0(d.revsPerKm) + '</div>' +
+      '<div class="res-unit">per km</div>' +
+      '<div class="res-label">Omdreininger/km</div>' +
+    '</div>';
+}
+
+['sW','sP','sR'].forEach(function(id){
+  document.getElementById(id).addEventListener('change', renderResults);
+});
+
+window.addEventListener('DOMContentLoaded', renderResults);
+</script>
+</body>
+</html>

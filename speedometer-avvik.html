@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speedometer avvik kalkulator — Sjekk fart med nye dekk</title>
+  <meta name="description" content="Beregn speedometer avvik ved dekkbytte. Sjekk faktisk hastighet mot vist hastighet og finn ut om nye dekk gir lovlig avvik. Prøv gratis nå!">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dekkalkulator.no/speedometer-avvik">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Speedometer avvik kalkulator — Sjekk fart med nye dekk">
+  <meta property="og:description" content="Beregn speedometer avvik ved dekkbytte. Sjekk faktisk hastighet mot vist hastighet og finn ut om nye dekk gir lovlig avvik.">
+  <meta property="og:url" content="https://dekkalkulator.no/speedometer-avvik">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="Dekkalkulator">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Speedometer avvik kalkulator",
+    "description": "Gratis kalkulator for å beregne speedometer avvik ved dekkbytte. Sjekk faktisk hastighet mot vist hastighet.",
+    "url": "https://dekkalkulator.no/speedometer-avvik",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+
+    /* ── LAYOUT ── */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    /* ── NAV ── */
+    .nav{background:#fff;border-bottom:1px solid #f3f4f6;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-logo{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
+    .nav-links a:hover{color:#111827}
+    .nav-links a[aria-current="page"]{color:#6366f1;font-weight:600}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
+    .nav-hamburger svg{display:block}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:8px 24px 16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f3f4f6;border-radius:0;font-size:15px}
+      .nav-links a:last-child{border-bottom:none}
+      .nav-hamburger{display:block}
+    }
+
+    /* ── HERO ── */
+    .hero{padding:64px 0 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#6b7280;background:#f3f4f6;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+    .hero h1{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;max-width:720px;margin:0 auto}
+    .hero p{font-size:18px;color:#6b7280;max-width:640px;margin:20px auto 0;line-height:1.7}
+    @media(max-width:640px){
+      .hero{padding:40px 0 32px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:16px}
+    }
+
+    /* ── CALCULATOR ── */
+    .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+    @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
+
+    /* Side-by-side tire inputs */
+    .sides{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:560px){.sides{grid-template-columns:1fr;gap:16px}}
+
+    .side{padding:20px;border-radius:12px}
+    .side-orig{background:#f8fafc;border:1.5px solid #e2e8f0}
+    .side-new{background:#f8fdf8;border:1.5px solid #d1fae5}
+    .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .side-orig .side-label{color:#6366f1}
+    .side-new .side-label{color:#16a34a}
+    .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0}
+    .side-orig .dot{background:#6366f1}
+    .side-new .dot{background:#22c55e}
+
+    .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .input-group select{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;cursor:pointer;appearance:auto;transition:border-color .2s;font-family:'Inter',system-ui,sans-serif}
+    .input-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .input-group input[type="number"]{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;transition:border-color .2s;font-family:'Inter',system-ui,sans-serif}
+    .input-group input[type="number"]:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+
+    .tire-label{text-align:center;font-size:20px;font-weight:800;color:#111827;padding:10px;background:#f9fafb;border-radius:8px;margin-top:12px;letter-spacing:0.5px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
+
+    /* ── SPEEDOMETER HERO PANEL ── */
+    .speedo-panel{margin-top:28px;padding:28px 24px;background:linear-gradient(135deg,#312e81 0%,#4338ca 50%,#6366f1 100%);border-radius:16px;color:#fff;text-align:center}
+    .speedo-panel h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7);margin-bottom:20px}
+    .speedo-input-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+    .speedo-input-row label{font-size:14px;font-weight:600;color:rgba(255,255,255,0.85)}
+    .speedo-input-row input[type="number"]{width:90px;padding:10px 12px;border:2px solid rgba(255,255,255,0.25);border-radius:10px;font-size:18px;font-weight:700;background:rgba(255,255,255,0.1);color:#fff;text-align:center;transition:border-color .2s}
+    .speedo-input-row input[type="number"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
+    .speedo-input-row span{font-size:14px;color:rgba(255,255,255,0.7)}
+    .speed-btns{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+    .speed-btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer;transition:all .15s}
+    .speed-btn:hover,.speed-btn.active{background:rgba(255,255,255,0.25);border-color:rgba(255,255,255,0.4)}
+    .speedo-result{margin-top:8px}
+    .speedo-actual{font-size:56px;font-weight:800;letter-spacing:-0.03em;line-height:1.1}
+    .speedo-actual-label{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:4px}
+    .speedo-deviation{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 20px;border-radius:999px;font-size:18px;font-weight:700}
+    .speedo-dev-pos{background:rgba(34,197,94,0.2);color:#86efac}
+    .speedo-dev-neg{background:rgba(239,68,68,0.2);color:#fca5a5}
+    .speedo-dev-zero{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)}
+    .speedo-pct{font-size:14px;color:rgba(255,255,255,0.6);margin-top:8px}
+    @media(max-width:640px){
+      .speedo-panel{padding:20px 16px}
+      .speedo-actual{font-size:40px}
+    }
+
+    /* ── SPEED GRID ── */
+    .speed-section{margin-top:24px;padding:20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px}
+    .speed-section h2{font-size:12px;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+    .speed-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+    @media(max-width:640px){.speed-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:380px){.speed-grid{grid-template-columns:repeat(2,1fr)}}
+    .speed-item{background:#fff;border:1px solid #fde68a;border-radius:10px;padding:12px 8px;text-align:center;transition:box-shadow .2s}
+    .speed-item:hover{box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+    .speed-item .spd{font-weight:800;color:#111827;font-size:16px;line-height:1.3}
+    .speed-item .lbl{color:#92400e;font-size:11px;line-height:1.4}
+    .speed-item .dev{font-size:12px;font-weight:700;line-height:1.4}
+
+    /* ── BADGE ── */
+    .badge-wrap{text-align:center;padding:16px 0 8px}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700}
+    .badge-ok{background:#dcfce7;color:#166534}
+    .badge-warn{background:#fef3c7;color:#92400e}
+    .badge-fail{background:#fee2e2;color:#991b1b}
+
+    /* ── SIMPLE RESULTS ROW ── */
+    .simple-results{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:480px){.simple-results{grid-template-columns:1fr}}
+    .simple-result{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:16px;text-align:center}
+    .simple-result .sr-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9ca3af;margin-bottom:6px}
+    .simple-result .sr-value{font-size:22px;font-weight:800;color:#111827}
+    .simple-result .sr-detail{font-size:13px;color:#6b7280;margin-top:4px}
+
+    /* ── RELATED TOOLS ── */
+    .related{padding:64px 0}
+    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
+    .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
+    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover .arrow{transform:translateX(3px)}
+
+    /* ── FAQ ── */
+    .faq{padding:64px 0 0}
+    .faq h2{font-size:24px;font-weight:800;color:#111827;margin-bottom:24px;text-align:center;letter-spacing:-0.02em}
+    details{border-bottom:1px solid #e5e7eb}
+    details:last-of-type{border-bottom:none}
+    summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
+    summary:hover{color:#6366f1}
+    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    details[open] summary::after{content:'\2212';transform:rotate(180deg)}
+    details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
+    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#6366f1}
+
+    /* ── FOOTER ── */
+    .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    @media(max-width:640px){.f-grid{grid-template-columns:1fr;gap:32px}}
+    .f-brand .f-logo{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .f-brand p{font-size:14px;color:#6b7280;line-height:1.6;max-width:300px}
+    .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
+    .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
+    .f-col a:hover{color:#fff}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+
+    /* ── UTILITIES ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hovednavigasjon">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/dekkdimensjon">Dekkdimensjon</a>
+        <a href="/felg-kalkulator">Felg kalkulator</a>
+        <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+        <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+        <a href="/speedometer-avvik" aria-current="page">Speedometeravvik</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO -->
+      <div class="hero">
+        <span class="hero-badge">Gratis speedometer kalkulator</span>
+        <h1>Speedometer avvik kalkulator for dekkbytte</h1>
+        <p>Når du bytter til dekk med en annen diameter, endres rulleomkretsen og speedometeret viser feil hastighet. Beregn nøyaktig speedometer avvik her og sjekk om nye dekk gir lovlig avvik etter norske regler.</p>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="calc">
+
+        <!-- TIRE INPUTS: side by side -->
+        <div class="sides">
+          <div class="side side-orig">
+            <div class="side-label"><span class="dot"></span> Originale dekk</div>
+            <div class="input-row">
+              <div class="input-group"><label for="oW">Bredde</label><select id="oW"></select></div>
+              <div class="input-group"><label for="oP">Profil</label><select id="oP"></select></div>
+              <div class="input-group"><label for="oR">Felg</label><select id="oR"></select></div>
+            </div>
+            <div class="tire-label" id="oLabel">205/55 R16</div>
+          </div>
+          <div class="side side-new">
+            <div class="side-label"><span class="dot"></span> Nye dekk</div>
+            <div class="input-row">
+              <div class="input-group"><label for="nW">Bredde</label><select id="nW"></select></div>
+              <div class="input-group"><label for="nP">Profil</label><select id="nP"></select></div>
+              <div class="input-group"><label for="nR">Felg</label><select id="nR"></select></div>
+            </div>
+            <div class="tire-label" id="nLabel">225/45 R17</div>
+          </div>
+        </div>
+
+        <!-- SPEEDOMETER HERO PANEL -->
+        <div class="speedo-panel">
+          <h2>Speedometer avvik</h2>
+          <div class="speedo-input-row">
+            <label for="speedoInput">Speedometer viser:</label>
+            <input type="number" id="speedoInput" value="80" min="1" max="300" step="1">
+            <span>km/t</span>
+          </div>
+          <div class="speed-btns" id="speedBtns">
+            <button class="speed-btn" data-speed="30">30</button>
+            <button class="speed-btn" data-speed="50">50</button>
+            <button class="speed-btn" data-speed="60">60</button>
+            <button class="speed-btn active" data-speed="80">80</button>
+            <button class="speed-btn" data-speed="100">100</button>
+            <button class="speed-btn" data-speed="120">120</button>
+          </div>
+          <div class="speedo-result">
+            <div class="speedo-actual-label">Faktisk hastighet</div>
+            <div class="speedo-actual" id="speedoActual">80,0 km/t</div>
+            <div><span class="speedo-deviation" id="speedoDev">0,0 km/t</span></div>
+            <div class="speedo-pct" id="speedoPct">0,00 % avvik</div>
+          </div>
+        </div>
+
+        <!-- SPEED GRID -->
+        <div class="speed-section">
+          <h2>Speedometeravvik ved alle norske hastigheter</h2>
+          <div class="speed-grid" id="speedGrid"></div>
+        </div>
+
+        <!-- LEGAL BADGE -->
+        <div class="badge-wrap"><span class="badge" id="badge"></span></div>
+
+        <!-- SIMPLE RESULTS ROW -->
+        <div class="simple-results">
+          <div class="simple-result">
+            <div class="sr-title">Diameterforskjell</div>
+            <div class="sr-value" id="diamDiff">0,0 cm</div>
+            <div class="sr-detail" id="diamDetail">Original: 0,0 cm &mdash; Ny: 0,0 cm</div>
+          </div>
+          <div class="simple-result">
+            <div class="sr-title">Omkretsforskjell</div>
+            <div class="sr-value" id="circDiff">0,0 cm</div>
+            <div class="sr-detail" id="circDetail">Original: 0,0 cm &mdash; Ny: 0,0 cm</div>
+          </div>
+        </div>
+
+      </div><!-- /.calc -->
+
+      <!-- RELATED TOOLS -->
+      <div class="related">
+        <h2>Flere dekk kalkulatorer og verktøy</h2>
+        <div class="rel-grid">
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator <span class="arrow">&rarr;</span></a>
+          <a href="/">Dekkalkulator <span class="arrow">&rarr;</span></a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq">
+        <h2>Vanlige spørsmål om speedometer avvik</h2>
+        <details open>
+          <summary>Hvordan sjekker jeg om nye dekk gir speedometer avvik?</summary>
+          <p>Velg din originale dekkdimensjon og den nye dimensjonen i kalkulatoren over. Verktøyet beregner automatisk forskjellen i rulleomkrets og viser faktisk hastighet ved ulike speedometerverdier. Du kan skrive inn en vilkårlig hastighet eller bruke hurtigknappene for vanlige hastigheter i Norge.</p>
+        </details>
+        <details>
+          <summary>Hvor mye speedometer avvik er lovlig i Norge?</summary>
+          <p>I Norge tillates et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Kalkulatoren viser automatisk om dine valgte dekk er innenfor eller utenfor dette kravet. Les mer om <a href="/lovlig-avvik-dekkdimensjon">lovlig avvik for dekkdimensjoner</a>.</p>
+        </details>
+        <details>
+          <summary>Hva gjør jeg hvis speedometeret viser feil etter dekkbytte?</summary>
+          <p>Hvis avviket er innenfor ±5 %, er det lovlig å kjøre med de nye dekkene, men du bør være klar over den faktiske hastigheten din. Ved større avvik må du enten bytte til dekk med riktig diameter, eller få speedometeret kalibrert hos et godkjent verksted. Du kan også bruke GPS-basert hastighet som referanse.</p>
+        </details>
+      </div>
+
+      <!-- FAQPage Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Hvordan sjekker jeg om nye dekk gir speedometer avvik?","acceptedAnswer":{"@type":"Answer","text":"Velg din originale dekkdimensjon og den nye dimensjonen i kalkulatoren over. Verktøyet beregner automatisk forskjellen i rulleomkrets og viser faktisk hastighet ved ulike speedometerverdier. Du kan skrive inn en vilkårlig hastighet eller bruke hurtigknappene for vanlige hastigheter i Norge."}},
+          {"@type":"Question","name":"Hvor mye speedometer avvik er lovlig i Norge?","acceptedAnswer":{"@type":"Answer","text":"I Norge tillates et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Kalkulatoren viser automatisk om dine valgte dekk er innenfor eller utenfor dette kravet."}},
+          {"@type":"Question","name":"Hva gjør jeg hvis speedometeret viser feil etter dekkbytte?","acceptedAnswer":{"@type":"Answer","text":"Hvis avviket er innenfor ±5 %, er det lovlig å kjøre med de nye dekkene, men du bør være klar over den faktiske hastigheten din. Ved større avvik må du enten bytte til dekk med riktig diameter, eller få speedometeret kalibrert hos et godkjent verksted. Du kan også bruke GPS-basert hastighet som referanse."}}
+        ]
+      }
+      </script>
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+        <div class="f-col">
+          <h3>Kalkulatorer</h3>
+          <a href="/felg-kalkulator">Felg kalkulator</a>
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator</a>
+          <a href="/innpress-felg-kalkulator">Innpress felg kalkulator</a>
+          <a href="/speedometer-avvik">Speedometer avvik</a>
+          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon</a>
+        </div>
+        <div class="f-col">
+          <h3>Verktøy</h3>
+          <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+          <a href="/tommer-til-cm">Tommer til cm</a>
+          <a href="/dekkdimensjon">Dekkdimensjon kalkulator</a>
+          <a href="/dekk-kalkulator-bil">Dekk kalkulator bil</a>
+          <a href="/dekk-og-felg-kalkulator">Dekk og felg kalkulator</a>
+          <a href="/hvilke-dekk-passer-min-bil">Hvilke dekk passer min bil</a>
+          <a href="/overgangstabell-dekk">Overgangstabell dekk</a>
+          <a href="/load-index-dekk">Load index dekk</a>
+          <a href="/hastighetskode-dekk">Hastighetskode dekk</a>
+        </div>
+      </div>
+      <div class="f-copy">&copy; 2026 Dekkalkulator.no &mdash; Gratis dekkalkulator for alle biltyper</div>
+    </div>
+  </footer>
+
+<script>
+// ══════════════════════════════════════════════
+// SPEEDOMETER AVVIK KALKULATOR — Mode 6
+// Vanilla JS, 0 dependencias
+// ══════════════════════════════════════════════
+
+// ── NAV TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', function() {
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+// ── DATA ──
+var WIDTHS = [145,155,165,175,185,195,205,215,225,235,245,255,265,275,285,295,305,315,325,335,345];
+var PROFILES = [25,30,35,40,45,50,55,60,65,70,75,80,85,90];
+var RIMS = [12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
+
+// ── FORMULAS ──
+function tireDiameter(w, p, r) {
+  return 2 * (w * p / 100) + (r * 25.4);
+}
+function tireCircumference(w, p, r) {
+  return Math.PI * tireDiameter(w, p, r);
+}
+function realSpeed(oW, oP, oR, nW, nP, nR, indicated) {
+  return indicated * (tireCircumference(nW, nP, nR) / tireCircumference(oW, oP, oR));
+}
+
+// ── FORMAT ──
+function fmt(n, d) {
+  d = d === undefined ? 1 : d;
+  return n.toLocaleString('nb-NO', {minimumFractionDigits: d, maximumFractionDigits: d});
+}
+
+// ── UI HELPERS ──
+function fillSelect(id, arr, sel, sfx) {
+  var s = document.getElementById(id);
+  s.innerHTML = '';
+  for (var i = 0; i < arr.length; i++) {
+    var o = document.createElement('option');
+    o.value = arr[i];
+    o.textContent = arr[i] + (sfx || '');
+    if (arr[i] === sel) o.selected = true;
+    s.appendChild(o);
+  }
+}
+function gv(id) { return parseInt(document.getElementById(id).value); }
+
+// ── INIT SELECTS ──
+fillSelect('oW', WIDTHS, 205, ' mm');
+fillSelect('oP', PROFILES, 55, ' %');
+fillSelect('oR', RIMS, 16, '"');
+fillSelect('nW', WIDTHS, 225, ' mm');
+fillSelect('nP', PROFILES, 45, ' %');
+fillSelect('nR', RIMS, 17, '"');
+
+// ── SPEED BUTTONS ──
+var speedBtns = document.querySelectorAll('.speed-btn');
+var speedoInput = document.getElementById('speedoInput');
+
+for (var b = 0; b < speedBtns.length; b++) {
+  speedBtns[b].addEventListener('click', function() {
+    var spd = parseInt(this.getAttribute('data-speed'));
+    speedoInput.value = spd;
+    // Update active state
+    for (var j = 0; j < speedBtns.length; j++) {
+      speedBtns[j].classList.remove('active');
+    }
+    this.classList.add('active');
+    calculate();
+  });
+}
+
+speedoInput.addEventListener('input', function() {
+  // Remove active from all buttons
+  for (var j = 0; j < speedBtns.length; j++) {
+    speedBtns[j].classList.remove('active');
+  }
+  // Check if current value matches a button
+  var val = parseInt(this.value);
+  for (var j = 0; j < speedBtns.length; j++) {
+    if (parseInt(speedBtns[j].getAttribute('data-speed')) === val) {
+      speedBtns[j].classList.add('active');
+    }
+  }
+  calculate();
+});
+
+// ── MAIN CALCULATE ──
+function calculate() {
+  var oW = gv('oW'), oP = gv('oP'), oR = gv('oR');
+  var nW = gv('nW'), nP = gv('nP'), nR = gv('nR');
+
+  // Labels
+  document.getElementById('oLabel').textContent = oW + '/' + oP + ' R' + oR;
+  document.getElementById('nLabel').textContent = nW + '/' + nP + ' R' + nR;
+
+  // Calculations
+  var od = tireDiameter(oW, oP, oR), nd = tireDiameter(nW, nP, nR);
+  var oc = tireCircumference(oW, oP, oR), nc = tireCircumference(nW, nP, nR);
+  var pct = ((nc - oc) / oc) * 100;
+
+  // ── HERO SPEEDOMETER PANEL ──
+  var indicated = parseInt(speedoInput.value) || 80;
+  var actual = realSpeed(oW, oP, oR, nW, nP, nR, indicated);
+  var dev = actual - indicated;
+  var devPct = ((actual - indicated) / indicated) * 100;
+
+  document.getElementById('speedoActual').textContent = fmt(actual) + ' km/t';
+
+  var devEl = document.getElementById('speedoDev');
+  var devSign = dev > 0.05 ? '+' : '';
+  devEl.textContent = devSign + fmt(dev) + ' km/t';
+  if (dev > 0.05) {
+    devEl.className = 'speedo-deviation speedo-dev-pos';
+  } else if (dev < -0.05) {
+    devEl.className = 'speedo-deviation speedo-dev-neg';
+  } else {
+    devEl.className = 'speedo-deviation speedo-dev-zero';
+  }
+
+  document.getElementById('speedoPct').textContent = (devPct > 0 ? '+' : '') + fmt(devPct, 2) + ' % avvik';
+
+  // ── SPEED GRID (6 speeds) ──
+  var speeds = [30, 50, 60, 80, 100, 120];
+  var shtml = '';
+  for (var j = 0; j < speeds.length; j++) {
+    var rs = realSpeed(oW, oP, oR, nW, nP, nR, speeds[j]);
+    var diff = rs - speeds[j];
+    var diffColor = diff > 0.05 ? '#16a34a' : diff < -0.05 ? '#dc2626' : '#6b7280';
+    shtml += '<div class="speed-item">';
+    shtml += '<div class="lbl">Viser ' + speeds[j] + ' km/t</div>';
+    shtml += '<div class="spd">Faktisk: ' + fmt(rs) + ' km/t</div>';
+    shtml += '<div class="dev" style="color:' + diffColor + '">';
+    shtml += (diff > 0 ? '+' : '') + fmt(diff) + ' km/t</div></div>';
+  }
+  document.getElementById('speedGrid').innerHTML = shtml;
+
+  // ── LEGAL BADGE ──
+  var ap = Math.abs(pct);
+  var badge = document.getElementById('badge');
+  if (ap <= 2.5) {
+    badge.className = 'badge badge-ok';
+    badge.textContent = '\u2713 Innenfor lovlig avvik (' + fmt(ap, 2) + ' %)';
+  } else if (ap <= 5) {
+    badge.className = 'badge badge-warn';
+    badge.textContent = '\u26A0 N\u00E6r grensen (' + fmt(ap, 2) + ' % av maks 5 %)';
+  } else {
+    badge.className = 'badge badge-fail';
+    badge.textContent = '\u2717 Utenfor lovlig avvik (' + fmt(ap, 2) + ' % \u2014 maks er 5 %)';
+  }
+
+  // ── SIMPLE RESULTS: diameter & circumference in cm ──
+  var diamDiffVal = (nd - od) / 10;
+  var circDiffVal = (nc - oc) / 10;
+  var diamSign = diamDiffVal > 0.05 ? '+' : '';
+  var circSign = circDiffVal > 0.05 ? '+' : '';
+
+  document.getElementById('diamDiff').textContent = diamSign + fmt(diamDiffVal, 1) + ' cm';
+  document.getElementById('diamDetail').textContent = 'Original: ' + fmt(od / 10, 1) + ' cm \u2014 Ny: ' + fmt(nd / 10, 1) + ' cm';
+  document.getElementById('circDiff').textContent = circSign + fmt(circDiffVal, 1) + ' cm';
+  document.getElementById('circDetail').textContent = 'Original: ' + fmt(oc / 10, 1) + ' cm \u2014 Ny: ' + fmt(nc / 10, 1) + ' cm';
+}
+
+// ── EVENT LISTENERS ──
+var ids = ['oW','oP','oR','nW','nP','nR'];
+for (var i = 0; i < ids.length; i++) {
+  document.getElementById(ids[i]).addEventListener('change', calculate);
+}
+
+// ── INITIAL CALC ──
+calculate();
+</script>
+</body>
+</html>
