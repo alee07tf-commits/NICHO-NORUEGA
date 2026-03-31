@@ -191,5 +191,6 @@ function fmt(n,d){d=d===undefined?2:d;return n.toLocaleString('nb-NO',{minimumFr
 function calcD(){var c=parseFloat(document.getElementById('circIn').value);if(isNaN(c)||c<=0){document.getElementById('dRes').textContent='—';return;}var d=c/Math.PI;document.getElementById('dRes').textContent=fmt(d)+' cm';document.getElementById('dFml').textContent=fmt(c,1)+' cm ÷ π = '+fmt(d)+' cm  |  Radius: '+fmt(d/2)+' cm';}
 document.getElementById('circIn').addEventListener('input',calcD);calcD();
 </script>
+<script src="/js/cookie-banner.js"></script>
 </body>
 </html>
