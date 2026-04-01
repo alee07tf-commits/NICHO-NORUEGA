@@ -3,238 +3,238 @@
 
   <!-- CLUSTER 1: Calculadora principal -->
   <url>
-    <loc>https://dekkalkulator.no/</loc>
+    <loc>https://dekkalkulator.online/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekkdimensjon</loc>
+    <loc>https://dekkalkulator.online/dekkdimensjon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-storrelser</loc>
+    <loc>https://dekkalkulator.online/dekk-storrelser</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/hvilke-dekk-passer-min-bil</loc>
+    <loc>https://dekkalkulator.online/hvilke-dekk-passer-min-bil</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-kalkulator-bil</loc>
+    <loc>https://dekkalkulator.online/dekk-kalkulator-bil</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/lovlig-avvik-dekkdimensjon</loc>
+    <loc>https://dekkalkulator.online/lovlig-avvik-dekkdimensjon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dimensjon-dekk</loc>
+    <loc>https://dekkalkulator.online/dimensjon-dekk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- CLUSTER 2: Llantas / Felg -->
   <url>
-    <loc>https://dekkalkulator.no/felg-kalkulator</loc>
+    <loc>https://dekkalkulator.online/felg-kalkulator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/innpress-felg-kalkulator</loc>
+    <loc>https://dekkalkulator.online/innpress-felg-kalkulator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-og-felg-kalkulator</loc>
+    <loc>https://dekkalkulator.online/dekk-og-felg-kalkulator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-felg-tabell</loc>
+    <loc>https://dekkalkulator.online/dekk-felg-tabell</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- CLUSTER 3: Rulleomkrets -->
   <url>
-    <loc>https://dekkalkulator.no/rulleomkrets-kalkulator</loc>
+    <loc>https://dekkalkulator.online/rulleomkrets-kalkulator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/rulleomkrets-dekk</loc>
+    <loc>https://dekkalkulator.online/rulleomkrets-dekk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-omkrets</loc>
+    <loc>https://dekkalkulator.online/dekk-omkrets</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/omkrets-til-diameter</loc>
+    <loc>https://dekkalkulator.online/omkrets-til-diameter</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- CLUSTER 4: Tablas -->
   <url>
-    <loc>https://dekkalkulator.no/overgangstabell-dekk</loc>
+    <loc>https://dekkalkulator.online/overgangstabell-dekk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekktabell</loc>
+    <loc>https://dekkalkulator.online/dekktabell</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/omregningstabell-dekk</loc>
+    <loc>https://dekkalkulator.online/omregningstabell-dekk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- CLUSTER 5: Conversores -->
   <url>
-    <loc>https://dekkalkulator.no/tommer-til-cm</loc>
+    <loc>https://dekkalkulator.online/tommer-til-cm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/tommer-til-mm</loc>
+    <loc>https://dekkalkulator.online/tommer-til-mm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/cm-til-tommer</loc>
+    <loc>https://dekkalkulator.online/cm-til-tommer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/millimeter-til-tommer</loc>
+    <loc>https://dekkalkulator.online/millimeter-til-tommer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- CLUSTER 5: Programáticas tommer-i-cm -->
   <url>
-    <loc>https://dekkalkulator.no/10-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/10-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/11-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/11-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/12-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/12-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/13-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/13-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/14-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/14-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/15-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/15-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/16-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/16-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/17-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/17-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/18-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/18-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/19-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/19-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/20-tommer-i-cm</loc>
+    <loc>https://dekkalkulator.online/20-tommer-i-cm</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- CLUSTER 6: Complementarias -->
   <url>
-    <loc>https://dekkalkulator.no/km-t-kalkulator</loc>
+    <loc>https://dekkalkulator.online/km-t-kalkulator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/hastighet-kalkulator</loc>
+    <loc>https://dekkalkulator.online/hastighet-kalkulator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/speedometer-avvik</loc>
+    <loc>https://dekkalkulator.online/speedometer-avvik</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- CLUSTER 7: Especificaciones -->
   <url>
-    <loc>https://dekkalkulator.no/load-index-dekk</loc>
+    <loc>https://dekkalkulator.online/load-index-dekk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/hastighetskode-dekk</loc>
+    <loc>https://dekkalkulator.online/hastighetskode-dekk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-merking</loc>
+    <loc>https://dekkalkulator.online/dekk-merking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekktrykk-tabell</loc>
+    <loc>https://dekkalkulator.online/dekktrykk-tabell</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- CLUSTER 8: Por vehículo -->
   <url>
-    <loc>https://dekkalkulator.no/dekk-mc</loc>
+    <loc>https://dekkalkulator.online/dekk-mc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-lastebil</loc>
+    <loc>https://dekkalkulator.online/dekk-lastebil</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-suv</loc>
+    <loc>https://dekkalkulator.online/dekk-suv</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dekkalkulator.no/dekk-tilhenger</loc>
+    <loc>https://dekkalkulator.online/dekk-tilhenger</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
