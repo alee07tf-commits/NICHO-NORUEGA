@@ -1,150 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- CLUSTER 1: Calculadora principal -->
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
-    <loc>https://dekkalkulator.online/dekkdimensjon</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/lovlig-avvik-dekkdimensjon</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-
-  <!-- CLUSTER 2: Llantas / Felg -->
-    <url>
-    <loc>https://dekkalkulator.online/felg-kalkulator</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/innpress-felg-kalkulator</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/dekk-felg-tabell</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-
-  <!-- CLUSTER 3: Rulleomkrets -->
-    <url>
-    <loc>https://dekkalkulator.online/rulleomkrets-kalkulator</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-
-  <!-- CLUSTER 4: Tablas -->
-    <url>
-    <loc>https://dekkalkulator.online/overgangstabell-dekk</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-
-  <!-- CLUSTER 5: Conversores -->
-    <url>
-    <loc>https://dekkalkulator.online/tommer-til-cm</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/tommer-til-mm</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/cm-til-tommer</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/millimeter-til-tommer</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-
-  <!-- CLUSTER 5: Programáticas tommer-i-cm -->
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/10-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/11-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/12-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/13-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/14-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/15-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/16-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/17-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/18-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/19-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/20-tommer-i-cm</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-
-  <!-- CLUSTER 6: Complementarias -->
-    <url>
-    <loc>https://dekkalkulator.online/speedometer-avvik</loc>
-    <lastmod>2026-04-14</lastmod>
+  <url>
+    <loc>https://dekkalkulator.online/cm-til-tommer</loc>
+    <lastmod>2026-08-28</lastmod>
   </url>
-
-  <!-- CLUSTER 7: Especificaciones -->
-    <url>
-    <loc>https://dekkalkulator.online/load-index-dekk</loc>
-    <lastmod>2026-04-14</lastmod>
+  <url>
+    <loc>https://dekkalkulator.online/dekk-felg-tabell</loc>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
-    <loc>https://dekkalkulator.online/hastighetskode-dekk</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/dekk-merking</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-    <url>
-    <loc>https://dekkalkulator.online/dekktrykk-tabell</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-
-  <!-- CLUSTER 8: Por vehículo -->
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/dekk-mc</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
+    <loc>https://dekkalkulator.online/dekk-merking</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
     <loc>https://dekkalkulator.online/dekk-suv</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://dekkalkulator.online/dekk-tilhenger</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
-
+  <url>
+    <loc>https://dekkalkulator.online/dekkdimensjon</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/dekktrykk-tabell</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/felg-kalkulator</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/hastighetskode-dekk</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/innpress-felg-kalkulator</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/kontakt</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/load-index-dekk</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/lovlig-avvik-dekkdimensjon</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/millimeter-til-tommer</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/om-oss</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/overgangstabell-dekk</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/personvern</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/rulleomkrets-kalkulator</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
   <url>
     <loc>https://dekkalkulator.online/rulleomkrets-traktordekk</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/speedometer-avvik</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/tommer-til-cm</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/tommer-til-mm</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://dekkalkulator.online/vilkar</loc>
     <lastmod>2026-08-28</lastmod>
   </url>
 </urlset>
