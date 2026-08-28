@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rulleomkrets traktordekk — omkrets, tabell og forspring</title>
+<meta name="description" content="Regn ut rulleomkrets på traktordekk, se tabell over vanlige dimensjoner og kontroller at forspringet mellom for- og bakaksel er riktig.">
+<link rel="canonical" href="https://dekkalkulator.online/rulleomkrets-traktordekk">
+<meta name="robots" content="index,follow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#111827;background:#ffffff;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:#6366f1}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #f3f4f6;height:56px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#111827;text-decoration:none}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.9rem;color:#6b7280;transition:color .15s;text-decoration:none}
+.nav-links a:hover{color:#111827}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+@media(max-width:680px){
+  .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;flex-direction:column;padding:16px 24px;gap:12px;align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-hamburger{display:block}
+}
+
+/* CONTENT */
+.page-hero{padding:48px 0 32px}
+.page-hero h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
+.page-hero .subtitle{color:#6b7280;font-size:.95rem}
+.content{padding-bottom:64px}
+.content section{margin-bottom:40px}
+.content h2{font-size:1.15rem;font-weight:700;margin-bottom:12px;color:#111827;padding-top:8px;border-top:1px solid #f3f4f6}
+.content h3{font-size:1rem;font-weight:600;margin:16px 0 8px;color:#111827}
+.content p{margin-bottom:12px;color:#374151;font-size:.95rem}
+.content ul{margin:8px 0 12px 20px;color:#374151;font-size:.95rem}
+.content ul li{margin-bottom:6px}
+.content table{width:100%;border-collapse:collapse;font-size:.875rem;margin:12px 0}
+.content table th{background:#f9fafb;padding:10px 12px;text-align:left;font-weight:600;border:1px solid #e5e7eb;color:#374151}
+.content table td{padding:10px 12px;border:1px solid #e5e7eb;color:#374151;vertical-align:top}
+.last-updated{font-size:.8rem;color:#9ca3af;margin-top:4px}
+
+/* FOOTER */
+.footer{background:#111827;color:#9ca3af;margin-top:0;padding:48px 0 24px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.f-grid{grid-template-columns:1fr}}
+.f-logo{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.f-brand p{font-size:.85rem;line-height:1.6}
+.f-col h3{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:12px}
+.f-col a{display:block;font-size:.85rem;margin-bottom:8px;color:#9ca3af;transition:color .15s;text-decoration:none}
+.f-col a:hover{color:#fff}
+.f-copy{border-top:1px solid #1f2937;padding-top:20px;text-align:center;font-size:.8rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Dekkalkulator",
+      "item": "https://dekkalkulator.online/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Rulleomkrets kalkulator",
+      "item": "https://dekkalkulator.online/rulleomkrets-kalkulator"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rulleomkrets traktordekk",
+      "item": "https://dekkalkulator.online/rulleomkrets-traktordekk"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Hovednavigasjon">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">Dekkalkulator</a>
+    <div class="nav-links" id="navLinks">
+      <a href="/dekkdimensjon">Dekkdimensjon</a>
+      <a href="/felg-kalkulator">Felg kalkulator</a>
+      <a href="/rulleomkrets-kalkulator">Rulleomkrets</a>
+      <a href="/dekk-felg-tabell">Dekk og felg tabell</a>
+      <a href="/speedometer-avvik">Speedometeravvik</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="Åpne meny" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero">
+      <h1>Rulleomkrets traktordekk — regn ut omkrets og forspring</h1>
+      <p class="subtitle">Slik finner du rulleomkretsen på traktordekk, og hvorfor forholdet mellom for- og bakhjul avgjør om firehjulstrekket sliter seg selv ned</p>
+    </div>
+    <div class="content">
+
+      <section>
+        <p>På en personbil er rulleomkretsen først og fremst et speedometerspørsmål. På traktor er den noe helt annet: <strong>forholdet mellom rulleomkretsen foran og bak bestemmer om firehjulstrekket drar eller bremser</strong>. Regner du feil her, sliper dekkene mot hverandre gjennom drivlinjen — med slitasje, høyere forbruk og i verste fall skade på framakselen som resultat.</p>
+        <p>Denne siden forklarer regnemåten, hvordan traktordekk dimensjoneres, og hvordan du kontrollerer forspringet. Skal du bare regne om en dimensjon til omkrets, kan du bruke <a href="/rulleomkrets-kalkulator">rulleomkrets kalkulatoren</a> direkte.</p>
+      </section>
+
+      <section>
+        <h2>Slik leser du en traktordekkdimensjon</h2>
+        <p>Traktordekk oppgis i to systemer, og begge er i bruk samtidig i Norge.</p>
+        <h3>Metrisk: 380/85 R28</h3>
+        <ul>
+          <li><strong>380</strong> — dekkbredden i millimeter</li>
+          <li><strong>85</strong> — profilen: flankehøyden er 85 % av bredden</li>
+          <li><strong>R</strong> — radialdekk (en <strong>–</strong> betyr diagonaldekk)</li>
+          <li><strong>28</strong> — felgdiameteren i tommer</li>
+        </ul>
+        <p>Diameteren regnes på samme måte som for bildekk: <span style="font-family:ui-monospace,monospace">(28 × 25,4) + (2 × 380 × 0,85) = 711,2 + 646 = 1 357 mm</span>. Rulleomkretsen blir da 1 357 × π ≈ <strong>4 264 mm</strong>.</p>
+        <h3>Tommebasert: 16.9 R38</h3>
+        <ul>
+          <li><strong>16.9</strong> — dekkbredden i tommer (16,9″ ≈ 429 mm)</li>
+          <li><strong>38</strong> — felgdiameteren i tommer</li>
+        </ul>
+        <p>Den gamle notasjonen oppgir ingen profil. Standardprofilen i dette systemet er nær 85 %, men den er ikke oppgitt i betegnelsen — og det er nettopp derfor du ikke kan regne deg helt presist fram til omkretsen fra dimensjonen alene på eldre dekk. Her må du bruke produsentens tabell.</p>
+      </section>
+
+      <section>
+        <h2>Hvorfor formelen ikke holder hele veien på traktor</h2>
+        <p>Traktordekk har svært høy profil og lavt lufttrykk. Under last flater dekket ut betydelig mer enn et bildekk gjør, og den <em>målte</em> rulleomkretsen blir merkbart kortere enn den geometriske. Bridgestone påpeker at rulleomkretsen <strong>ikke er standardisert</strong> og varierer mellom fabrikat og dekkteknologi, selv for samme dimensjon.</p>
+        <p>Konsekvensen er praktisk: to dekk merket 380/85 R28 fra to produsenter kan ha ulik rulleomkrets. Skal du regne ut forspring, må du bruke produsentens oppgitte måleverdi for akkurat det dekket — ikke formelen. Formelen er god nok til å sammenligne dimensjoner grovt; den er ikke god nok til å sette opp en drivlinje.</p>
+      </section>
+
+      <section>
+        <h2>Forspring (lead ratio) — det tallet som faktisk betyr noe</h2>
+        <p>På en traktor med firehjulstrekk skal framhjulene rotere litt <em>raskere</em> enn bakhjulene tilsier. Det lille forspranget gjør at framakselen trekker traktoren framover i stedet for å bli slept med. Forspringet regnes ut fra to størrelser:</p>
+        <ol>
+          <li><strong>Utvekslingsforholdet</strong> mellom for- og bakaksel — dette får du fra traktorprodusenten, ikke fra dekket.</li>
+          <li><strong>Den nøyaktige rulleomkretsen</strong> i millimeter på for- og bakdekkene.</li>
+        </ol>
+        <p><a href="https://blog.bridgestone-agriculture.eu/agricultural-tyres-rules-for-managing-the-lead-ratio" rel="nofollow noopener" target="_blank">Bridgestone Agriculture</a> angir følgende grenser for forspringet:</p>
+        <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;margin:12px 0">
+          <thead><tr style="background:#f1f5f9"><th style="text-align:left;padding:8px;border-bottom:2px solid #cbd5e1">Forspring</th><th style="text-align:left;padding:8px;border-bottom:2px solid #cbd5e1">Vurdering</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">Over 5 %</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">For høyt — bakakselen bremser framakselen</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">1,5–3,5 %</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Optimalt område, med 2,5 % som ideal</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">0,5–5 %</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Innenfor akseptert norm</td></tr>
+            <tr><td style="padding:8px">Under 0,5 %</td><td style="padding:8px">For lavt — bakakselen skyver for mye</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Ligger du utenfor, er det som regel dekkvalget som må justeres — ikke drivlinjen. Bytter du bare bakdekkene til en annen dimensjon uten å regne om forspringet, flytter du hele forholdet.</p>
+      </section>
+
+      <section>
+        <h2>Vanlige traktordimensjoner og omtrentlig omkrets</h2>
+        <p>Tabellen viser den <em>geometriske</em> omkretsen regnet fra dimensjonen. Bruk den til å sammenligne dimensjoner mot hverandre, ikke til å sette opp forspring — der gjelder produsentens måleverdi.</p>
+        <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;margin:12px 0">
+          <thead><tr style="background:#f1f5f9">
+            <th style="text-align:left;padding:8px;border-bottom:2px solid #cbd5e1">Dimensjon</th>
+            <th style="text-align:left;padding:8px;border-bottom:2px solid #cbd5e1">Diameter</th>
+            <th style="text-align:left;padding:8px;border-bottom:2px solid #cbd5e1">Rulleomkrets</th>
+            <th style="text-align:left;padding:8px;border-bottom:2px solid #cbd5e1">Typisk plassering</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">380/85 R28</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 357 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">4 264 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Framaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">340/85 R28</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 289 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">4 050 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Framaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">420/70 R24</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 198 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">3 762 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Framaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">320/85 R24</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 154 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">3 624 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Framaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">11.2 R24*</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 093 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">3 434 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Framaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">13.6 R24*</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 197 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">3 760 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Framaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">520/85 R38</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 849 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">5 809 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Bakaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">480/70 R38</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 637 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">5 143 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Bakaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">540/65 R38</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 667 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">5 238 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Bakaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">460/85 R34</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 646 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">5 170 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Bakaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">16.9 R38*</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 695 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">5 325 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Bakaksel</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb">18.4 R38*</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">1 760 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">5 528 mm</td><td style="padding:8px;border-bottom:1px solid #e5e7eb">Bakaksel</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p style="font-size:.9rem;color:#6b7280;margin-top:8px">* Tommebaserte dimensjoner oppgir ingen profil. Verdiene er regnet med 85 % profil, som er standard i dette systemet. Kontroller alltid mot produsentens tabell.</p>
+      </section>
+
+      <section>
+        <h2>Sjekkliste før du bytter traktordekk</h2>
+        <ul>
+          <li>Finn utvekslingsforholdet mellom akslene i traktorens håndbok.</li>
+          <li>Hent <strong>målt</strong> rulleomkrets for de aktuelle dekkene fra produsentens datablad — ikke fra en formel.</li>
+          <li>Regn ut forspringet og kontroller at det havner mellom 1,5 og 3,5 %.</li>
+          <li>Bytter du bare den ene akselen, regn om på nytt: forholdet endres selv om dimensjonen «ser lik ut».</li>
+          <li>Kontroller at felgbredden passer dekket, og at lufttrykket settes etter last og hastighet.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Vanlige spørsmål</h2>
+        <details><summary>Kan jeg bruke bildekkalkulatoren på traktordekk?</summary>
+          <p>Ja, til å regne om en dimensjon til diameter og omkrets — formelen er den samme. Men på traktor avviker den målte omkretsen mer fra den geometriske enn på bil, så bruk den bare til sammenligning. <a href="/rulleomkrets-kalkulator">Åpne rulleomkrets kalkulatoren</a>.</p>
+        </details>
+        <details><summary>Hva betyr R og – i en traktordekkdimensjon?</summary>
+          <p>R står for radialdekk, der kordlagene ligger på tvers av kjøreretningen. En bindestrek betyr diagonaldekk (kryssdekk), som har en annen oppbygning og som regel kortere levetid ved veikjøring.</p>
+        </details>
+        <details><summary>Hvorfor har to dekk med samme dimensjon ulik rulleomkrets?</summary>
+          <p>Fordi rulleomkretsen på landbruksdekk ikke er standardisert. Konstruksjon, gummiblanding og lufttrykk påvirker hvor mye dekket flater ut under last, og dermed hvor langt det faktisk ruller per omdreining.</p>
+        </details>
+        <details><summary>Hva skjer hvis forspringet er feil?</summary>
+          <p>Er det for høyt, bremser bakakselen framakselen; er det for lavt, skyver bakakselen. Begge deler gir økt slitasje på dekk og drivlinje og høyere drivstofforbruk, fordi akslene motarbeider hverandre i stedet for å trekke sammen.</p>
+        </details>
+      </section>
+
+      <section>
+        <h2>Kilder</h2>
+        <ul>
+          <li><a href="https://blog.bridgestone-agriculture.eu/agricultural-tyres-rules-for-managing-the-lead-ratio" rel="nofollow noopener" target="_blank">Bridgestone Agriculture</a> — grenseverdier for forspring og hvorfor rulleomkrets ikke er standardisert</li>
+          <li><a href="https://www.etrto.org/" rel="nofollow noopener" target="_blank">ETRTO</a> — standarder for dekkdimensjoner og måleverdier</li>
+          <li><a href="https://www.vegvesen.no/" rel="nofollow noopener" target="_blank">Statens vegvesen</a> — krav til kjøretøy og dekk</li>
+        </ul>
+        <p style="margin-top:12px;font-size:.9rem;color:#6b7280">Beregningene på siden er veiledende. Se <a href="/om-oss">om oss</a> for formelen vi bruker.</p>
+      </section>
+
+    </div>
+  </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan jeg bruke bildekkalkulatoren på traktordekk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, til å regne om en dimensjon til diameter og omkrets — formelen er den samme. Men på traktor avviker den målte omkretsen mer fra den geometriske enn på bil, så bruk den bare til sammenligning. Åpne rulleomkrets kalkulatoren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva betyr R og – i en traktordekkdimensjon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "R står for radialdekk, der kordlagene ligger på tvers av kjøreretningen. En bindestrek betyr diagonaldekk (kryssdekk), som har en annen oppbygning og som regel kortere levetid ved veikjøring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvorfor har to dekk med samme dimensjon ulik rulleomkrets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fordi rulleomkretsen på landbruksdekk ikke er standardisert. Konstruksjon, gummiblanding og lufttrykk påvirker hvor mye dekket flater ut under last, og dermed hvor langt det faktisk ruller per omdreining."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva skjer hvis forspringet er feil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Er det for høyt, bremser bakakselen framakselen; er det for lavt, skyver bakakselen. Begge deler gir økt slitasje på dekk og drivlinje og høyere drivstofforbruk, fordi akslene motarbeider hverandre i stedet for å trekke sammen."
+      }
+    }
+  ]
+}
+</script>
+
+      <section class="related" style="margin:28px 0;padding:18px 20px;border-left:4px solid #2563eb;background:#f8fafc;border-radius:8px">
+        <h2 style="margin:0 0 8px;font-size:1.15rem">Skal du regne på bildekk i stedet?</h2>
+        <p style="margin:0 0 10px">Verktøyene for personbil regner ut det samme, men mot vognkortets dimensjon og norske krav:</p>
+        <div class="rel-grid">
+          <a href="/rulleomkrets-kalkulator">Rulleomkrets kalkulator <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-kalkulator-bil">Finn riktige dekk til bilen din <span class="arrow">&rarr;</span></a>
+          <a href="/lovlig-avvik-dekkdimensjon">Sjekk om avviket er lovlig <span class="arrow">&rarr;</span></a>
+          <a href="/load-index-dekk">Lastindeks på dekk <span class="arrow">&rarr;</span></a>
+        </div>
+      </section>
+</main>
+
+
+<footer class="footer">
+  <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="f-logo">Dekkalkulator</div>
+          <p>Gratis verktøy for å sammenligne dekkdimensjoner, beregne rulleomkrets og sjekke lovlig avvik for norske biler.</p>
+        </div>
+      </div>
+      <div class="f-legal" style="margin-top:12px;font-size:.9em">
+        <a href="/personvern">Personvern</a> · <a href="/om-oss">Om oss</a> · <a href="/kontakt">Kontakt</a> · <a href="/vilkar">Vilkår</a>
+      </div>
+      <div class="f-copy">© 2026 dekkalkulator.online — Gratis dekkalkulator for alle biltyper</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function(){
+  var links = document.getElementById('navLinks');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+</script>
+<script src="/js/cookie-banner.js"></script>
+</body>
+</html>

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
-  <title>Rulleomkrets kalkulator — Beregn omkrets for dekk</title>
-  <meta name="description" content="Beregn rulleomkrets for alle dekkstørrelser med vår gratis kalkulator. Se diameter, radius og omdreininger per km for ditt dekk. Prøv nå!">
+  <title>Rulleomkrets kalkulator — regn ut dekkomkrets på sekunder</title>
+  <meta name="description" content="Regn ut rulleomkrets, diameter og omdreininger per km for enhver dekkdimensjon. Se hvor mye omkretsen endres før du bytter dekk. Helt gratis.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/rulleomkrets-kalkulator">
   <meta property="og:type" content="website">
@@ -181,7 +181,7 @@
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Gratis rulleomkrets kalkulator</span>
-        <h1>Rulleomkrets kalkulator — Beregn rulleomkrets for alle dekkstørrelser</h1>
+        <h1>Rulleomkrets kalkulator — hvor langt ruller dekket ditt?</h1>
         <p>Velg dekkstørrelsen din og se rulleomkrets, diameter, radius og omdreininger per km umiddelbart. Bruk resultatet til å sjekke speedometeravvik eller finne riktig erstatningsdekk. Fungerer for alle personbiler i Norge.</p>
       </div>
 
@@ -234,7 +234,7 @@
 
         <!-- POPULAR SIZES TABLE -->
         <div class="popular-section">
-          <h2 class="section-title">Rulleomkrets for populære dekkstørrelser</h2>
+          <h2 class="section-title">Rulleomkrets tabell for vanlige dekkdimensjoner</h2>
           <div class="pop-table-wrap">
             <table class="pop-table" aria-label="Rulleomkrets for populære dekkstørrelser">
               <thead>
@@ -251,6 +251,43 @@
         </div>
 
       </div><!-- /.calc -->
+
+      <!-- CONTENT: rulleomkrets -->
+      <section class="content" style="margin:32px 0;line-height:1.7">
+
+        <h2>Hva er rulleomkrets — og hvorfor betyr det noe?</h2>
+        <p><strong>Rulleomkrets</strong> er strekningen dekket tilbakelegger på én hel omdreining. Den bestemmer hvor langt bilen kjører per hjulrotasjon, og derfor også hva speedometeret og kilometertelleren viser. To dekk kan ha helt ulike dimensjonstall og likevel nesten samme rulleomkrets — og det er nettopp derfor du kan bytte til en annen dimensjon uten at bilen begynner å måle feil.</p>
+        <p>Du møter tre ord om det samme målet: <strong>rulleomkrets</strong>, <strong>dekkomkrets</strong> og <strong>hjulomkrets</strong>. I praksis brukes de om hverandre i norske dekkataloger. Rulleomkrets er det mest presise, fordi det beskriver omkretsen slik den faktisk ruller under bilen — ikke bare den geometriske omkretsen til et fritthengende dekk.</p>
+
+        <h2>Slik regner rulleomkretskalkulatoren</h2>
+        <p>En <strong>rulleomkretskalkulator</strong> gjør to steg. Først finner den dekkets ytre diameter fra dimensjonen på siden av dekket, så ganger den diameteren med pi.</p>
+        <p><strong>Steg 1 — diameter:</strong> felgdiameteren oppgis i tommer og må gjøres om til millimeter (1 tomme = 25,4 mm). Dekkets høyde på hver side legges til:</p>
+        <p style="background:#f8fafc;padding:12px 16px;border-radius:8px;font-family:ui-monospace,monospace;font-size:.95rem">diameter = (felg × 25,4) + (2 × bredde × profil ÷ 100)</p>
+        <p><strong>Steg 2 — omkrets:</strong> <span style="font-family:ui-monospace,monospace">rulleomkrets = diameter × π</span></p>
+        <p><strong>Regnet ut for 205/55 R16:</strong> felgen er 16 tommer, altså 406,4 mm. Dekkhøyden er 55 % av 205 mm = 112,75 mm, og den kommer både over og under felgen: 2 × 112,75 = 225,5 mm. Diameteren blir 406,4 + 225,5 = <strong>631,9 mm</strong>. Rulleomkretsen blir 631,9 × π = <strong>1 985 mm</strong>, altså cirka 198,5 cm. Med den omkretsen roterer hjulet omtrent 504 ganger per kilometer.</p>
+        <p>Det er den samme regnemåten en <strong>dekkomkretskalkulator</strong> bruker. Skriv inn dimensjonen i feltene over, så får du diameter, radius, omkrets og omdreininger per kilometer på én gang.</p>
+
+        <h3>Teoretisk omkrets er ikke helt det samme som målt omkrets</h3>
+        <p>Formelen over gir den <em>geometriske</em> omkretsen — dekket regnet som en perfekt sirkel. Et dekk med last på seg flater ut litt der det møter asfalten, og ruller derfor en anelse kortere enn formelen tilsier. Derfor publiserer standardiseringsorganene <a href="https://www.etrto.org/" rel="nofollow noopener" target="_blank">ETRTO</a> og STRO egne <em>målte</em> rulleomkretsverdier for hver dimensjon, og de avviker typisk noen få promille til et par prosent fra den geometriske verdien.</p>
+        <p>For å sammenligne to dimensjoner mot hverandre — som er det du gjør før et dekkbytte — spiller dette ingen rolle: begge regnes på samme måte, så forskjellen i prosent blir den samme. Skal du derimot kalibrere en kilometerteller eller en GPS-basert måling helt nøyaktig, bør du bruke produsentens oppgitte måleverdi.</p>
+
+        <h2>Hva rulleomkretsen påvirker på bilen</h2>
+        <ul>
+          <li><strong>Speedometer og kilometerteller.</strong> Bilen teller hjulomdreininger. Større rulleomkrets betyr at du kjører fortere enn speedometeret viser, mindre omkrets at du kjører saktere. Regn ut utslaget i <a href="/speedometer-avvik">speedometer avvik kalkulatoren</a>.</li>
+          <li><strong>Effektiv utveksling.</strong> Et dekk med større omkrets virker som en lengre utveksling: lavere turtall ved marsjfart, men tregere akselerasjon.</li>
+          <li><strong>ABS, ESP og cruisekontroll.</strong> Systemene sammenligner turtallet på de fire hjulene. Store avvik mellom for- og bakaksel kan gi feilmeldinger.</li>
+          <li><strong>Lovlighet ved kontroll.</strong> Avviket måles nettopp i rulleomkrets — se under.</li>
+        </ul>
+
+        <h3>Hvor mye kan rulleomkretsen avvike lovlig i Norge?</h3>
+        <p>Hovedregelen i det norske dekkmiljøet er at rulleomkretsen skal holde seg innenfor <strong>±5 %</strong> av omkretsen på hjulene bilen kom med fra fabrikken. <a href="https://www.nokiantyres.no/dekktips/velge-dekk/alternative-dekkdimensjoner/" rel="nofollow noopener" target="_blank">Nokian Tyres</a> formulerer det som at maksimalt avvik i rulleomkrets er ±5 % sammenlignet med dimensjonen oppgitt i vognkortet, og <a href="https://www.norgesdekk.no/om-dekk/alternative-dimensjoner" rel="nofollow noopener" target="_blank">Norgesdekk</a> gjengir den samme grensen. Dekk og felg må i tillegg passe sammen etter STRO-normen, og vognkortet ditt er alltid utgangspunktet.</p>
+        <p>Vil du sjekke et konkret bytte mot grensen, bruk <a href="/lovlig-avvik-dekkdimensjon">kalkulatoren for lovlig avvik på dekkdimensjon</a>. Den regner ut avviket i prosent og sier om byttet ligger innenfor, nær grensen eller utenfor.</p>
+
+        <h2>Rulleomkrets på traktordekk</h2>
+        <p>Traktordekk følger en annen logikk enn bildekk. Dimensjoner som 380/85 R28 eller 16.9 R38 har langt høyere profil, og på traktor er rulleomkretsen ikke bare et speedometerspørsmål: forholdet mellom omkretsen foran og bak bestemmer <em>utvekslingsforholdet</em> i firehjulstrekket. Blir forholdet feil, sliper enten framakselen eller bakakselen, med unødvendig slitasje og økt drivstofforbruk som resultat.</p>
+        <p>Rulleomkretsen er også grunnlaget for arealmåling og hjulslipp i presisjonsutstyr og GPS-kalibrering. Vi har derfor samlet regnemåten og de vanlige dimensjonene på en egen side: <a href="/rulleomkrets-traktordekk">rulleomkrets for traktordekk</a>.</p>
+
+      </section>
 
       <!-- RELATED TOOLS -->
       <div class="related">
