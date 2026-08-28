@@ -2,241 +2,197 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- CLUSTER 1: Calculadora principal -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekkdimensjon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-storrelser</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/hvilke-dekk-passer-min-bil</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-kalkulator-bil</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/lovlig-avvik-dekkdimensjon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dimensjon-dekk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 2: Llantas / Felg -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/felg-kalkulator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/innpress-felg-kalkulator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-og-felg-kalkulator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-felg-tabell</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 3: Rulleomkrets -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/rulleomkrets-kalkulator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/rulleomkrets-dekk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-omkrets</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/omkrets-til-diameter</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 4: Tablas -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/overgangstabell-dekk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekktabell</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/omregningstabell-dekk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 5: Conversores -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/tommer-til-cm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/tommer-til-mm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/cm-til-tommer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/millimeter-til-tommer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 5: Programáticas tommer-i-cm -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/10-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/11-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/12-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/13-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/14-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/15-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/16-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/17-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/18-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/19-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/20-tommer-i-cm</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 6: Complementarias -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/km-t-kalkulator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/hastighet-kalkulator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/speedometer-avvik</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 7: Especificaciones -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/load-index-dekk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/hastighetskode-dekk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-merking</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekktrykk-tabell</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
 
   <!-- CLUSTER 8: Por vehículo -->
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-mc</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-lastebil</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-suv</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://dekkalkulator.online/dekk-tilhenger</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
 
 </urlset>
