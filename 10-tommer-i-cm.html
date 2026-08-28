@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://dekkalkulator.online/10-tommer-i-cm">
   <meta property="og:type" content="website">
   <meta property="og:title" content="10 tommer i cm — 10 tommer er 25,40 centimeter">
-  <meta property="og:description" content="10 tommer er 25,40 cm. Se eksakt omregning, formel og hurtigkonverter for 10 tommer til centimeter.">
+  <meta property="og:description" content="10 tommer er 25,40 cm. Se eksakt omregning, formel og hurtigkonverter for 10 tommer til centimeter. Perfekt for dekk og felger i 10-tommers størrelse.">
   <meta property="og:url" content="https://dekkalkulator.online/10-tommer-i-cm">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
@@ -146,7 +146,14 @@
     table.quick-table td:last-child{font-weight:600;color:#16a34a;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
     table.quick-table td a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
     table.quick-table td a:hover{text-decoration-color:#6366f1}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -167,6 +174,10 @@
   ]
 }
 </script>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 tommer i cm — 10 tommer er 25,40 centimeter">
+<meta name="twitter:description" content="10 tommer er 25,40 cm. Se eksakt omregning, formel og hurtigkonverter for 10 tommer til centimeter. Perfekt for dekk og felger i 10-tommers størrelse.">
+<meta name="twitter:url" content="https://dekkalkulator.online/10-tommer-i-cm">
 </head>
 <body>
 
@@ -187,6 +198,13 @@
     </div>
   </nav>
 
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">10 tommer i cm</span></li>
+    </ol>
+  </nav>
+
   <main>
     <div class="wrap">
 
@@ -202,11 +220,11 @@
 
         <div class="converter-input">
           <label for="tommerInput">Tommer:</label>
-          <input type="number" id="tommerInput" value="10" min="0" step="any" aria-label="Antall tommer">
+          <input type="number" id="tommerInput" value="10" min="0" step="any" aria-label="Antall tommer" inputmode="decimal">
           <span class="unit-label">tommer (in)</span>
         </div>
 
-        <div class="result-card" id="resultCard">
+        <div class="result-card" id="resultCard" role="status" aria-live="polite">
           <div class="result-value" id="resultValue">25,40</div>
           <span class="result-unit">cm</span>
           <div class="result-formula" id="resultFormula">10 tommer × 2,54 = 25,40 cm</div>

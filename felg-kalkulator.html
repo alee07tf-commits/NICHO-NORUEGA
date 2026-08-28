@@ -10,8 +10,8 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/felg-kalkulator">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Felg kalkulator — Beregn innpress og dekkbredde">
-  <meta property="og:description" content="Gratis felg kalkulator for å beregne innpress (ET), dekkbredde og kompatibilitet. Sammenlign original og ny felg.">
+  <meta property="og:title" content="Felg kalkulator — regn ut innpress (ET) og felgbredde">
+  <meta property="og:description" content="Gratis felg kalkulator for å beregne innpress (ET), dekkbredde og kompatibilitet. Sammenlign original og ny felg og se om den passer bilen din.">
   <meta property="og:url" content="https://dekkalkulator.online/felg-kalkulator">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
@@ -171,7 +171,14 @@
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -192,6 +199,10 @@
   ]
 }
 </script>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Felg kalkulator — regn ut innpress (ET) og felgbredde">
+<meta name="twitter:description" content="Gratis felg kalkulator for å beregne innpress (ET), dekkbredde og kompatibilitet. Sammenlign original og ny felg og se om den passer bilen din.">
+<meta name="twitter:url" content="https://dekkalkulator.online/felg-kalkulator">
 </head>
 <body>
 
@@ -210,6 +221,13 @@
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
+  </nav>
+
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Felg kalkulator</span></li>
+    </ol>
   </nav>
 
   <main>
@@ -240,7 +258,7 @@
               </div>
               <div class="input-group">
                 <label for="oET">ET (mm)</label>
-                <input type="number" id="oET" value="45" min="-30" max="60" step="1" aria-label="Original innpress ET">
+                <input type="number" id="oET" value="45" min="-30" max="60" step="1" aria-label="Original innpress ET" inputmode="decimal">
               </div>
             </div>
             <div class="rim-label" id="oRimLabel">7.0" x 16 ET45</div>
@@ -258,7 +276,7 @@
               </div>
               <div class="input-group">
                 <label for="nET">ET (mm)</label>
-                <input type="number" id="nET" value="35" min="-30" max="60" step="1" aria-label="Ny innpress ET">
+                <input type="number" id="nET" value="35" min="-30" max="60" step="1" aria-label="Ny innpress ET" inputmode="decimal">
               </div>
             </div>
             <div class="rim-label" id="nRimLabel">8.0" x 17 ET35</div>
@@ -273,7 +291,7 @@
           <h2 class="section-title">Resultat</h2>
 
           <div class="result-grid">
-            <div class="result-card">
+            <div class="result-card" role="status" aria-live="polite">
               <div class="r-label">ET-forskjell</div>
               <div class="r-value" id="rETdiff">-10</div>
               <div class="r-unit">mm</div>

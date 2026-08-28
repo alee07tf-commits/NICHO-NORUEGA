@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://dekkalkulator.online/millimeter-til-tommer">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Millimeter til tommer — Konverter mm til tommer">
-  <meta property="og:description" content="Konverter millimeter til tommer enkelt og raskt. Finn dekkbredde i tommer med vår gratis kalkulator. Tabeller for vanlige dekkmål.">
+  <meta property="og:description" content="Konverter millimeter til tommer enkelt og raskt. Finn dekkbredde i tommer med vår gratis kalkulator. Tabeller for vanlige dekkmål. Prøv nå!">
   <meta property="og:url" content="https://dekkalkulator.online/millimeter-til-tommer">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
@@ -150,7 +150,14 @@
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -171,6 +178,10 @@
   ]
 }
 </script>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Millimeter til tommer — Konverter mm til tommer">
+<meta name="twitter:description" content="Konverter millimeter til tommer enkelt og raskt. Finn dekkbredde i tommer med vår gratis kalkulator. Tabeller for vanlige dekkmål. Prøv nå!">
+<meta name="twitter:url" content="https://dekkalkulator.online/millimeter-til-tommer">
 </head>
 <body>
 
@@ -191,6 +202,13 @@
     </div>
   </nav>
 
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Millimeter til tommer</span></li>
+    </ol>
+  </nav>
+
   <main>
     <div class="wrap">
 
@@ -206,11 +224,11 @@
 
         <div class="converter-input">
           <label for="mmInput">Millimeter:</label>
-          <input type="number" id="mmInput" value="205" min="0" step="any" aria-label="Antall millimeter">
+          <input type="number" id="mmInput" value="205" min="0" step="any" aria-label="Antall millimeter" inputmode="decimal">
           <span class="unit-label">mm</span>
         </div>
 
-        <div class="result-card" id="resultCard">
+        <div class="result-card" id="resultCard" role="status" aria-live="polite">
           <div class="result-value" id="resultValue">8,07</div>
           <span class="result-unit">tommer (″)</span>
           <div class="result-formula" id="resultFormula">205 mm ÷ 25,4 = 8,07 tommer</div>

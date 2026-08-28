@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://dekkalkulator.online/speedometer-avvik">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Speedometer avvik kalkulator — Sjekk fart med nye dekk">
-  <meta property="og:description" content="Beregn speedometer avvik ved dekkbytte. Sjekk faktisk hastighet mot vist hastighet og finn ut om nye dekk gir lovlig avvik.">
+  <meta property="og:description" content="Beregn speedometer avvik ved dekkbytte. Sjekk faktisk hastighet mot vist hastighet og finn ut om nye dekk gir lovlig avvik. Prøv gratis nå!">
   <meta property="og:url" content="https://dekkalkulator.online/speedometer-avvik">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
@@ -181,7 +181,14 @@
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -202,6 +209,10 @@
   ]
 }
 </script>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Speedometer avvik kalkulator — Sjekk fart med nye dekk">
+<meta name="twitter:description" content="Beregn speedometer avvik ved dekkbytte. Sjekk faktisk hastighet mot vist hastighet og finn ut om nye dekk gir lovlig avvik. Prøv gratis nå!">
+<meta name="twitter:url" content="https://dekkalkulator.online/speedometer-avvik">
 </head>
 <body>
 
@@ -220,6 +231,13 @@
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
+  </nav>
+
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Speedometer avvik kalkulator</span></li>
+    </ol>
   </nav>
 
   <main>
@@ -262,7 +280,7 @@
           <h2>Speedometer avvik</h2>
           <div class="speedo-input-row">
             <label for="speedoInput">Speedometer viser:</label>
-            <input type="number" id="speedoInput" value="80" min="1" max="300" step="1">
+            <input type="number" id="speedoInput" value="80" min="1" max="300" step="1" inputmode="decimal">
             <span>km/t</span>
           </div>
           <div class="speed-btns" id="speedBtns">

@@ -10,8 +10,8 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/dekk-felg-tabell">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dekk og felg tabell — Finn riktig dekkbredde">
-  <meta property="og:description" content="Dekk og felg tabell med kompatible dekkbredder for alle felgstørrelser. Finn riktig min, ideal og maks dekkbredde for din felg.">
+  <meta property="og:title" content="Dekk og felg tabell — hvilken dekkbredde passer felgen?">
+  <meta property="og:description" content="Dekk og felg tabell med kompatible dekkbredder for alle felgstørrelser. Finn riktig min, ideal og maks dekkbredde for din felg. Gratis og oppdatert.">
   <meta property="og:url" content="https://dekkalkulator.online/dekk-felg-tabell">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
@@ -136,7 +136,14 @@
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -157,6 +164,10 @@
   ]
 }
 </script>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dekk og felg tabell — hvilken dekkbredde passer felgen?">
+<meta name="twitter:description" content="Dekk og felg tabell med kompatible dekkbredder for alle felgstørrelser. Finn riktig min, ideal og maks dekkbredde for din felg. Gratis og oppdatert.">
+<meta name="twitter:url" content="https://dekkalkulator.online/dekk-felg-tabell">
 </head>
 <body>
 
@@ -175,6 +186,13 @@
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
+  </nav>
+
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Dekk og felg tabell</span></li>
+    </ol>
   </nav>
 
   <main>
@@ -200,7 +218,7 @@
           </div>
           <div class="input-group">
             <label for="searchDekk">Søk etter dekkbredde (mm)</label>
-            <input type="number" id="searchDekk" placeholder="F.eks. 225" min="100" max="400" aria-label="Skriv inn dekkbredde i mm for å søke">
+            <input type="number" id="searchDekk" placeholder="F.eks. 225" min="100" max="400" aria-label="Skriv inn dekkbredde i mm for å søke" inputmode="decimal">
           </div>
           <button class="btn-reset" id="btnReset" type="button">Nullstill</button>
         </div>
