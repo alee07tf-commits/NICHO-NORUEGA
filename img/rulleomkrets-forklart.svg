@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-labelledby="t2 d2">
+<title id="t2">Rulleomkrets — hvor langt dekket ruller på én omdreining</title>
+<desc id="d2">Et dekk med 63,19 cm diameter ruller 198,5 cm på én hel omdreining. Rulleomkrets er lik diameter ganget med pi.</desc>
+<rect width="520" height="300" fill="#ffffff"/>
+<line x1="20" y1="215" x2="500" y2="215" stroke="#374151" stroke-width="3"/>
+<g transform="translate(90,150)">
+  <circle r="64" fill="#1f2937"/><circle r="46" fill="#9ca3af"/><circle r="14" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <line x1="0" y1="-46" x2="0" y2="46" stroke="#6b7280" stroke-width="4"/>
+  <line x1="-46" y1="0" x2="46" y2="0" stroke="#6b7280" stroke-width="4"/>
+</g>
+<g opacity=".28" transform="translate(370,150)">
+  <circle r="64" fill="#1f2937"/><circle r="46" fill="#9ca3af"/><circle r="14" fill="#f3f4f6"/>
+  <line x1="-33" y1="-33" x2="33" y2="33" stroke="#6b7280" stroke-width="4"/>
+  <line x1="-33" y1="33" x2="33" y2="-33" stroke="#6b7280" stroke-width="4"/>
+</g>
+<g font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" fill="#111827">
+  <path d="M90 240 L370 240" stroke="#2563eb" stroke-width="2" marker-start="url(#c)" marker-end="url(#c)" fill="none"/>
+  <line x1="90" y1="222" x2="90" y2="248" stroke="#cbd5e1"/><line x1="370" y1="222" x2="370" y2="248" stroke="#cbd5e1"/>
+  <text x="230" y="266" text-anchor="middle" font-size="14" font-weight="600" fill="#2563eb">Én omdreining = 198,5 cm</text>
+  <text x="20" y="32" font-size="18" font-weight="700">Rulleomkrets</text>
+  <text x="20" y="54" font-size="13" fill="#4b5563">205/55 R16 · diameter 63,19 cm</text>
+  <text x="20" y="76" font-size="13" fill="#4b5563">63,19 × π = 198,5 cm</text>
+  <text x="20" y="98" font-size="12" fill="#6b7280">≈ 504 omdreininger per kilometer</text>
+</g>
+<defs><marker id="c" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 4 L8 4 M3 1 L0 4 L3 7" stroke="#2563eb" stroke-width="1.6" fill="none"/></marker></defs>
+</svg>
