@@ -1,4 +1,56 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/dimensjon-dekk",
+      "destination": "/dekkdimensjon",
+      "permanent": true
+    },
+    {
+      "source": "/dekk-storrelser",
+      "destination": "/dekkdimensjon",
+      "permanent": true
+    },
+    {
+      "source": "/dekk-lastebil",
+      "destination": "/dekkdimensjon",
+      "permanent": true
+    },
+    {
+      "source": "/omregningstabell-dekk",
+      "destination": "/overgangstabell-dekk",
+      "permanent": true
+    },
+    {
+      "source": "/rulleomkrets-dekk",
+      "destination": "/rulleomkrets-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/dekk-omkrets",
+      "destination": "/rulleomkrets-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/omkrets-til-diameter",
+      "destination": "/rulleomkrets-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hastighet-kalkulator",
+      "destination": "/speedometer-avvik",
+      "permanent": true
+    },
+    {
+      "source": "/km-t-kalkulator",
+      "destination": "/speedometer-avvik",
+      "permanent": true
+    },
+    {
+      "source": "/dekktabell",
+      "destination": "/dekk-felg-tabell",
+      "permanent": true
+    }
+  ]
 }
