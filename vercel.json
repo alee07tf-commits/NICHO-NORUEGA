@@ -51,6 +51,21 @@
       "source": "/dekktabell",
       "destination": "/dekk-felg-tabell",
       "permanent": true
+    },
+    {
+      "source": "/hvilke-dekk-passer-min-bil",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dekk-og-felg-kalkulator",
+      "destination": "/felg-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/dekk-kalkulator-bil",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
