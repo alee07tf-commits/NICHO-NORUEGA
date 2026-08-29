@@ -3,18 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
-  <title>Innpress felg kalkulator — Beregn ET og offset</title>
-  <meta name="description" content="Gratis innpress felg kalkulator for å beregne ET-forskjell, klaring og sporvidde. Sammenlign original og ny innpress og sjekk kompatibilitet nå.">
+  <title>Innpress felg kalkulator – beregn ET, offset og sporvidde</title>
+  <meta name="description" content="ET forteller hvor langt ut hjulet havner. Legg inn original og ny ET og se endringen i mm per side. Vianor oppgir ±7,5 mm per side som margin.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/innpress-felg-kalkulator">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Innpress felg kalkulator — Beregn ET og offset">
-  <meta property="og:description" content="Gratis innpress felg kalkulator for å beregne ET-forskjell, klaring og sporvidde. Sammenlign original og ny innpress og sjekk kompatibilitet.">
+  <meta property="og:title" content="Innpress felg kalkulator – beregn ET, offset og sporvidde">
+  <meta property="og:description" content="ET forteller hvor langt ut hjulet havner. Legg inn original og ny ET og se endringen i mm per side. Vianor oppgir ±7,5 mm per side som margin.">
   <meta property="og:url" content="https://dekkalkulator.online/innpress-felg-kalkulator">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
+  <meta property="og:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dekkalkulator for norske bilister. Regn ut rulleomkrets, speedometeravvik og lovlige alternative dekkdimensjoner">
 
   <script type="application/ld+json">
   {
@@ -79,19 +115,19 @@
     .side-orig{background:#f8fafc;border:1.5px solid #e2e8f0}
     .side-new{background:#f8fdf8;border:1.5px solid #d1fae5}
     .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .side-orig .side-label{color:#6366f1}
-    .side-new .side-label{color:#16a34a}
+    .side-orig .side-label{color:#4f46e5}
+    .side-new .side-label{color:#15803d}
     .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0}
-    .side-orig .dot{background:#6366f1}
-    .side-new .dot{background:#22c55e}
+    .side-orig .dot{background:#4f46e5}
+    .side-new .dot{background:#15803d}
 
     .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
     .input-group select,.input-group input[type="number"]{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;cursor:pointer;transition:border-color .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
     .input-group select{appearance:auto}
     .input-group input[type="number"]{-moz-appearance:textfield}
     .input-group input[type="number"]::-webkit-inner-spin-button,.input-group input[type="number"]::-webkit-outer-spin-button{opacity:1}
-    .input-group select:focus,.input-group input[type="number"]:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .input-group select:focus,.input-group input[type="number"]:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
 
     .rim-label{text-align:center;font-size:20px;font-weight:800;color:#111827;padding:10px;background:#f9fafb;border-radius:8px;margin-top:12px;letter-spacing:0.5px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
 
@@ -101,11 +137,11 @@
 
     /* ── RESULTS ── */
     .results-section{margin-top:24px}
-    .section-title{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
+    .section-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
 
     .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
     .result-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:16px;text-align:center}
-    .result-card .r-label{font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
+    .result-card .r-label{font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
     .result-card .r-value{font-size:24px;font-weight:800;color:#111827;line-height:1.2}
     .result-card .r-unit{font-size:13px;font-weight:500;color:#6b7280;margin-top:2px}
     .result-card .r-detail{font-size:13px;color:#6b7280;margin-top:6px;line-height:1.5}
@@ -122,13 +158,13 @@
     .cmp-section h2{font-size:12px;font-weight:700;color:#111827;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
     table.cmp{width:100%;border-collapse:collapse}
     table.cmp th,table.cmp td{padding:10px 12px;text-align:center;font-size:14px}
-    table.cmp th{font-weight:600;color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #e5e7eb}
+    table.cmp th{font-weight:600;color:#374151;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #e5e7eb}
     table.cmp td{border-bottom:1px solid #f3f4f6}
     table.cmp tbody tr:last-child td{border-bottom:none}
-    .c-orig{color:#6366f1;font-weight:600}
-    .c-new{color:#16a34a;font-weight:600}
+    .c-orig{color:#4f46e5;font-weight:600}
+    .c-new{color:#15803d;font-weight:600}
     .c-diff{font-weight:700}
-    .pos{color:#16a34a}.neg{color:#dc2626}.zer{color:#9ca3af}
+    .pos{color:#15803d}.neg{color:#dc2626}.zer{color:#6b7280}
 
     /* ── ET REFERENCE TABLE ── */
     .ref-section{margin-top:24px;padding:20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px}
@@ -143,11 +179,11 @@
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -156,12 +192,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -172,35 +208,78 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Dekkalkulator",
-      "item": "https://dekkalkulator.online/"
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://dekkalkulator.online/innpress-felg-kalkulator#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dekkalkulator",
+        "item": "https://dekkalkulator.online/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Innpress felg kalkulator",
+        "item": "https://dekkalkulator.online/innpress-felg-kalkulator"
+      }
+    ]
+  }
+  </script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+<meta name="twitter:title" content="Innpress felg kalkulator – beregn ET, offset og sporvidde">
+<meta name="twitter:description" content="ET forteller hvor langt ut hjulet havner. Legg inn original og ny ET og se endringen i mm per side. Vianor oppgir ±7,5 mm per side som margin.">
+<meta name="twitter:url" content="https://dekkalkulator.online/innpress-felg-kalkulator">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://dekkalkulator.online/innpress-felg-kalkulator#webpage",
+    "url": "https://dekkalkulator.online/innpress-felg-kalkulator",
+    "name": "Innpress felg kalkulator – beregn ET, offset og sporvidde",
+    "description": "ET forteller hvor langt ut hjulet havner. Legg inn original og ny ET og se endringen i mm per side. Vianor oppgir ±7,5 mm per side som margin.",
+    "inLanguage": "nb-NO",
+    "isPartOf": {
+      "@id": "https://dekkalkulator.online/#website"
     },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Innpress felg kalkulator",
-      "item": "https://dekkalkulator.online/innpress-felg-kalkulator"
+    "publisher": {
+      "@id": "https://dekkalkulator.online/#organization"
+    },
+    "dateModified": "2026-08-29",
+    "breadcrumb": {
+      "@id": "https://dekkalkulator.online/innpress-felg-kalkulator#breadcrumb"
     }
-  ]
-}
-</script>
+  }
+  </script>
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -212,22 +291,30 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
-  <main>
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Innpress felg kalkulator</span></li>
+    </ol>
+  </nav>
+
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Gratis innpress kalkulator</span>
-        <h1>Innpress felg kalkulator — Beregn ET og offset</h1>
-        <p>Sammenlign innpress (ET/offset) mellom original og ny felg. Se hvordan endring i ET påvirker indre klaring, ytre klaring og sporvidde. Finn ut om nye felger passer bilen din uten modifikasjoner.</p>
+        <h1>Innpress felg kalkulator – <span class="hl">hvor langt ut havner hjulet?</span></h1>
+        <p>ET er avstanden i millimeter mellom felgens festeflate og midten av felgen. Lavere tall skyver hjulet utover, høyere tall trekker det innover. Du kan endre inntil 7,5 mm per side uten godkjenning, og kalkulatoren under viser hvor du havner.</p>
       </div>
 
       <!-- CALCULATOR -->
+      <div id="kalkulator" style="position:relative;top:-72px"></div>
       <div class="calc" aria-label="Innpress felg kalkulator">
 
         <!-- RIM INPUTS: side by side -->
@@ -245,7 +332,7 @@
               </div>
               <div class="input-group">
                 <label for="oET">Innpress (ET)</label>
-                <input type="number" id="oET" value="45" min="-30" max="60" step="1" aria-label="Original innpress ET">
+                <input type="number" id="oET" value="45" min="-30" max="60" step="1" aria-label="Original innpress ET" inputmode="decimal">
               </div>
             </div>
             <div class="rim-label" id="oRimLabel">7.0" x 16 ET45</div>
@@ -263,7 +350,7 @@
               </div>
               <div class="input-group">
                 <label for="nET">Innpress (ET)</label>
-                <input type="number" id="nET" value="35" min="-30" max="60" step="1" aria-label="Ny innpress ET">
+                <input type="number" id="nET" value="35" min="-30" max="60" step="1" aria-label="Ny innpress ET" inputmode="decimal">
               </div>
             </div>
             <div class="rim-label" id="nRimLabel">8.0" x 17 ET35</div>
@@ -278,7 +365,7 @@
           <h2 class="section-title">Innpress-resultat</h2>
 
           <div class="result-grid">
-            <div class="result-card">
+            <div class="result-card" role="status" aria-live="polite">
               <div class="r-label">ET-forskjell</div>
               <div class="r-value" id="rETdiff">-10</div>
               <div class="r-unit">mm</div>
@@ -315,28 +402,36 @@
         <!-- DETAILED COMPARISON TABLE -->
         <div class="cmp-section">
           <h2>Detaljert innpress-sammenligning</h2>
-          <table class="cmp" aria-label="Detaljert sammenligning av innpress og offset">
+          <table class="cmp" aria-label="Detaljert sammenligning av innpress og offset"><caption class="sr-only">Detaljert sammenligning av innpress og offset</caption>
             <thead>
               <tr>
-                <th></th>
-                <th class="c-orig">Original</th>
-                <th class="c-new">Ny</th>
-                <th>Forskjell</th>
+                <th scope="col"></th>
+                <th scope="col" class="c-orig">Original</th>
+                <th scope="col" class="c-new">Ny</th>
+                <th scope="col">Forskjell</th>
               </tr>
             </thead>
-            <tbody id="cmpBody"></tbody>
+            <tbody id="cmpBody">
+              <tr><td style="text-align:left;font-weight:600">Felgbredde</td><td class="c-orig">7,0"</td><td class="c-new">8,0"</td><td class="c-diff"><span class="pos">+1,0 "</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Felgbredde (mm)</td><td class="c-orig">177,8 mm</td><td class="c-new">203,2 mm</td><td class="c-diff"><span class="pos">+25,4 mm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Felgdiameter</td><td class="c-orig">16"</td><td class="c-new">17"</td><td class="c-diff"><span class="pos">+1,0 "</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Innpress (ET)</td><td class="c-orig">45 mm</td><td class="c-new">35 mm</td><td class="c-diff"><span class="neg">−10,0 mm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Indre klaring</td><td class="c-orig">43,9 mm</td><td class="c-new">66,6 mm</td><td class="c-diff"><span class="pos">+22,7 mm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Ytre klaring</td><td class="c-orig">133,9 mm</td><td class="c-new">136,6 mm</td><td class="c-diff"><span class="pos">+2,7 mm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Sporviddeendring</td><td class="c-orig"></td><td class="c-new"></td><td class="c-diff"><strong>+5,4 mm</strong></td></tr>
+            </tbody>
           </table>
         </div>
 
         <!-- QUICK REFERENCE: Common ET values by car brand -->
         <div class="ref-section">
           <h2>Vanlige innpress-verdier (ET) etter bilmerke</h2>
-          <table class="ref" aria-label="Vanlige innpress-verdier etter bilmerke">
+          <table class="ref" aria-label="Vanlige innpress-verdier etter bilmerke"><caption class="sr-only">Vanlige innpress-verdier etter bilmerke</caption>
             <thead>
               <tr>
-                <th>Bilmerke</th>
-                <th>Typisk ET</th>
-                <th>Boltmønster</th>
+                <th scope="col">Bilmerke</th>
+                <th scope="col">Typisk ET</th>
+                <th scope="col">Boltmønster</th>
               </tr>
             </thead>
             <tbody>
@@ -356,13 +451,57 @@
 
       </div><!-- /.calc -->
 
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
+        <p style="margin:0 0 14px;color:#4b5563;font-size:.96rem">Bytter du bredde samtidig? Da må begge regnes i samme regnestykke.</p>
+        <a href="/felg-kalkulator" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Regn ut felg, innpress og sporvidde &rarr;</a>
+        <a href="#kalkulator" style="display:inline-block;margin-left:14px;color:#4b5563;text-decoration:none;font-size:.92rem;border-bottom:1px solid #d8d8d4;padding-bottom:2px">Tilbake til kalkulatoren</a>
+      </div>
+
       <!-- RELATED TOOLS -->
+
+      <!-- CONTENT: innpress-felg-kalkulator -->
+      <section class="content" style="margin:32px 0;line-height:1.7">
+
+        <h2>Hva ET-tallet er</h2>
+        <p><strong>ET</strong> kommer fra tysk <em>Einpresstiefe</em> og oppgir avstanden i millimeter mellom felgens festeflate, der den ligger an mot navet, og felgens midtlinje. Tallet står støpt inn på felgen, som regel i formen <em>ET45</em>.</p>
+        <ul>
+          <li><strong>Positiv ET</strong>: festeflaten sitter utenfor midtlinjen. Hjulet trekkes <em>innover</em> mot bilen. Dette er normalen på forhjulsdrevne personbiler.</li>
+          <li><strong>ET 0</strong>: festeflaten ligger nøyaktig i midten.</li>
+          <li><strong>Negativ ET</strong>: festeflaten sitter innenfor midtlinjen, og hjulet skyves <em>utover</em>. Vanlig på terrengbil og på felger bygget for bred sporvidde.</li>
+        </ul>
+        <p>Regelen er kontraintuitiv første gang: <strong>lavere ET-tall skyver hjulet utover</strong>, høyere ET-tall trekker det innover. Går du fra ET45 til ET35, kommer hjulet 10 mm lenger ut på hver side.</p>
+
+        <h2>Hvor mye du får lov til å endre</h2>
+        <p>Dette er ikke en smakssak. <a href="https://vianor.no/biltips/felgtips/innpress-pa-felger/" rel="nofollow noopener" target="_blank">Vianor</a> oppgir grensen slik: du kan endre ET-verdien med inntil <strong>±7,5 mm per side, altså 15 mm per aksel</strong>, i forhold til produsentens spesifikasjon. Går du lenger, kreves godkjenning.</p>
+        <p>Det er en trangere ramme enn folk regner med. Et felgsett annonsert som «passer» kan ligge 15 eller 20 mm unna original ET og likevel selges: det er kjøperen som må kontrollere tallet, ikke selgeren.</p>
+
+        <h3>Hva som faktisk skjer når ET endres</h3>
+        <p>Hjulet flytter seg i én retning, og begge retninger har konsekvenser:</p>
+        <ol>
+          <li><strong>For lav ET (hjulet utover).</strong> Sporvidden øker. Dekket kan skrape mot innerskjerm ved fullt rattutslag og fjæringsutslag, og hjullageret får en større momentarm å jobbe mot. Belastningen øker på et lager som er dimensjonert for originaltallet.</li>
+          <li><strong>For høy ET (hjulet innover).</strong> Felgen eller dekket kan komme borti bremsekaliper, fjærbein eller styredeler. Dette merkes ofte ikke ved montering på plant underlag, men først i sving eller over ujevnheter.</li>
+        </ol>
+        <p>I tillegg endres <strong>scrub radius</strong> – geometrien styringen arbeider etter. Utslaget er en bil som trekker mer i spor og som gir tydeligere rykk i rattet ved bremsing på ujevnt underlag. Bilen er ikke ødelagt, men den styrer ikke som konstruktøren tegnet den.</p>
+
+        <h3>ET er bare halve regnestykket</h3>
+        <p>Endrer du felgbredden samtidig, flytter hjulet seg selv om ET-tallet står stille: halvparten av breddeøkningen går innover og halvparten utover. Det er derfor kalkulatoren over regner begge deler samtidig: den viser hvor hjulkanten faktisk havner, ikke bare differansen i ET.</p>
+        <p>Skal du kontrollere at dekkbredden passer den nye felgbredden, gir <a href="/dekk-felg-tabell">dekk og felg tabellen</a> minimum, ideell og maksimal bredde. Endrer du dekkdimensjon i samme slengen, må rulleomkretsen holde seg innenfor ±5 %. det tar <a href="/lovlig-avvik-dekkdimensjon">kalkulatoren for lovlig avvik</a>.</p>
+
+        <h2>Kilder</h2>
+        <ul>
+          <li><a href="https://vianor.no/biltips/felgtips/innpress-pa-felger/" rel="nofollow noopener" target="_blank">Vianor</a>: hva ET betyr og grensen på ±7,5 mm per side</li>
+          <li><a href="https://www.vegvesen.no/" rel="nofollow noopener" target="_blank">Statens vegvesen</a>: krav til hjul og felger på kjøretøy</li>
+        </ul>
+        <p style="margin-top:12px;font-size:.9rem;color:#6b7280">Beregningen er veiledende. Kontroller alltid klaring fysisk før montering.</p>
+
+      </section>
+
       <div class="related">
         <h2>Relaterte kalkulatorer</h2>
         <div class="rel-grid">
-          <a href="/felg-kalkulator">Dekk og felg kalkulator <span class="arrow">&rarr;</span></a>
-          <a href="/overgangstabell-dekk">Overgangstabell for dekk <span class="arrow">&rarr;</span></a>
-          <a href="/rulleomkrets-traktordekk">Rulleomkrets på traktordekk <span class="arrow">&rarr;</span></a>
+          <a href="/felg-kalkulator">Regn ut felg, innpress og sporvidde <span class="arrow">&rarr;</span></a>
+          <a href="/overgangstabell-dekk">Finn dimensjonene som ruller like langt <span class="arrow">&rarr;</span></a>
+          <a href="/rulleomkrets-traktordekk">Regn ut omkrets og forspring på traktor <span class="arrow">&rarr;</span></a>
         </div>
       </div>
 
@@ -411,7 +550,7 @@
       <div class="f-legal" style="margin-top:12px;font-size:.9em">
         <a href="/personvern">Personvern</a> · <a href="/om-oss">Om oss</a> · <a href="/kontakt">Kontakt</a> · <a href="/vilkar">Vilkår</a>
       </div>
-      <div class="f-copy">&copy; 2026 dekkalkulator.online — Gratis dekkalkulator for alle biltyper</div>
+      <div class="f-copy">&copy; 2026 dekkalkulator.online – Gratis dekkalkulator for alle biltyper</div>
     </div>
   </footer>
 
@@ -510,22 +649,22 @@ function drawOffsetVisual(oRW, oET, nRW, nET) {
     '<text x="' + cx + '" y="8" text-anchor="middle" fill="#9ca3af" font-size="9" font-weight="600" font-family="system-ui,sans-serif">MONTERINGSFLATE</text>' +
 
     // Original rim (rectangle)
-    '<rect x="' + (cx - oInner) + '" y="' + (oY - rimH/2) + '" width="' + (oInner + oOuter) + '" height="' + rimH + '" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5"/>' +
+    '<rect x="' + (cx - oInner) + '" y="' + (oY - rimH/2) + '" width="' + (oInner + oOuter) + '" height="' + rimH + '" rx="3" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>' +
     // ET marker line on original
-    '<line x1="' + cx + '" y1="' + (oY - rimH/2 - 2) + '" x2="' + cx + '" y2="' + (oY + rimH/2 + 2) + '" stroke="#6366f1" stroke-width="2"/>' +
+    '<line x1="' + cx + '" y1="' + (oY - rimH/2 - 2) + '" x2="' + cx + '" y2="' + (oY + rimH/2 + 2) + '" stroke="#4f46e5" stroke-width="2"/>' +
     // Label original
-    '<text x="30" y="' + (oY + 4) + '" fill="#6366f1" font-size="11" font-weight="700" font-family="system-ui,sans-serif">ORIGINAL</text>' +
+    '<text x="30" y="' + (oY + 4) + '" fill="#4f46e5" font-size="11" font-weight="700" font-family="system-ui,sans-serif">ORIGINAL</text>' +
     // ET value original
-    '<text x="' + (cx - oInner/2) + '" y="' + (oY + 4) + '" text-anchor="middle" fill="#6366f1" font-size="10" font-weight="600" font-family="system-ui,sans-serif">ET' + gi('oET') + '</text>' +
+    '<text x="' + (cx - oInner/2) + '" y="' + (oY + 4) + '" text-anchor="middle" fill="#4f46e5" font-size="10" font-weight="600" font-family="system-ui,sans-serif">ET' + gi('oET') + '</text>' +
 
     // New rim (rectangle)
-    '<rect x="' + (cx - nInner) + '" y="' + (nY - rimH/2) + '" width="' + (nInner + nOuter) + '" height="' + rimH + '" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>' +
+    '<rect x="' + (cx - nInner) + '" y="' + (nY - rimH/2) + '" width="' + (nInner + nOuter) + '" height="' + rimH + '" rx="3" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>' +
     // ET marker line on new
-    '<line x1="' + cx + '" y1="' + (nY - rimH/2 - 2) + '" x2="' + cx + '" y2="' + (nY + rimH/2 + 2) + '" stroke="#16a34a" stroke-width="2"/>' +
+    '<line x1="' + cx + '" y1="' + (nY - rimH/2 - 2) + '" x2="' + cx + '" y2="' + (nY + rimH/2 + 2) + '" stroke="#15803d" stroke-width="2"/>' +
     // Label new
-    '<text x="30" y="' + (nY + 4) + '" fill="#16a34a" font-size="11" font-weight="700" font-family="system-ui,sans-serif">NY</text>' +
+    '<text x="30" y="' + (nY + 4) + '" fill="#15803d" font-size="11" font-weight="700" font-family="system-ui,sans-serif">NY</text>' +
     // ET value new
-    '<text x="' + (cx - nInner/2) + '" y="' + (nY + 4) + '" text-anchor="middle" fill="#16a34a" font-size="10" font-weight="600" font-family="system-ui,sans-serif">ET' + gi('nET') + '</text>' +
+    '<text x="' + (cx - nInner/2) + '" y="' + (nY + 4) + '" text-anchor="middle" fill="#15803d" font-size="10" font-weight="600" font-family="system-ui,sans-serif">ET' + gi('nET') + '</text>' +
 
     // Side labels
     '<text x="' + (cx - Math.max(oInner, nInner) - 10) + '" y="155" text-anchor="middle" fill="#6b7280" font-size="9" font-weight="600" font-family="system-ui,sans-serif">FJÆRING</text>' +
@@ -620,7 +759,7 @@ function calculate() {
     innerEl.style.color = '#dc2626';
   } else if (innerChange < -0.5) {
     innerEl.textContent = 'Mer klaring til fjæring';
-    innerEl.style.color = '#16a34a';
+    innerEl.style.color = '#15803d';
   } else {
     innerEl.textContent = 'Tilnærmet lik klaring';
     innerEl.style.color = '#6b7280';
@@ -635,7 +774,7 @@ function calculate() {
     outerEl.style.color = '#dc2626';
   } else if (outerChange < -0.5) {
     outerEl.textContent = 'Mer klaring til skjerm';
-    outerEl.style.color = '#16a34a';
+    outerEl.style.color = '#15803d';
   } else {
     outerEl.textContent = 'Tilnærmet lik klaring';
     outerEl.style.color = '#6b7280';
@@ -647,7 +786,7 @@ function calculate() {
   var trackEl = document.getElementById('rTrackDetail');
   if (trackChange > 0.5) {
     trackEl.textContent = 'Bredere sporvidde';
-    trackEl.style.color = '#6366f1';
+    trackEl.style.color = '#4f46e5';
   } else if (trackChange < -0.5) {
     trackEl.textContent = 'Smalere sporvidde';
     trackEl.style.color = '#92400e';

@@ -3,18 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
-  <title>Rulleomkrets kalkulator — regn ut dekkomkrets på sekunder</title>
-  <meta name="description" content="Regn ut rulleomkrets, diameter og omdreininger per km for enhver dekkdimensjon. Se hvor mye omkretsen endres før du bytter dekk. Helt gratis.">
+  <title>Rulleomkrets kalkulator – dekk kalkulator for omkrets og avvik</title>
+  <meta name="description" content="Skriv inn dekkdimensjonen og få rulleomkrets i mm, diameter og omdreininger per km. Sammenlign to dimensjoner og se avviket i prosent.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/rulleomkrets-kalkulator">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Rulleomkrets kalkulator — Beregn omkrets for dekk">
-  <meta property="og:description" content="Beregn rulleomkrets for alle dekkstørrelser med vår gratis kalkulator. Se diameter, radius og omdreininger per km for ditt dekk.">
+  <meta property="og:title" content="Rulleomkrets kalkulator – dekk kalkulator for omkrets og avvik">
+  <meta property="og:description" content="Skriv inn dekkdimensjonen og få rulleomkrets i mm, diameter og omdreininger per km. Sammenlign to dimensjoner og se avviket i prosent.">
   <meta property="og:url" content="https://dekkalkulator.online/rulleomkrets-kalkulator">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
+  <meta property="og:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dekkalkulator for norske bilister. Regn ut rulleomkrets, speedometeravvik og lovlige alternative dekkdimensjoner">
 
   <script type="application/ld+json">
   {
@@ -46,7 +82,7 @@
     .nav-links{display:flex;gap:4px}
     .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
     .nav-links a:hover{color:#111827}
-    .nav-links a[aria-current="page"]{color:#6366f1;font-weight:600}
+    .nav-links a[aria-current="page"]{color:#4f46e5;font-weight:600}
     .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
     .nav-hamburger svg{display:block}
     @media(max-width:768px){
@@ -73,13 +109,13 @@
     @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
 
     .side{padding:20px;border-radius:12px;background:#f8fafc;border:1.5px solid #e2e8f0;max-width:400px;margin:0 auto}
-    .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:#6366f1}
-    .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;background:#6366f1}
+    .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:#4f46e5}
+    .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;background:#4f46e5}
 
     .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
     .input-group select{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;cursor:pointer;appearance:auto;transition:border-color .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-    .input-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .input-group select:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
 
     .tire-label{text-align:center;font-size:20px;font-weight:800;color:#111827;padding:10px;background:#f9fafb;border-radius:8px;margin-top:12px;letter-spacing:0.5px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
 
@@ -89,7 +125,7 @@
 
     /* ── MAIN RESULT ── */
     .main-result{text-align:center;padding:32px 16px;margin-top:24px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:12px}
-    .main-result .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#16a34a;margin-bottom:8px}
+    .main-result .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#15803d;margin-bottom:8px}
     .main-result .value{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
     .main-result .unit{font-size:20px;font-weight:600;color:#6b7280;margin-left:4px}
     @media(max-width:640px){
@@ -101,16 +137,16 @@
     .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
     @media(max-width:640px){.results-grid{grid-template-columns:repeat(2,1fr)}}
     .result-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px 12px;text-align:center}
-    .result-card .r-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#9ca3af;margin-bottom:4px}
+    .result-card .r-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;margin-bottom:4px}
     .result-card .r-value{font-size:22px;font-weight:800;color:#111827;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
     .result-card .r-unit{font-size:13px;font-weight:500;color:#6b7280}
 
     /* ── TABLE POPULAR ── */
     .popular-section{margin-top:40px}
-    .section-title{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
+    .section-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
     .pop-table-wrap{border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}
     table.pop-table{width:100%;border-collapse:collapse;font-size:14px}
-    table.pop-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em}
+    table.pop-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:11px;text-transform:uppercase;color:#374151;font-weight:600;letter-spacing:0.04em}
     table.pop-table td{padding:10px 16px;border-bottom:1px solid #f3f4f6}
     table.pop-table tbody tr:last-child td{border-bottom:none}
     table.pop-table tbody tr:hover{background:#f0f4ff}
@@ -121,11 +157,11 @@
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -134,12 +170,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -150,35 +186,78 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Dekkalkulator",
-      "item": "https://dekkalkulator.online/"
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://dekkalkulator.online/rulleomkrets-kalkulator#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dekkalkulator",
+        "item": "https://dekkalkulator.online/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rulleomkrets kalkulator",
+        "item": "https://dekkalkulator.online/rulleomkrets-kalkulator"
+      }
+    ]
+  }
+  </script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+<meta name="twitter:title" content="Rulleomkrets kalkulator – dekk kalkulator for omkrets og avvik">
+<meta name="twitter:description" content="Skriv inn dekkdimensjonen og få rulleomkrets i mm, diameter og omdreininger per km. Sammenlign to dimensjoner og se avviket i prosent.">
+<meta name="twitter:url" content="https://dekkalkulator.online/rulleomkrets-kalkulator">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://dekkalkulator.online/rulleomkrets-kalkulator#webpage",
+    "url": "https://dekkalkulator.online/rulleomkrets-kalkulator",
+    "name": "Rulleomkrets kalkulator – dekk kalkulator for omkrets og avvik",
+    "description": "Skriv inn dekkdimensjonen og få rulleomkrets i mm, diameter og omdreininger per km. Sammenlign to dimensjoner og se avviket i prosent.",
+    "inLanguage": "nb-NO",
+    "isPartOf": {
+      "@id": "https://dekkalkulator.online/#website"
     },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Rulleomkrets kalkulator",
-      "item": "https://dekkalkulator.online/rulleomkrets-kalkulator"
+    "publisher": {
+      "@id": "https://dekkalkulator.online/#organization"
+    },
+    "dateModified": "2026-08-29",
+    "breadcrumb": {
+      "@id": "https://dekkalkulator.online/rulleomkrets-kalkulator#breadcrumb"
     }
-  ]
-}
-</script>
+  }
+  </script>
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -190,22 +269,30 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
-  <main>
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Rulleomkrets kalkulator</span></li>
+    </ol>
+  </nav>
+
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Gratis rulleomkrets kalkulator</span>
-        <h1>Rulleomkrets kalkulator — hvor langt ruller dekket ditt?</h1>
-        <p>Velg dekkstørrelsen din og se rulleomkrets, diameter, radius og omdreininger per km umiddelbart. Bruk resultatet til å sjekke speedometeravvik eller finne riktig erstatningsdekk. Fungerer for alle personbiler i Norge.</p>
+        <h1>Hvor langt ruller <span class="hl">dekket på én omdreining?</span></h1>
+        <p>Rulleomkretsen er diameteren ganget med pi: hvor langt dekket ruller på én omdreining. Det er denne, ikke dimensjonstallene, alt annet måles mot. Velg dimensjonen din, så gir rulleomkrets kalkulatoren deg <strong>omkrets</strong>, diameter og omdreininger per kilometer.</p>
       </div>
 
       <!-- CALCULATOR -->
+      <div id="kalkulator" style="position:relative;top:-72px"></div>
       <div class="calc">
 
         <!-- TIRE INPUT: single set -->
@@ -230,7 +317,7 @@
 
         <!-- SECONDARY RESULTS -->
         <div class="results-grid">
-          <div class="result-card">
+          <div class="result-card" role="status" aria-live="polite">
             <div class="r-label">Diameter</div>
             <div class="r-value" id="resDiameter">62,6</div>
             <div class="r-unit">cm</div>
@@ -256,16 +343,27 @@
         <div class="popular-section">
           <h2 class="section-title">Rulleomkrets tabell for vanlige dekkdimensjoner</h2>
           <div class="pop-table-wrap">
-            <table class="pop-table" aria-label="Rulleomkrets for populære dekkstørrelser">
+            <table class="pop-table" aria-label="Rulleomkrets for populære dekkstørrelser"><caption class="sr-only">Rulleomkrets for populære dekkstørrelser</caption>
               <thead>
                 <tr>
-                  <th>Dekkstørrelse</th>
-                  <th>Rulleomkrets</th>
-                  <th>Diameter</th>
-                  <th>Omdr./km</th>
+                  <th scope="col">Dekkstørrelse</th>
+                  <th scope="col">Rulleomkrets</th>
+                  <th scope="col">Diameter</th>
+                  <th scope="col">Omdr./km</th>
                 </tr>
               </thead>
-              <tbody id="popBody"></tbody>
+              <tbody id="popBody">
+              <tr><td>165/70 R14</td><td>184,3 cm</td><td>58,7 cm</td><td>543</td></tr>
+              <tr><td>175/65 R14</td><td>183,2 cm</td><td>58,3 cm</td><td>546</td></tr>
+              <tr><td>185/65 R15</td><td>195,2 cm</td><td>62,2 cm</td><td>512</td></tr>
+              <tr><td>195/65 R15</td><td>199,3 cm</td><td>63,5 cm</td><td>502</td></tr>
+              <tr><td>205/55 R16</td><td>198,5 cm</td><td>63,2 cm</td><td>504</td></tr>
+              <tr><td>215/55 R17</td><td>210,0 cm</td><td>66,8 cm</td><td>476</td></tr>
+              <tr><td>225/45 R17</td><td>199,3 cm</td><td>63,4 cm</td><td>502</td></tr>
+              <tr><td>225/50 R17</td><td>206,3 cm</td><td>65,7 cm</td><td>485</td></tr>
+              <tr><td>235/45 R18</td><td>210,1 cm</td><td>66,9 cm</td><td>476</td></tr>
+              <tr><td>255/40 R19</td><td>215,7 cm</td><td>68,7 cm</td><td>464</td></tr>
+            </tbody>
             </table>
           </div>
         </div>
@@ -275,28 +373,32 @@
       <!-- CONTENT: rulleomkrets -->
       <section class="content" style="margin:32px 0;line-height:1.7">
 
-        <h2>Hva er rulleomkrets — og hvorfor betyr det noe?</h2>
-        <p><strong>Rulleomkrets</strong> er strekningen dekket tilbakelegger på én hel omdreining. Den bestemmer hvor langt bilen kjører per hjulrotasjon, og derfor også hva speedometeret og kilometertelleren viser. To dekk kan ha helt ulike dimensjonstall og likevel nesten samme rulleomkrets — og det er nettopp derfor du kan bytte til en annen dimensjon uten at bilen begynner å måle feil.</p>
-        <p>Du møter tre ord om det samme målet: <strong>rulleomkrets</strong>, <strong>dekkomkrets</strong> og <strong>hjulomkrets</strong>. I praksis brukes de om hverandre i norske dekkataloger. Rulleomkrets er det mest presise, fordi det beskriver omkretsen slik den faktisk ruller under bilen — ikke bare den geometriske omkretsen til et fritthengende dekk.</p>
+        <figure style="margin:24px 0;text-align:center">
+          <img loading="lazy" decoding="async" src="/img/rulleomkrets-forklart.svg" width="520" height="300" alt="Rulleomkrets forklart: et dekk på 205/55 R16 med 63,19 cm diameter ruller 198,5 cm på én omdreining" style="max-width:100%;height:auto">
+          <figcaption style="font-size:.85rem;color:#6b7280;margin-top:8px">Rulleomkrets er diameteren ganget med pi: hvor langt dekket faktisk ruller på én omdreining.</figcaption>
+        </figure>
+        <h2>Hva er rulleomkrets, og hvorfor betyr det noe?</h2>
+        <p><strong>Rulleomkrets</strong> er strekningen dekket tilbakelegger på én hel omdreining. Den bestemmer hvor langt bilen kjører per hjulrotasjon, og derfor også hva speedometeret og kilometertelleren viser. To dekk kan ha helt ulike dimensjonstall og likevel nesten samme rulleomkrets, og det er nettopp derfor du kan bytte til en annen dimensjon uten at bilen begynner å måle feil.</p>
+        <p>Du møter tre ord om det samme målet: <strong>rulleomkrets</strong>, <strong>dekkomkrets</strong> og <strong>hjulomkrets</strong>. I praksis brukes de om hverandre i norske dekkataloger. Rulleomkrets er det mest presise, fordi det beskriver omkretsen slik den faktisk ruller under bilen, ikke bare den geometriske omkretsen til et fritthengende dekk.</p>
 
         <h2>Slik regner rulleomkretskalkulatoren</h2>
         <p>En <strong>rulleomkretskalkulator</strong> gjør to steg. Først finner den dekkets ytre diameter fra dimensjonen på siden av dekket, så ganger den diameteren med pi.</p>
-        <p><strong>Steg 1 — diameter:</strong> felgdiameteren oppgis i tommer og må gjøres om til millimeter (1 tomme = 25,4 mm). Dekkets høyde på hver side legges til:</p>
+        <p><strong>Steg 1, diameter:</strong> felgdiameteren oppgis i tommer og må gjøres om til millimeter (1 tomme = 25,4 mm). Dekkets høyde på hver side legges til:</p>
         <p style="background:#f8fafc;padding:12px 16px;border-radius:8px;font-family:ui-monospace,monospace;font-size:.95rem">diameter = (felg × 25,4) + (2 × bredde × profil ÷ 100)</p>
-        <p><strong>Steg 2 — omkrets:</strong> <span style="font-family:ui-monospace,monospace">rulleomkrets = diameter × π</span></p>
+        <p><strong>Steg 2, omkrets:</strong> <span style="font-family:ui-monospace,monospace">rulleomkrets = diameter × π</span></p>
         <p><strong>Regnet ut for 205/55 R16:</strong> felgen er 16 tommer, altså 406,4 mm. Dekkhøyden er 55 % av 205 mm = 112,75 mm, og den kommer både over og under felgen: 2 × 112,75 = 225,5 mm. Diameteren blir 406,4 + 225,5 = <strong>631,9 mm</strong>. Rulleomkretsen blir 631,9 × π = <strong>1 985 mm</strong>, altså cirka 198,5 cm. Med den omkretsen roterer hjulet omtrent 504 ganger per kilometer.</p>
         <p>Det er den samme regnemåten en <strong>dekkomkretskalkulator</strong> bruker. Skriv inn dimensjonen i feltene over, så får du diameter, radius, omkrets og omdreininger per kilometer på én gang.</p>
 
         <h3>Teoretisk omkrets er ikke helt det samme som målt omkrets</h3>
-        <p>Formelen over gir den <em>geometriske</em> omkretsen — dekket regnet som en perfekt sirkel. Et dekk med last på seg flater ut litt der det møter asfalten, og ruller derfor en anelse kortere enn formelen tilsier. Derfor publiserer standardiseringsorganene <a href="https://www.etrto.org/" rel="nofollow noopener" target="_blank">ETRTO</a> og STRO egne <em>målte</em> rulleomkretsverdier for hver dimensjon, og de avviker typisk noen få promille til et par prosent fra den geometriske verdien.</p>
-        <p>For å sammenligne to dimensjoner mot hverandre — som er det du gjør før et dekkbytte — spiller dette ingen rolle: begge regnes på samme måte, så forskjellen i prosent blir den samme. Skal du derimot kalibrere en kilometerteller eller en GPS-basert måling helt nøyaktig, bør du bruke produsentens oppgitte måleverdi.</p>
+        <p>Formelen over gir den <em>geometriske</em> omkretsen: dekket regnet som en perfekt sirkel. Et dekk med last på seg flater ut litt der det møter asfalten, og ruller derfor en anelse kortere enn formelen tilsier. Derfor publiserer standardiseringsorganene <a href="https://www.etrto.org/" rel="nofollow noopener" target="_blank">ETRTO</a> og STRO egne <em>målte</em> rulleomkretsverdier for hver dimensjon, og de avviker typisk noen få promille til et par prosent fra den geometriske verdien.</p>
+        <p>For å sammenligne to dimensjoner mot hverandre – som er det du gjør før et dekkbytte – spiller dette ingen rolle: begge regnes på samme måte, så forskjellen i prosent blir den samme. Skal du derimot kalibrere en kilometerteller eller en GPS-basert måling helt nøyaktig, bør du bruke produsentens oppgitte måleverdi.</p>
 
         <h2>Hva rulleomkretsen påvirker på bilen</h2>
         <ul>
           <li><strong>Speedometer og kilometerteller.</strong> Bilen teller hjulomdreininger. Større rulleomkrets betyr at du kjører fortere enn speedometeret viser, mindre omkrets at du kjører saktere. Regn ut utslaget i <a href="/speedometer-avvik">speedometer avvik kalkulatoren</a>.</li>
           <li><strong>Effektiv utveksling.</strong> Et dekk med større omkrets virker som en lengre utveksling: lavere turtall ved marsjfart, men tregere akselerasjon.</li>
           <li><strong>ABS, ESP og cruisekontroll.</strong> Systemene sammenligner turtallet på de fire hjulene. Store avvik mellom for- og bakaksel kan gi feilmeldinger.</li>
-          <li><strong>Lovlighet ved kontroll.</strong> Avviket måles nettopp i rulleomkrets — se under.</li>
+          <li><strong>Lovlighet ved kontroll.</strong> Avviket måles nettopp i rulleomkrets. Se under.</li>
         </ul>
 
         <h3>Hvor mye kan rulleomkretsen avvike lovlig i Norge?</h3>
@@ -305,15 +407,21 @@
 
         <h2>Rulleomkrets på traktordekk</h2>
         <p>Traktordekk følger en annen logikk enn bildekk. Dimensjoner som 380/85 R28 eller 16.9 R38 har langt høyere profil, og på traktor er rulleomkretsen ikke bare et speedometerspørsmål: forholdet mellom omkretsen foran og bak bestemmer <em>utvekslingsforholdet</em> i firehjulstrekket. Blir forholdet feil, sliper enten framakselen eller bakakselen, med unødvendig slitasje og økt drivstofforbruk som resultat.</p>
-        <p>Rulleomkretsen er også grunnlaget for arealmåling og hjulslipp i presisjonsutstyr og GPS-kalibrering. Vi har derfor samlet regnemåten og de vanlige dimensjonene på en egen side: <a href="/rulleomkrets-traktordekk">rulleomkrets for traktordekk</a>.</p>
+        <p>Rulleomkretsen er også grunnlaget for arealmåling og hjulslipp i presisjonsutstyr og GPS-kalibrering. Her er regnemåten og de vanlige dimensjonene på en egen side: <a href="/rulleomkrets-traktordekk">Rulleomkrets på traktordekk</a>.</p>
 
       </section>
+
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
+        <p style="margin:0 0 14px;color:#4b5563;font-size:.96rem">Omkretsen er tallet. Se hva den gjør med farten du leser av.</p>
+        <a href="/speedometer-avvik" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Se hva speedometeret kommer til å vise &rarr;</a>
+        <a href="#kalkulator" style="display:inline-block;margin-left:14px;color:#4b5563;text-decoration:none;font-size:.92rem;border-bottom:1px solid #d8d8d4;padding-bottom:2px">Tilbake til kalkulatoren</a>
+      </div>
 
       <!-- RELATED TOOLS -->
       <div class="related">
         <h2>Relaterte kalkulatorer</h2>
         <div class="rel-grid">
-          <a href="/overgangstabell-dekk">Overgangstabell for dekk <span class="arrow">&rarr;</span></a>
+          <a href="/overgangstabell-dekk">Finn dimensjonene som ruller like langt <span class="arrow">&rarr;</span></a>
         </div>
       </div>
 
@@ -362,7 +470,7 @@
       <div class="f-legal" style="margin-top:12px;font-size:.9em">
         <a href="/personvern">Personvern</a> · <a href="/om-oss">Om oss</a> · <a href="/kontakt">Kontakt</a> · <a href="/vilkar">Vilkår</a>
       </div>
-      <div class="f-copy">&copy; 2026 dekkalkulator.online — Gratis dekkalkulator for alle biltyper</div>
+      <div class="f-copy">&copy; 2026 dekkalkulator.online – Gratis dekkalkulator for alle biltyper</div>
     </div>
   </footer>
 

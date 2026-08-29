@@ -3,19 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
-  <title>Dekkalkulator — sammenlign dekkdimensjoner på 5 sekunder</title>
-  <meta name="description" content="Skriv inn dekkstørrelsen og se rulleomkrets, diameter og speedometeravvik med en gang. Sjekk om den nye dimensjonen er lovlig. Gratis, uten registrering.">
+  <title>Dekkalkulator – se avviket i rulleomkrets før du bytter dekk</title>
+  <meta name="description" content="Legg inn dimensjonen du har og den du vurderer. Du får avviket i prosent, ny rulleomkrets og speedometeravvik. Bransjen regner ±5 % som grensen.">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="4wh4FQtJX7fNOy0sA76ZMaf2fyJt34rZE9skWGdvKPk">
   <link rel="canonical" href="https://dekkalkulator.online/">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dekkalkulator — Sammenlign dekkdimensjoner gratis">
-  <meta property="og:description" content="Dekkalkulator for å sammenligne dekkdimensjoner og dekkstørrelse. Beregn rulleomkrets, speedometeravvik og finn lovlige alternativ.">
+  <meta property="og:title" content="Dekkalkulator – se avviket i rulleomkrets før du bytter dekk">
+  <meta property="og:description" content="Legg inn dimensjonen du har og den du vurderer. Du får avviket i prosent, ny rulleomkrets og speedometeravvik. Bransjen regner ±5 % som grensen.">
   <meta property="og:url" content="https://dekkalkulator.online/">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
+  <meta property="og:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dekkalkulator for norske bilister. Regn ut rulleomkrets, speedometeravvik og lovlige alternative dekkdimensjoner">
 
   <script type="application/ld+json">
   {
@@ -73,7 +109,7 @@
     .section-spacer + .section-spacer{padding-top:0}
 
     /* ── SECTION LABELS ── */
-    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px;text-align:center}
+    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6b7280;margin-bottom:16px;text-align:center}
 
     /* ── CALCULATOR ── */
     .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
@@ -87,16 +123,16 @@
     .side-orig{background:#f8fafc;border:1.5px solid #e2e8f0}
     .side-new{background:#f8fdf8;border:1.5px solid #d1fae5}
     .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .side-orig .side-label{color:#6366f1}
-    .side-new .side-label{color:#16a34a}
+    .side-orig .side-label{color:#4f46e5}
+    .side-new .side-label{color:#15803d}
     .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0}
-    .side-orig .dot{background:#6366f1}
-    .side-new .dot{background:#22c55e}
+    .side-orig .dot{background:#4f46e5}
+    .side-new .dot{background:#15803d}
 
     .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
     .input-group select{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;cursor:pointer;appearance:auto;transition:border-color .2s;font-family:'Inter',system-ui,sans-serif}
-    .input-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .input-group select:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
 
     .tire-label{text-align:center;font-size:20px;font-weight:800;color:#111827;padding:10px;background:#f9fafb;border-radius:8px;margin-top:12px;letter-spacing:0.5px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
 
@@ -106,16 +142,16 @@
 
     /* ── RESULTS TABLE ── */
     .results-section{margin-top:24px}
-    .section-title{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
+    .section-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
     table.res{width:100%;border-collapse:collapse}
     table.res th,table.res td{padding:10px 12px;text-align:center;font-size:14px}
-    table.res th{font-weight:600;color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
+    table.res th{font-weight:600;color:#374151;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
     table.res td{border-bottom:1px solid #f3f4f6}
     table.res tbody tr:last-child td{border-bottom:none;padding-top:14px}
-    .c-orig{color:#6366f1;font-weight:600}
-    .c-new{color:#16a34a;font-weight:600}
+    .c-orig{color:#4f46e5;font-weight:600}
+    .c-new{color:#15803d;font-weight:600}
     .c-diff{font-weight:700}
-    .pos{color:#16a34a}.neg{color:#dc2626}.zer{color:#9ca3af}
+    .pos{color:#15803d}.neg{color:#dc2626}.zer{color:#6b7280}
 
     /* ── BADGE ── */
     .badge-wrap{text-align:center;padding:16px 0 8px}
@@ -143,19 +179,19 @@
     .alt-filters .input-group select{padding:8px;font-size:13px;border-radius:8px}
     .alt-table-wrap{max-height:320px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:10px}
     table.alt-table{width:100%;border-collapse:collapse;font-size:13px}
-    table.alt-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em;position:sticky;top:0}
+    table.alt-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#374151;font-weight:600;letter-spacing:0.04em;position:sticky;top:0}
     table.alt-table td{padding:8px 12px;border-bottom:1px solid #f3f4f6}
     table.alt-table tbody tr:hover{background:#f0f4ff}
-    .alt-legal{color:#16a34a;font-weight:700}
+    .alt-legal{color:#15803d;font-weight:700}
     .alt-illegal{color:#dc2626;font-weight:700}
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -164,12 +200,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -180,15 +216,83 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  .f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}
+</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+<meta name="twitter:title" content="Dekkalkulator – se avviket i rulleomkrets før du bytter dekk">
+<meta name="twitter:description" content="Legg inn dimensjonen du har og den du vurderer. Du får avviket i prosent, ny rulleomkrets og speedometeravvik. Bransjen regner ±5 % som grensen.">
+<meta name="twitter:url" content="https://dekkalkulator.online/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dekkalkulator.online/#website",
+        "url": "https://dekkalkulator.online/",
+        "name": "Dekkalkulator",
+        "description": "Gratis kalkulatorer for dekkdimensjon, rulleomkrets, speedometeravvik og lovlig avvik.",
+        "inLanguage": "nb-NO",
+        "publisher": { "@id": "https://dekkalkulator.online/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://dekkalkulator.online/#organization",
+        "name": "Dekkalkulator",
+        "url": "https://dekkalkulator.online/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dekkalkulator.online/img/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "founder": { "@type": "Person", "name": "Alejandro Bethencourt Rodriguez" },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "alee07tf@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["nb", "en", "es"]
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://dekkalkulator.online/#webpage",
+    "url": "https://dekkalkulator.online/",
+    "name": "Dekkalkulator – se avviket i rulleomkrets før du bytter dekk",
+    "description": "Legg inn dimensjonen du har og den du vurderer. Du får avviket i prosent, ny rulleomkrets og speedometeravvik. Bransjen regner ±5 % som grensen.",
+    "inLanguage": "nb-NO",
+    "isPartOf": {
+      "@id": "https://dekkalkulator.online/#website"
+    },
+    "publisher": {
+      "@id": "https://dekkalkulator.online/#organization"
+    },
+    "dateModified": "2026-08-29"
+  }
+  </script>
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -200,22 +304,23 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
-  <main>
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Gratis dekkalkulator for Norge</span>
-        <h1>Dekkalkulator — hvilke dekk passer på bilen din?</h1>
-        <p>Denne <strong>dekk kalkulatoren</strong> regner om dekkdimensjoner på sekunder. Velg dimensjonen du har i dag og den du vurderer, så viser dekkalkulatoren forskjellen i diameter, rulleomkrets og speedometeravvik — og om avviket holder seg innenfor det som er lovlig i Norge.</p>
+        <h1>Passer de nye dekkene <span class="hl">på bilen din?</span></h1>
+        <p>Skal du bytte til en annen dekkstørrelse, er det ett tall som avgjør: hvor mye rulleomkretsen endrer seg. Holder avviket seg innenfor ±5 %, er byttet greit. Legg inn dimensjonen du har i dag og den du vurderer, så regner dekkalkulatoren ut <strong>prosenten</strong>, viser hva speedometeret kommer til å vise, og lister opp alternativene som holder seg innenfor.</p>
       </div>
 
       <!-- CALCULATOR -->
+      <div id="kalkulator" style="position:relative;top:-72px"></div>
       <div class="calc">
 
         <!-- TIRE INPUTS: side by side -->
@@ -244,11 +349,17 @@
         <div class="visual" id="vis" role="img" aria-label="Visuell sammenligning av dekkstørrelser"></div>
 
         <!-- RESULTS TABLE -->
-        <div class="results-section">
+        <div class="results-section" role="status" aria-live="polite" aria-atomic="true">
           <h2 class="section-title">Sammenlign dekkdimensjoner</h2>
-          <table class="res" aria-label="Resultat av dekksammenligning">
-            <thead><tr><th></th><th class="c-orig">Original</th><th class="c-new">Ny</th><th>Forskjell</th></tr></thead>
-            <tbody id="tbody"></tbody>
+          <table class="res" aria-label="Resultat av dekksammenligning"><caption class="sr-only">Resultat av dekksammenligning</caption>
+            <thead><tr><th scope="col"></th><th scope="col" class="c-orig">Original</th><th scope="col" class="c-new">Ny</th><th scope="col">Forskjell</th></tr></thead>
+            <tbody id="tbody">
+              <tr><td style="text-align:left;font-weight:600">Diameter</td><td class="c-orig">63,19 cm</td><td class="c-new">63,43 cm</td><td class="c-diff"><span class="pos">+0,2 cm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Rulleomkrets</td><td class="c-orig">198,5 cm</td><td class="c-new">199,3 cm</td><td class="c-diff"><span class="pos">+0,8 cm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Flankehøyde</td><td class="c-orig">11,28 cm</td><td class="c-new">10,13 cm</td><td class="c-diff"><span class="neg">−1,2 cm</span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Omdr./km</td><td class="c-orig">504</td><td class="c-new">502</td><td class="c-diff"><span class="neg">−1,9 </span></td></tr>
+              <tr><td style="text-align:left;font-weight:600">Avvik</td><td class="c-orig"></td><td class="c-new"></td><td class="c-diff"><strong>+0,38 %</strong></td></tr>
+            </tbody>
           </table>
         </div>
 
@@ -277,62 +388,126 @@
             </div>
           </div>
           <div class="alt-table-wrap">
-            <table class="alt-table" aria-label="Alternative dekkdimensjoner">
-              <thead><tr><th>Dimensjon</th><th>Diameter</th><th>Omkrets</th><th>Avvik</th><th>Lovlig</th></tr></thead>
-              <tbody id="altBody"></tbody>
+            <table class="alt-table" aria-label="Alternative dekkdimensjoner"><caption class="sr-only">Alternative dekkdimensjoner</caption>
+              <thead><tr><th scope="col">Dimensjon</th><th scope="col">Diameter</th><th scope="col">Omkrets</th><th scope="col">Avvik</th><th scope="col">Lovlig</th></tr></thead>
+              <tbody id="altBody">
+              <tr><td style="font-weight:700">175/50 R18</td><td>63,22 cm</td><td>198,6 cm</td><td>+0,05 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">225/50 R16</td><td>63,14 cm</td><td>198,4 cm</td><td>−0,08 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">285/35 R17</td><td>63,13 cm</td><td>198,3 cm</td><td>−0,09 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">145/60 R18</td><td>63,12 cm</td><td>198,3 cm</td><td>−0,11 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">195/45 R18</td><td>63,27 cm</td><td>198,8 cm</td><td>+0,13 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">335/30 R17</td><td>63,28 cm</td><td>198,8 cm</td><td>+0,14 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">315/40 R15</td><td>63,30 cm</td><td>198,9 cm</td><td>+0,17 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">155/65 R17</td><td>63,33 cm</td><td>199,0 cm</td><td>+0,22 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">175/65 R16</td><td>63,39 cm</td><td>199,1 cm</td><td>+0,32 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">325/35 R16</td><td>63,39 cm</td><td>199,1 cm</td><td>+0,32 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">165/60 R17</td><td>62,98 cm</td><td>197,9 cm</td><td>−0,33 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">345/25 R18</td><td>62,97 cm</td><td>197,8 cm</td><td>−0,35 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">295/30 R18</td><td>63,42 cm</td><td>199,2 cm</td><td>+0,36 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">225/45 R17</td><td>63,43 cm</td><td>199,3 cm</td><td>+0,38 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">285/40 R16</td><td>63,44 cm</td><td>199,3 cm</td><td>+0,40 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">195/65 R15</td><td>63,45 cm</td><td>199,3 cm</td><td>+0,41 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">215/40 R18</td><td>62,92 cm</td><td>197,7 cm</td><td>−0,43 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">155/80 R15</td><td>62,90 cm</td><td>197,6 cm</td><td>−0,46 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">145/70 R17</td><td>63,48 cm</td><td>199,4 cm</td><td>+0,46 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">245/35 R18</td><td>62,87 cm</td><td>197,5 cm</td><td>−0,51 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">165/75 R15</td><td>62,85 cm</td><td>197,4 cm</td><td>−0,54 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">225/55 R15</td><td>62,85 cm</td><td>197,4 cm</td><td>−0,54 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">275/45 R15</td><td>62,85 cm</td><td>197,4 cm</td><td>−0,54 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">185/55 R17</td><td>63,53 cm</td><td>199,6 cm</td><td>+0,54 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">185/60 R16</td><td>62,84 cm</td><td>197,4 cm</td><td>−0,55 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">285/30 R18</td><td>62,82 cm</td><td>197,4 cm</td><td>−0,59 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">255/35 R18</td><td>63,57 cm</td><td>199,7 cm</td><td>+0,60 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">255/40 R17</td><td>63,58 cm</td><td>199,7 cm</td><td>+0,62 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">255/45 R16</td><td>63,59 cm</td><td>199,8 cm</td><td>+0,63 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">245/40 R17</td><td>62,78 cm</td><td>197,2 cm</td><td>−0,65 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">255/50 R15</td><td>63,60 cm</td><td>199,8 cm</td><td>+0,65 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">155/55 R18</td><td>62,77 cm</td><td>197,2 cm</td><td>−0,66 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">145/85 R15</td><td>62,75 cm</td><td>197,1 cm</td><td>−0,70 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">205/60 R15</td><td>62,70 cm</td><td>197,0 cm</td><td>−0,78 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">205/50 R17</td><td>63,68 cm</td><td>200,1 cm</td><td>+0,78 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">245/45 R16</td><td>62,69 cm</td><td>196,9 cm</td><td>−0,79 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">315/35 R16</td><td>62,69 cm</td><td>196,9 cm</td><td>−0,79 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">195/50 R17</td><td>62,68 cm</td><td>196,9 cm</td><td>−0,81 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">325/30 R17</td><td>62,68 cm</td><td>196,9 cm</td><td>−0,81 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">225/40 R18</td><td>63,72 cm</td><td>200,2 cm</td><td>+0,84 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">165/70 R16</td><td>63,74 cm</td><td>200,2 cm</td><td>+0,87 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">275/40 R16</td><td>62,64 cm</td><td>196,8 cm</td><td>−0,87 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">285/45 R15</td><td>63,75 cm</td><td>200,3 cm</td><td>+0,89 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">175/70 R15</td><td>62,60 cm</td><td>196,7 cm</td><td>−0,93 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">245/50 R15</td><td>62,60 cm</td><td>196,7 cm</td><td>−0,93 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">295/35 R17</td><td>63,83 cm</td><td>200,5 cm</td><td>+1,01 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">145/80 R16</td><td>63,84 cm</td><td>200,6 cm</td><td>+1,03 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">215/45 R17</td><td>62,53 cm</td><td>196,4 cm</td><td>−1,04 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">165/55 R18</td><td>63,87 cm</td><td>200,7 cm</td><td>+1,08 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td style="font-weight:700">305/40 R15</td><td>62,50 cm</td><td>196,3 cm</td><td>−1,09 %</td><td class="alt-legal">✓ Ja</td></tr>
+              <tr><td colspan="5" style="text-align:center;color:#4b5563;font-size:11px">Viser 50 av 230 resultater</td></tr>
+            </tbody>
             </table>
           </div>
         </div>
 
       </div><!-- /.calc -->
 
+
       <!-- CONTENT: home -->
       <section class="content" style="margin:32px 0;line-height:1.7">
 
-        <h2>Hvilke dekk passer på bilen din?</h2>
-        <p>Spørsmålet har tre svar som alle må stemme før et dekkbytte er greit. Kalkulatoren over tar seg av det andre; her er hele bildet.</p>
+        <h2>Tre spørsmål, og alle tre må stemme</h2>
+        <p>Dekkalkulatoren over svarer på det andre. Her er de tre, i den rekkefølgen et verksted ville tatt dem.</p>
         <ol>
-          <li><strong>Står dimensjonen i vognkortet?</strong> Er den oppført, er den godkjent for bilen din, og du trenger ikke regne på noe. Vognkortet lister ofte flere dimensjoner.</li>
-          <li><strong>Er avviket i rulleomkrets innenfor ±5 %?</strong> Er dimensjonen ikke oppført, er dette hovedregelen i det norske dekkmiljøet. Legg begge dimensjonene inn over, så får du avviket i prosent med én gang.</li>
-          <li><strong>Passer dekket fysisk?</strong> Felgbredden må stemme med dekkbredden, og dekket må ha klaring i hjulhuset ved fullt rattutslag. Et dekk kan ligge innenfor ±5 % og likevel skrape.</li>
+          <li><strong>Står dimensjonen i vognkortet?</strong> Er den oppført, er den godkjent for bilen din, og du trenger ikke regne på noe. Sjekk hele listen: det står ofte flere dimensjoner der enn folk tror.</li>
+          <li><strong>Holder avviket seg innenfor ±5 %?</strong> Er dimensjonen ikke oppført, er dette regelen som gjelder. Legg begge inn over, så får du prosenten med én gang.</li>
+          <li><strong>Er det fysisk plass?</strong> Felgbredden må passe dekkbredden, og hjulet må gå klar ved fullt rattutslag. Et dekk kan ligge på 1 % avvik og likevel skrape mot innerskjermen.</li>
         </ol>
-        <p>Vet du ikke hvilken dekkstørrelse bilen har i dag, står den på siden av dekket i formen 205/55 R16 — og i vognkortet. <a href="/dekkdimensjon">Slik leser du dekkdimensjonen</a> forklarer hvert tall.</p>
+        <p>Vet du ikke hvilken dekkstørrelse bilen har nå, står den på siden av dekket i formen 205/55 R16, og i vognkortet. <a href="/dekkdimensjon">Slik leser du dekkdimensjonen</a> tar hvert tegn for seg.</p>
 
-        <h2>Slik bruker du dekkalkulatoren</h2>
-        <p>Legg inn dimensjonen du har i dag til venstre og den du vurderer til høyre. Dekkalkulatoren regner om begge til faktiske millimeter og viser forskjellen med en gang:</p>
+        <h2>Hva tallene i kalkulatoren betyr for deg</h2>
+        <p>Fem verdier kommer ut. Én av dem avgjør, resten forklarer hvorfor. Felgen oppgis i tommer og dekket i millimeter, så det første <strong>dekkalkulatoren</strong> gjør er å gjøre om enhetene. Vil du se den omregningen for seg, finnes det et eget verktøy for å <a href="/tommer-til-cm">regne om tommer til centimeter</a>.</p>
         <ul>
-          <li><strong>Diameter</strong> — dekkets ytre mål. Det er dette, ikke dimensjonstallene, som avgjør om noe endrer seg.</li>
-          <li><strong>Rulleomkrets</strong> — hvor langt dekket ruller på én omdreining, og grunnlaget for avviket som måles ved kontroll.</li>
-          <li><strong>Flankehøyde</strong> — dekkets «gummipute». Lavere flanke gir skarpere styrerespons, men hardere gange og mer utsatt felg.</li>
-          <li><strong>Omdreininger per kilometer</strong> — det bilen faktisk teller, og derfor det kilometertelleren bygger på.</li>
-          <li><strong>Avvik i prosent</strong> — det ene tallet som avgjør om byttet holder seg innenfor.</li>
+          <li><strong>Avvik i prosent.</strong> Dette er svaret. Under ±5 % er byttet innenfor, og jo nærmere null, desto mindre merker du det.</li>
+          <li><strong>Rulleomkrets.</strong> Hvor langt hjulet ruller på én omdreining. Det er her avviket måles, ikke på dimensjonstallene.</li>
+          <li><strong>Diameter.</strong> Dekkets ytre mål. To dimensjoner som ser helt ulike ut kan ha nesten samme diameter.</li>
+          <li><strong>Flankehøyde.</strong> Gummiputen mellom felg og vei. Lavere flanke gir skarpere styring, men hardere gange og mer utsatt felg i hull.</li>
+          <li><strong>Omdreininger per kilometer.</strong> Det bilen faktisk teller, og grunnlaget for kilometertelleren.</li>
         </ul>
-        <p>Alt regnes ut mens du skriver. Ingen registrering, ingen nedlasting.</p>
+        <p>Alt regnes ut mens du velger. Ingen registrering, ingen nedlasting.</p>
 
-        <h2>Når lønner det seg å bytte dekkdimensjon?</h2>
-        <p>Det vanligste er ikke at noen vil bytte, men at de <em>må</em>: originaldimensjonen har blitt vanskelig å få tak i, eller finnes bare i få mønstre og til høy pris. Da er en alternativ dimensjon med tilnærmet lik diameter den praktiske løsningen, og listen over alternativer under kalkulatoren viser hvilke som er aktuelle.</p>
-        <p>Ellers er det tre grunner som går igjen:</p>
+        <h2>Når er det verdt å bytte dimensjon?</h2>
+        <p>Det vanligste er ikke at noen vil bytte, men at de <em>må</em>. Originaldimensjonen er blitt vanskelig å få tak i, eller finnes bare i få mønstre og til stiv pris. Da er en alternativ dimensjon med tilnærmet lik diameter den praktiske løsningen, og listen under kalkulatoren viser hvilke som er aktuelle.</p>
+        <p>Ellers går tre grunner igjen:</p>
         <ul>
-          <li><strong>Bredere dekk for bedre grep på tørt underlag.</strong> Går du opp i bredde, må profilen ned for at diameteren skal holde seg. Regn alltid begge veier.</li>
-          <li><strong>Større felg av utseendehensyn.</strong> Én tomme opp i felg krever tilsvarende lavere profil. Effekten er reell: bedre respons, men mer veistøy og større risiko for felgskade i hull.</li>
-          <li><strong>Smalere dekk til vinterbruk.</strong> Smalere dekk skjærer bedre gjennom snø og slaps enn brede.</li>
+          <li><strong>Bredere dekk for bedre grep på tørt underlag.</strong> Går du opp i bredde, må profilen ned for at diameteren skal holde seg.</li>
+          <li><strong>Større felg av utseendehensyn.</strong> Én tomme opp krever tilsvarende lavere profil. Effekten er reell i begge retninger: bedre respons, men mer veistøy og større risiko for felgskade.</li>
+          <li><strong>Smalere dekk til vinteren.</strong> Smalt skjærer bedre gjennom snø og slaps enn bredt.</li>
+          <li><strong>Annen kjøretøytype.</strong> Reglene er de samme, men utgangspunktet er ikke: se <a href="/dekk-suv">dekkdimensjoner for SUV</a> eller <a href="/dekk-mc">dekk til motorsykkel</a>.</li>
         </ul>
-        <p>Uansett grunn er regnestykket det samme, og grensen er den samme. Vil du se hvor mye speedometeret forskyver seg med den nye dimensjonen, gjør <a href="/speedometer-avvik">speedometer avvik kalkulatoren</a> det ved vanlige hastigheter.</p>
+        <p>Uansett grunn er regnestykket det samme, og grensen er den samme. Vil du se hvor mye speedometeret forskyver seg, gjør <a href="/speedometer-avvik">speedometer avvik kalkulatoren</a> det ved norske fartsgrenser.</p>
 
-        <h2>Hva et avvik faktisk gjør med bilen</h2>
-        <p>Et dekk med større rulleomkrets gjør at du kjører fortere enn speedometeret viser, og at kilometertelleren teller for lite. Et mindre dekk gir motsatt utslag. I tillegg endres den effektive utvekslingen: større omkrets gir lavere turtall ved marsjfart, men tregere akselerasjon.</p>
-        <p>Avvik mellom for- og bakaksel kan også gi utslag på ABS og antispinn, som sammenligner turtallet på de fire hjulene. Derfor bør begge akslene ha samme rulleomkrets, selv når dimensjonene er ulike foran og bak.</p>
+        <h2>Hvor grensen på ±5 % kommer fra</h2>
+        <p>Grensen er ikke noe dekkbransjen har funnet på hver for seg. Den følger <strong>STRO-normen</strong>, standarden det nordiske dekkmiljøet arbeider etter, og forhandlerne slår opp de godkjente alternativene i STRO Databok. <a href="https://www.nokiantyres.no/dekktips/velge-dekk/alternative-dekkdimensjoner/" rel="nofollow noopener" target="_blank">Nokian Tyres</a>, <a href="https://www.norgesdekk.no/om-dekk/alternative-dimensjoner" rel="nofollow noopener" target="_blank">Norgesdekk</a> og <a href="https://www.dekkshop.no/dekkinformasjon/dimensjoner-og-dekkbytte" rel="nofollow noopener" target="_blank">Dekkshop</a> oppgir alle den samme.</p>
+        <p>Grunnen til at det finnes en grense: bilen bruker hjulomdreininger til mer enn å vise fart. Speedometer og kilometerteller er de synlige forbrukerne. ABS og antispinn sammenligner turtallet på de fire hjulene for å oppdage at ett av dem slipper, og det sammenligningsgrunnlaget forskyver seg når rulleomkretsen endres.</p>
+
+        <h3>Hva avviket gjør bak rattet</h3>
+        <p>Større rulleomkrets betyr at du kjører fortere enn speedometeret viser, og at kilometertelleren teller for lite. Mindre dekk gir motsatt utslag. I tillegg endres den effektive utvekslingen: større omkrets gir lavere turtall ved marsjfart, men tregere akselerasjon.</p>
+        <p>Har bilen ulike dimensjoner foran og bak, skal begge holde seg innenfor mot sin egen originaldimensjon. På firehjulstrekk er det ikke en detalj: forskjeller mellom akslene belaster drivlinjen hele tiden bilen ruller.</p>
 
       </section>
+
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
+        <p style="margin:0 0 14px;color:#4b5563;font-size:.96rem">Har du tallet? Neste spørsmål er om dimensjonen er godkjent for bilen din.</p>
+        <a href="/lovlig-avvik-dekkdimensjon" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Sjekk om avviket ditt er lovlig &rarr;</a>
+        <a href="#kalkulator" style="display:inline-block;margin-left:14px;color:#4b5563;text-decoration:none;font-size:.92rem;border-bottom:1px solid #d8d8d4;padding-bottom:2px">Tilbake til kalkulatoren</a>
+      </div>
 
       <!-- RELATED TOOLS -->
       <div class="related">
         <h2>Flere dekk kalkulatorer og verktøy</h2>
         <div class="rel-grid">
-          <a href="/lovlig-avvik-dekkdimensjon">Lovlig avvik dekkdimensjon <span class="arrow">&rarr;</span></a>
-          <a href="/felg-kalkulator">Dekk og felg kalkulator <span class="arrow">&rarr;</span></a>
-          <a href="/overgangstabell-dekk">Overgangstabell for dekk <span class="arrow">&rarr;</span></a>
-          <a href="/rulleomkrets-traktordekk">Rulleomkrets på traktordekk <span class="arrow">&rarr;</span></a>
+          <a href="/lovlig-avvik-dekkdimensjon">Sjekk om avviket ditt er lovlig <span class="arrow">&rarr;</span></a>
+          <a href="/felg-kalkulator">Regn ut felg, innpress og sporvidde <span class="arrow">&rarr;</span></a>
+          <a href="/overgangstabell-dekk">Finn dimensjonene som ruller like langt <span class="arrow">&rarr;</span></a>
+          <a href="/rulleomkrets-traktordekk">Regn ut omkrets og forspring på traktor <span class="arrow">&rarr;</span></a>
         </div>
       </div>
 
@@ -341,7 +516,7 @@
         <h2>Vanlige spørsmål om dekkalkulator og dekkdimensjoner</h2>
         <details open>
           <summary>Hvor stort avvik er lovlig i Norge?</summary>
-          <p>Statens vegvesen tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Denne dekkkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik.</p>
+          <p>Dekkbransjen regner ±5 % avvik i rulleomkrets som grensen, etter STRO-normen (Scandinavian Tire and Rim Organization). Det er denne grensen forhandlerne slår opp i STRO Databok. Denne dekkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik.</p>
         </details>
         <details>
           <summary>Hvordan leser jeg dekkstørrelsen i kalkulatoren?</summary>
@@ -353,7 +528,7 @@
         </details>
         <details>
           <summary>Kan jeg bruke bredere dekk?</summary>
-          <p>Det avhenger av felgbredden og plassen i hjulhuset. Bruk <a href="/felg-kalkulator">felg kalkulatoren</a> for å sjekke kompatibilitet, og se <a href="/dekk-felg-tabell">dekk og felg tabellen</a> for godkjente kombinasjoner. Generelt kan du gå 10–20 mm bredere uten problemer, men sjekk alltid mot bilen din.</p>
+          <p>Det avhenger av felgbredden og plassen i hjulhuset. Bruk <a href="/felg-kalkulator">felg kalkulatoren</a> for å sjekke kompatibilitet, og se <a href="/dekk-felg-tabell">dekk og felg tabellen</a> for godkjente kombinasjoner. På personbilbredder tåler felgen som regel 10 mm bredere dekk enn idealet, og 20 mm smalere. Slå opp din egen felgbredde i dekk og felg tabellen.</p>
         </details>
       </div>
 
@@ -363,10 +538,10 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"Hvor stort avvik er lovlig i Norge?","acceptedAnswer":{"@type":"Answer","text":"Statens vegvesen tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Denne dekkkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik."}},
+          {"@type":"Question","name":"Hvor stort avvik er lovlig i Norge?","acceptedAnswer":{"@type":"Answer","text":"Dekkbransjen regner ±5 % avvik i rulleomkrets som grensen, etter STRO-normen (Scandinavian Tire and Rim Organization). Det er denne grensen forhandlerne slår opp i STRO Databok. Denne dekkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik."}},
           {"@type":"Question","name":"Hvordan leser jeg dekkstørrelsen i kalkulatoren?","acceptedAnswer":{"@type":"Answer","text":"Skriv inn tallene fra dekket ditt, for eksempel 205/55 R16: velg 205 som bredde, 55 som profil og 16 som felg. Kalkulatoren beregner total diameter og rulleomkrets automatisk og viser forskjellen mellom original og nytt dekk."}},
           {"@type":"Question","name":"Påvirker nye dekk speedometeret?","acceptedAnswer":{"@type":"Answer","text":"Ja. Dekk med en annen rulleomkrets gjør at hjulene roterer raskere eller saktere. Større dekk betyr at du kjører raskere enn speedometeret viser. Bruk speedometer avvik kalkulatoren for nøyaktig beregning ved vanlige hastigheter i Norge."}},
-          {"@type":"Question","name":"Kan jeg bruke bredere dekk?","acceptedAnswer":{"@type":"Answer","text":"Det avhenger av felgbredden og plassen i hjulhuset. Bruk felg kalkulatoren for å sjekke kompatibilitet, og se dekk og felg tabellen for godkjente kombinasjoner. Generelt kan du gå 10–20 mm bredere uten problemer, men sjekk alltid mot bilen din."}}
+          {"@type":"Question","name":"Kan jeg bruke bredere dekk?","acceptedAnswer":{"@type":"Answer","text":"Det avhenger av felgbredden og plassen i hjulhuset. Bruk felg kalkulatoren for å sjekke kompatibilitet, og se dekk og felg tabellen for godkjente kombinasjoner. På personbilbredder tåler felgen som regel 10 mm bredere dekk enn idealet, og 20 mm smalere. Slå opp din egen felgbredde i dekk og felg tabellen."}}
         ]
       }
       </script>
@@ -377,11 +552,11 @@
       <section class="kilder" style="margin:48px 0;padding-top:24px;border-top:1px solid #f3f4f6">
         <h2>Kilder</h2>
         <ul style="margin:12px 0 0 20px">
-          <li><a href="https://lovdata.no/dokument/SF/forskrift/1994-10-04-918" rel="noopener">Kjøretøyforskriften</a> — Lovdata</li>
-          <li><a href="https://www.vegvesen.no/" rel="noopener">Statens vegvesen</a> — krav til dekk og felg</li>
-          <li>STRO / ETRTO — standarder for dekkdimensjoner og merking</li>
+          <li><a href="https://lovdata.no/dokument/SF/forskrift/1994-10-04-918" rel="noopener">Kjøretøyforskriften</a>: Lovdata</li>
+          <li><a href="https://www.vegvesen.no/" rel="noopener">Statens vegvesen</a>: krav til dekk og felg</li>
+          <li>STRO / ETRTO – standarder for dekkdimensjoner og merking</li>
         </ul>
-        <p style="margin-top:12px;font-size:.9rem;color:#6b7280">Beregningene er veiledende. Se <a href="/om-oss">om oss</a> for formelen vi bruker.</p>
+        <p style="margin-top:12px;font-size:.9rem;color:#6b7280">Beregningene er veiledende.</p>
       </section>
   </main>
 
@@ -397,7 +572,7 @@
       <div class="f-legal" style="margin-top:12px;font-size:.9em">
         <a href="/personvern">Personvern</a> · <a href="/om-oss">Om oss</a> · <a href="/kontakt">Kontakt</a> · <a href="/vilkar">Vilkår</a>
       </div>
-      <div class="f-copy">© 2026 dekkalkulator.online — Gratis dekkalkulator for alle biltyper</div>
+      <div class="f-copy">© 2026 dekkalkulator.online – Gratis dekkalkulator for alle biltyper</div>
     </div>
   </footer>
 
@@ -503,8 +678,8 @@ function drawTires(origD, newD) {
     '<line x1="' + (222 - rim2) + '" y1="70" x2="' + (222 + rim2) + '" y2="70" stroke="#9ca3af" stroke-width="0.5"/>' +
     '<text x="222" y="142" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="600" font-family="system-ui,sans-serif">' + fmt(newD / 10, 1) + ' cm</text>' +
     // Labels
-    '<text x="78" y="10" text-anchor="middle" fill="#6366f1" font-size="10" font-weight="700" font-family="system-ui,sans-serif">ORIGINAL</text>' +
-    '<text x="222" y="10" text-anchor="middle" fill="#16a34a" font-size="10" font-weight="700" font-family="system-ui,sans-serif">NY</text>' +
+    '<text x="78" y="10" text-anchor="middle" fill="#4f46e5" font-size="10" font-weight="700" font-family="system-ui,sans-serif">ORIGINAL</text>' +
+    '<text x="222" y="10" text-anchor="middle" fill="#15803d" font-size="10" font-weight="700" font-family="system-ui,sans-serif">NY</text>' +
     '</svg>';
 }
 
@@ -574,7 +749,7 @@ function calculate() {
     shtml += '<div class="speed-item">';
     shtml += '<div class="lbl">Viser ' + speeds[j] + ' km/t</div>';
     shtml += '<div class="spd">' + fmt(rs) + ' km/t</div>';
-    shtml += '<div class="lbl" style="color:' + (diff > 0.05 ? '#16a34a' : diff < -0.05 ? '#dc2626' : '#6b7280') + '">';
+    shtml += '<div class="lbl" style="color:' + (diff > 0.05 ? '#15803d' : diff < -0.05 ? '#dc2626' : '#6b7280') + '">';
     shtml += (diff > 0 ? '+' : '') + fmt(diff) + ' km/t</div></div>';
   }
   document.getElementById('speedGrid').innerHTML = shtml;
@@ -624,8 +799,8 @@ function calcAlternatives(oW, oP, oR) {
     html += '<td class="' + (legal ? 'alt-legal' : 'alt-illegal') + '">' + (legal ? '\u2713 Ja' : '\u2717 Nei') + '</td>';
     html += '</tr>';
   }
-  if (results.length === 0) html = '<tr><td colspan="5" style="text-align:center;color:#9ca3af;padding:20px">Ingen alternative dekk funnet med valgte filtre</td></tr>';
-  if (results.length > 50) html += '<tr><td colspan="5" style="text-align:center;color:#9ca3af;font-size:11px">Viser 50 av ' + results.length + ' resultater</td></tr>';
+  if (results.length === 0) html = '<tr><td colspan="5" style="text-align:center;color:#4b5563;padding:20px">Ingen alternative dekk funnet med valgte filtre</td></tr>';
+  if (results.length > 50) html += '<tr><td colspan="5" style="text-align:center;color:#4b5563;font-size:11px">Viser 50 av ' + results.length + ' resultater</td></tr>';
   document.getElementById('altBody').innerHTML = html;
 }
 

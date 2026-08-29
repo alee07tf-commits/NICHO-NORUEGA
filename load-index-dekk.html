@@ -3,24 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
-  <title>Load index dekk — Tabell og kalkulator for lasteindeks</title>
-  <meta name="description" content="Slå opp load index for dekk i komplett tabell (60–120). Finn bæreevne i kg per dekk og totalt for 4 hjul. Gratis og enkel kalkulator.">
+  <title>Load index dekk – Tabell og kalkulator for lasteindeks</title>
+  <meta name="description" content="Slå opp lastindeksen fra dekksiden i tabellen 60–120 og se bæreevnen i kg per dekk og for fire hjul. Sammenlign mot kravet i vognkortet.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/load-index-dekk">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Load index dekk — Tabell og kalkulator for lasteindeks">
-  <meta property="og:description" content="Slå opp load index for dekk i komplett tabell (60–120). Finn bæreevne i kg per dekk og totalt for 4 hjul.">
+  <meta property="og:title" content="Load index dekk – Tabell og kalkulator for lasteindeks">
+  <meta property="og:description" content="Slå opp lastindeksen fra dekksiden i tabellen 60–120 og se bæreevnen i kg per dekk og for fire hjul. Sammenlign mot kravet i vognkortet.">
   <meta property="og:url" content="https://dekkalkulator.online/load-index-dekk">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
+  <meta property="og:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dekkalkulator for norske bilister. Regn ut rulleomkrets, speedometeravvik og lovlige alternative dekkdimensjoner">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Load index dekk — Kalkulator",
+    "name": "Load index dekk – Kalkulator",
     "description": "Slå opp load index for dekk og finn bæreevne i kg. Komplett tabell fra 60 til 120.",
     "url": "https://dekkalkulator.online/load-index-dekk",
     "applicationCategory": "UtilityApplication",
@@ -75,15 +111,15 @@
     .search-wrap{max-width:420px;margin:0 auto 32px;text-align:center}
     .search-wrap label{display:block;font-size:14px;font-weight:600;color:#4b5563;margin-bottom:8px}
     .search-input{width:100%;padding:14px 20px;border:2px solid #e5e7eb;border-radius:12px;font-size:20px;font-weight:700;text-align:center;color:#111827;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;transition:border-color .2s,box-shadow .2s}
-    .search-input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,0.1)}
+    .search-input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 4px rgba(99,102,241,0.1)}
     .search-input::placeholder{color:#d1d5db;font-weight:400;font-family:system-ui,sans-serif;font-size:16px}
 
     /* ── RESULT DISPLAY ── */
     .result-display{max-width:540px;margin:0 auto 32px;padding:28px 24px;background:#f0fdf4;border:2px solid #bbf7d0;border-radius:16px;text-align:center;display:none}
     .result-display.active{display:block}
     .result-main{font-size:32px;font-weight:800;color:#111827;letter-spacing:-0.02em;line-height:1.2}
-    .result-main .li-num{color:#6366f1}
-    .result-main .li-kg{color:#16a34a}
+    .result-main .li-num{color:#4f46e5}
+    .result-main .li-kg{color:#15803d}
     .result-total{margin-top:12px;font-size:18px;font-weight:600;color:#4b5563}
     .result-total span{color:#111827;font-weight:800}
     @media(max-width:640px){
@@ -93,34 +129,34 @@
 
     /* ── COMMON EXAMPLES ── */
     .examples-card{max-width:540px;margin:0 auto 32px;padding:16px 20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}
-    .examples-card h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9ca3af;margin-bottom:10px}
+    .examples-card h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;margin-bottom:10px}
     .examples-list{display:flex;flex-wrap:wrap;gap:8px}
     .example-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:500;color:#374151;cursor:pointer;transition:all .15s}
-    .example-chip:hover{border-color:#6366f1;background:#f5f3ff}
+    .example-chip:hover{border-color:#4f46e5;background:#f5f3ff}
     .example-chip strong{font-weight:700;color:#111827}
 
     /* ── LOAD INDEX TABLE ── */
     .li-table-section{margin-top:8px}
-    .li-table-section h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
+    .li-table-section h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
     .li-table-wrap{max-height:520px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:12px}
     table.li-table{width:100%;border-collapse:collapse}
-    table.li-table th{background:#f3f4f6;padding:12px 16px;text-align:center;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.04em;position:sticky;top:0;z-index:2}
+    table.li-table th{background:#f3f4f6;padding:12px 16px;text-align:center;font-size:11px;text-transform:uppercase;color:#374151;font-weight:700;letter-spacing:0.04em;position:sticky;top:0;z-index:2}
     table.li-table td{padding:10px 16px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:14px;font-weight:500;color:#374151;transition:background .15s}
     table.li-table tbody tr:hover{background:#f5f3ff}
-    table.li-table tbody tr.highlighted{background:#eef2ff;outline:2px solid #6366f1;outline-offset:-2px}
+    table.li-table tbody tr.highlighted{background:#eef2ff;outline:2px solid #4f46e5;outline-offset:-2px}
     table.li-table tbody tr.highlighted td{font-weight:700;color:#111827}
-    table.li-table td:first-child{font-weight:700;color:#6366f1;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:16px}
+    table.li-table td:first-child{font-weight:700;color:#4f46e5;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:16px}
     table.li-table td:nth-child(2){font-weight:700;color:#111827}
     table.li-table td:nth-child(3){color:#6b7280}
-    .no-results{text-align:center;color:#9ca3af;padding:24px;font-size:14px}
+    .no-results{text-align:center;color:#6b7280;padding:24px;font-size:14px}
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -129,12 +165,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -145,35 +181,78 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Dekkalkulator",
-      "item": "https://dekkalkulator.online/"
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://dekkalkulator.online/load-index-dekk#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dekkalkulator",
+        "item": "https://dekkalkulator.online/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Load index dekk",
+        "item": "https://dekkalkulator.online/load-index-dekk"
+      }
+    ]
+  }
+  </script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+<meta name="twitter:title" content="Load index dekk – Tabell og kalkulator for lasteindeks">
+<meta name="twitter:description" content="Slå opp lastindeksen fra dekksiden i tabellen 60–120 og se bæreevnen i kg per dekk og for fire hjul. Sammenlign mot kravet i vognkortet.">
+<meta name="twitter:url" content="https://dekkalkulator.online/load-index-dekk">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://dekkalkulator.online/load-index-dekk#webpage",
+    "url": "https://dekkalkulator.online/load-index-dekk",
+    "name": "Load index dekk – Tabell og kalkulator for lasteindeks",
+    "description": "Slå opp lastindeksen fra dekksiden i tabellen 60–120 og se bæreevnen i kg per dekk og for fire hjul. Sammenlign mot kravet i vognkortet.",
+    "inLanguage": "nb-NO",
+    "isPartOf": {
+      "@id": "https://dekkalkulator.online/#website"
     },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Load index dekk",
-      "item": "https://dekkalkulator.online/load-index-dekk"
+    "publisher": {
+      "@id": "https://dekkalkulator.online/#organization"
+    },
+    "dateModified": "2026-08-29",
+    "breadcrumb": {
+      "@id": "https://dekkalkulator.online/load-index-dekk#breadcrumb"
     }
-  ]
-}
-</script>
+  }
+  </script>
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -185,19 +264,26 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
-  <main>
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Load index dekk</span></li>
+    </ol>
+  </nav>
+
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Komplett load index tabell</span>
-        <h1>Load index dekk — Finn bæreevne for dine dekk</h1>
-        <p>Slå opp load index (lasteindeks) og finn hvor mange kilo hvert dekk tåler. Skriv inn nummeret fra dekket ditt og se bæreevne per dekk og totalt for 4 hjul.</p>
+        <h1>Load index dekk – <span class="hl">Finn bæreevne for dine dekk</span></h1>
+        <p>Lastindeksen er tallet foran hastighetskoden, og den oppgir hvor mange kilo hvert dekk tåler. Nye dekk må ha minst like høy lastindeks som vognkortet krever. Slå opp nummeret ditt under, så får du bæreevnen i kilo.</p>
       </div>
 
       <!-- TOOL -->
@@ -210,18 +296,18 @@
         </div>
 
         <!-- RESULT DISPLAY -->
-        <div class="result-display" id="resultDisplay">
+        <div class="result-display" id="resultDisplay" role="status" aria-live="polite" aria-atomic="true">
           <div class="result-main">Load index <span class="li-num" id="resIndex"></span> = <span class="li-kg" id="resKg"></span> kg per dekk</div>
           <div class="result-total">4 dekk = <span id="resTotal"></span> kg total bæreevne</div>
         </div>
 
         <!-- COMMON EXAMPLES -->
         <div class="examples-card">
-          <h3>Vanlige load index for norske biler</h3>
+          <h2>Vanlige load index for norske biler</h2>
           <div class="examples-list">
-            <button class="example-chip" data-li="91"><strong>91</strong> — VW Golf</button>
-            <button class="example-chip" data-li="94"><strong>94</strong> — Toyota RAV4</button>
-            <button class="example-chip" data-li="99"><strong>99</strong> — BMW X5</button>
+            <button class="example-chip" data-li="91"><strong>91</strong> – VW Golf</button>
+            <button class="example-chip" data-li="94"><strong>94</strong> – Toyota RAV4</button>
+            <button class="example-chip" data-li="99"><strong>99</strong> – BMW X5</button>
           </div>
         </div>
 
@@ -229,17 +315,79 @@
         <div class="li-table-section">
           <h2>Komplett load index tabell (60–120)</h2>
           <div class="li-table-wrap">
-            <table class="li-table" aria-label="Load index tabell med bæreevne i kg">
+            <table class="li-table" aria-label="Load index tabell med bæreevne i kg"><caption class="sr-only">Load index tabell med bæreevne i kg</caption>
               <thead>
                 <tr>
-                  <th>Load Index</th>
-                  <th>Kg per dekk</th>
-                  <th>Kg totalt (×4)</th>
+                  <th scope="col">Load Index</th>
+                  <th scope="col">Kg per dekk</th>
+                  <th scope="col">Kg totalt (×4)</th>
                 </tr>
               </thead>
-              <tbody id="liBody"></tbody>
+              <tbody id="liBody">
+              <tr><td>60</td><td>250 kg</td><td>1&nbsp;000 kg</td></tr>
+              <tr><td>61</td><td>257 kg</td><td>1&nbsp;028 kg</td></tr>
+              <tr><td>62</td><td>265 kg</td><td>1&nbsp;060 kg</td></tr>
+              <tr><td>63</td><td>272 kg</td><td>1&nbsp;088 kg</td></tr>
+              <tr><td>64</td><td>280 kg</td><td>1&nbsp;120 kg</td></tr>
+              <tr><td>65</td><td>290 kg</td><td>1&nbsp;160 kg</td></tr>
+              <tr><td>66</td><td>300 kg</td><td>1&nbsp;200 kg</td></tr>
+              <tr><td>67</td><td>307 kg</td><td>1&nbsp;228 kg</td></tr>
+              <tr><td>68</td><td>315 kg</td><td>1&nbsp;260 kg</td></tr>
+              <tr><td>69</td><td>325 kg</td><td>1&nbsp;300 kg</td></tr>
+              <tr><td>70</td><td>335 kg</td><td>1&nbsp;340 kg</td></tr>
+              <tr><td>71</td><td>345 kg</td><td>1&nbsp;380 kg</td></tr>
+              <tr><td>72</td><td>355 kg</td><td>1&nbsp;420 kg</td></tr>
+              <tr><td>73</td><td>365 kg</td><td>1&nbsp;460 kg</td></tr>
+              <tr><td>74</td><td>375 kg</td><td>1&nbsp;500 kg</td></tr>
+              <tr><td>75</td><td>387 kg</td><td>1&nbsp;548 kg</td></tr>
+              <tr><td>76</td><td>400 kg</td><td>1&nbsp;600 kg</td></tr>
+              <tr><td>77</td><td>412 kg</td><td>1&nbsp;648 kg</td></tr>
+              <tr><td>78</td><td>425 kg</td><td>1&nbsp;700 kg</td></tr>
+              <tr><td>79</td><td>437 kg</td><td>1&nbsp;748 kg</td></tr>
+              <tr><td>80</td><td>450 kg</td><td>1&nbsp;800 kg</td></tr>
+              <tr><td>81</td><td>462 kg</td><td>1&nbsp;848 kg</td></tr>
+              <tr><td>82</td><td>475 kg</td><td>1&nbsp;900 kg</td></tr>
+              <tr><td>83</td><td>487 kg</td><td>1&nbsp;948 kg</td></tr>
+              <tr><td>84</td><td>500 kg</td><td>2&nbsp;000 kg</td></tr>
+              <tr><td>85</td><td>515 kg</td><td>2&nbsp;060 kg</td></tr>
+              <tr><td>86</td><td>530 kg</td><td>2&nbsp;120 kg</td></tr>
+              <tr><td>87</td><td>545 kg</td><td>2&nbsp;180 kg</td></tr>
+              <tr><td>88</td><td>560 kg</td><td>2&nbsp;240 kg</td></tr>
+              <tr><td>89</td><td>580 kg</td><td>2&nbsp;320 kg</td></tr>
+              <tr><td>90</td><td>600 kg</td><td>2&nbsp;400 kg</td></tr>
+              <tr><td>91</td><td>615 kg</td><td>2&nbsp;460 kg</td></tr>
+              <tr><td>92</td><td>630 kg</td><td>2&nbsp;520 kg</td></tr>
+              <tr><td>93</td><td>650 kg</td><td>2&nbsp;600 kg</td></tr>
+              <tr><td>94</td><td>670 kg</td><td>2&nbsp;680 kg</td></tr>
+              <tr><td>95</td><td>690 kg</td><td>2&nbsp;760 kg</td></tr>
+              <tr><td>96</td><td>710 kg</td><td>2&nbsp;840 kg</td></tr>
+              <tr><td>97</td><td>730 kg</td><td>2&nbsp;920 kg</td></tr>
+              <tr><td>98</td><td>750 kg</td><td>3&nbsp;000 kg</td></tr>
+              <tr><td>99</td><td>775 kg</td><td>3&nbsp;100 kg</td></tr>
+              <tr><td>100</td><td>800 kg</td><td>3&nbsp;200 kg</td></tr>
+              <tr><td>101</td><td>825 kg</td><td>3&nbsp;300 kg</td></tr>
+              <tr><td>102</td><td>850 kg</td><td>3&nbsp;400 kg</td></tr>
+              <tr><td>103</td><td>875 kg</td><td>3&nbsp;500 kg</td></tr>
+              <tr><td>104</td><td>900 kg</td><td>3&nbsp;600 kg</td></tr>
+              <tr><td>105</td><td>925 kg</td><td>3&nbsp;700 kg</td></tr>
+              <tr><td>106</td><td>950 kg</td><td>3&nbsp;800 kg</td></tr>
+              <tr><td>107</td><td>975 kg</td><td>3&nbsp;900 kg</td></tr>
+              <tr><td>108</td><td>1&nbsp;000 kg</td><td>4&nbsp;000 kg</td></tr>
+              <tr><td>109</td><td>1&nbsp;030 kg</td><td>4&nbsp;120 kg</td></tr>
+              <tr><td>110</td><td>1&nbsp;060 kg</td><td>4&nbsp;240 kg</td></tr>
+              <tr><td>111</td><td>1&nbsp;090 kg</td><td>4&nbsp;360 kg</td></tr>
+              <tr><td>112</td><td>1&nbsp;120 kg</td><td>4&nbsp;480 kg</td></tr>
+              <tr><td>113</td><td>1&nbsp;150 kg</td><td>4&nbsp;600 kg</td></tr>
+              <tr><td>114</td><td>1&nbsp;180 kg</td><td>4&nbsp;720 kg</td></tr>
+              <tr><td>115</td><td>1&nbsp;215 kg</td><td>4&nbsp;860 kg</td></tr>
+              <tr><td>116</td><td>1&nbsp;250 kg</td><td>5&nbsp;000 kg</td></tr>
+              <tr><td>117</td><td>1&nbsp;285 kg</td><td>5&nbsp;140 kg</td></tr>
+              <tr><td>118</td><td>1&nbsp;320 kg</td><td>5&nbsp;280 kg</td></tr>
+              <tr><td>119</td><td>1&nbsp;360 kg</td><td>5&nbsp;440 kg</td></tr>
+              <tr><td>120</td><td>1&nbsp;400 kg</td><td>5&nbsp;600 kg</td></tr>
+            </tbody>
             </table>
-            <div class="no-results" id="noResults" style="display:none">Ingen treff — prøv et tall mellom 60 og 120</div>
+            <div class="no-results" id="noResults" style="display:none">Ingen treff. Prøv et tall mellom 60 og 120</div>
           </div>
         </div>
 
@@ -249,10 +397,10 @@
       <div class="related">
         <h2>Flere dekk verktøy</h2>
         <div class="rel-grid">
-          <a href="/rulleomkrets-traktordekk">Rulleomkrets på traktordekk <span class="arrow">&rarr;</span></a>
-          <a href="/hastighetskode-dekk">Hastighetskode dekk <span class="arrow">&rarr;</span></a>
-          <a href="/dekk-merking">Dekk merking <span class="arrow">&rarr;</span></a>
-          <a href="/dekktrykk-tabell">Dekktrykk tabell <span class="arrow">&rarr;</span></a>
+          <a href="/rulleomkrets-traktordekk">Regn ut omkrets og forspring på traktor <span class="arrow">&rarr;</span></a>
+          <a href="/hastighetskode-dekk">Se hvilken fart dekket er godkjent for <span class="arrow">&rarr;</span></a>
+          <a href="/dekk-merking">Les merkingen på dekksiden din <span class="arrow">&rarr;</span></a>
+          <a href="/dekktrykk-tabell">Finn riktig lufttrykk for dekket ditt <span class="arrow">&rarr;</span></a>
         </div>
       </div>
 
@@ -269,7 +417,7 @@
         </details>
         <details>
           <summary>Hvilken load index anbefales for min biltype?</summary>
-          <p>Anbefalt load index avhenger av bilens vekt og bruk. Små personbiler bruker typisk 82–91, mellomklasse SUV-er 94–99, og store SUV-er eller varebiler 100–112. Sjekk alltid bilens typegodkjenning for riktig verdi. Bruk <a href="/"">hvilke dekk passer min bil</a> for mer informasjon om riktige dekk.</p>
+          <p>Anbefalt load index avhenger av bilens vekt og bruk. Små personbiler bruker typisk 82–91, mellomklasse SUV-er 94–99, og store SUV-er eller varebiler 100–112. Sjekk alltid bilens typegodkjenning for riktig verdi. Bruk <a href="/">hvilke dekk passer min bil</a> for mer informasjon om riktige dekk.</p>
         </details>
       </div>
 
@@ -301,7 +449,7 @@
       <div class="f-legal" style="margin-top:12px;font-size:.9em">
         <a href="/personvern">Personvern</a> · <a href="/om-oss">Om oss</a> · <a href="/kontakt">Kontakt</a> · <a href="/vilkar">Vilkår</a>
       </div>
-      <div class="f-copy">&copy; 2026 dekkalkulator.online — Gratis dekkalkulator for alle biltyper</div>
+      <div class="f-copy">&copy; 2026 dekkalkulator.online – Gratis dekkalkulator for alle biltyper</div>
     </div>
   </footer>
 

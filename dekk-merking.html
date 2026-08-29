@@ -3,25 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
-  <title>Dekk merking — Les koder og symboler på dekk</title>
-  <meta name="description" content="Forstå dekkmerking raskt: bredde, profil, felgdiameter, load index og hastighetskode. Interaktiv dekoder — skriv inn din merkingskode og se hva alt betyr.">
+  <title>Dekk merking – slik leser du koder og symboler på dekket</title>
+  <meta name="description" content="205/55 R16 91V: hvert tegn betyr noe. Skriv inn merkingen fra dekket ditt og få bredde, profil, felgdiameter, lastindeks og hastighetskode.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/dekk-merking">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dekk merking — Les koder og symboler på dekk">
-  <meta property="og:description" content="Forstå dekkmerking raskt: bredde, profil, felgdiameter, load index og hastighetskode. Interaktiv dekoder for alle dekkstørrelser.">
+  <meta property="og:title" content="Dekk merking – slik leser du koder og symboler på dekket">
+  <meta property="og:description" content="205/55 R16 91V: hvert tegn betyr noe. Skriv inn merkingen fra dekket ditt og få bredde, profil, felgdiameter, lastindeks og hastighetskode.">
   <meta property="og:url" content="https://dekkalkulator.online/dekk-merking">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="Dekkalkulator">
+  <meta property="og:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dekkalkulator for norske bilister. Regn ut rulleomkrets, speedometeravvik og lovlige alternative dekkdimensjoner">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Dekk merking dekoder",
-    "description": "Interaktiv dekoder for dekkmerking — les og forstå alle koder og symboler på dekket ditt.",
+    "description": "Interaktiv dekoder for dekkmerking – les og forstå alle koder og symboler på dekket ditt.",
     "url": "https://dekkalkulator.online/dekk-merking",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "All",
@@ -68,10 +104,10 @@
     @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
 
     .decoder-input-wrap{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:24px}
-    .decoder-input-wrap label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
+    .decoder-input-wrap label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
     .decoder-input-wrap input{padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:17px;font-weight:700;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;color:#111827;width:240px;transition:border-color .2s}
-    .decoder-input-wrap input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
-    .btn-decode{padding:12px 28px;background:#6366f1;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+    .decoder-input-wrap input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .btn-decode{padding:12px 28px;background:#4f46e5;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
     .btn-decode:hover{background:#4f46e5}
 
     .parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px}
@@ -79,17 +115,17 @@
     .part-card .part-code{font-size:28px;font-weight:900;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;line-height:1;margin-bottom:8px}
     .part-card .part-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
     .part-card .part-value{font-size:14px;color:#374151;line-height:1.4}
-    .part-width{background:#eff6ff;border-color:#bfdbfe}.part-width .part-code{color:#1d4ed8}.part-width .part-label{color:#3b82f6}
-    .part-profile{background:#f0fdf4;border-color:#bbf7d0}.part-profile .part-code{color:#15803d}.part-profile .part-label{color:#22c55e}
-    .part-construction{background:#fef9c3;border-color:#fde68a}.part-construction .part-code{color:#92400e}.part-construction .part-label{color:#ca8a04}
-    .part-rim{background:#f5f3ff;border-color:#ddd6fe}.part-rim .part-code{color:#6d28d9}.part-rim .part-label{color:#8b5cf6}
-    .part-load{background:#fff7ed;border-color:#fed7aa}.part-load .part-code{color:#c2410c}.part-load .part-label{color:#f97316}
-    .part-speed{background:#fdf2f8;border-color:#f5d0fe}.part-speed .part-code{color:#86198f}.part-speed .part-label{color:#d946ef}
+    .part-width{background:#eff6ff;border-color:#bfdbfe}.part-width .part-code{color:#1d4ed8}.part-width .part-label{color:#1d4ed8}
+    .part-profile{background:#f0fdf4;border-color:#bbf7d0}.part-profile .part-code{color:#15803d}.part-profile .part-label{color:#15803d}
+    .part-construction{background:#fef9c3;border-color:#fde68a}.part-construction .part-code{color:#92400e}.part-construction .part-label{color:#854d0e}
+    .part-rim{background:#f5f3ff;border-color:#ddd6fe}.part-rim .part-code{color:#6d28d9}.part-rim .part-label{color:#6d28d9}
+    .part-load{background:#fff7ed;border-color:#fed7aa}.part-load .part-code{color:#c2410c}.part-load .part-label{color:#c2410c}
+    .part-speed{background:#fdf2f8;border-color:#f5d0fe}.part-speed .part-code{color:#86198f}.part-speed .part-label{color:#a21caf}
 
     .marking-visual{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:20px;text-align:center;margin-bottom:24px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:22px;font-weight:800;letter-spacing:2px;overflow:hidden;word-break:break-all}
     .marking-visual span{display:inline;padding:2px 4px;border-radius:4px;transition:background .3s}
     .hl-width{background:#bfdbfe;color:#1d4ed8}
-    .hl-sep{color:#9ca3af}
+    .hl-sep{color:#6b7280}
     .hl-profile{background:#bbf7d0;color:#15803d}
     .hl-construction{background:#fde68a;color:#92400e}
     .hl-rim{background:#ddd6fe;color:#6d28d9}
@@ -103,14 +139,14 @@
     .winter-code-badge{font-size:13px;font-weight:800;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;background:#bfdbfe;color:#1d4ed8;padding:4px 8px;border-radius:6px;white-space:nowrap;flex-shrink:0}
     .winter-code-desc{font-size:13px;color:#374151;line-height:1.5}
 
-    .placeholder-msg{text-align:center;color:#9ca3af;padding:32px;font-size:15px}
+    .placeholder-msg{text-align:center;color:#6b7280;padding:32px;font-size:15px}
 
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     .faq{padding:64px 0 0}
@@ -118,12 +154,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
     .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
@@ -133,33 +169,76 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  
+.bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
+.bcrumb a{color:#6b7280;text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb [aria-current]{color:#111827;font-weight:500}
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Dekkalkulator",
-      "item": "https://dekkalkulator.online/"
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://dekkalkulator.online/dekk-merking#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dekkalkulator",
+        "item": "https://dekkalkulator.online/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Dekk merking",
+        "item": "https://dekkalkulator.online/dekk-merking"
+      }
+    ]
+  }
+  </script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
+<meta name="twitter:title" content="Dekk merking – slik leser du koder og symboler på dekket">
+<meta name="twitter:description" content="205/55 R16 91V: hvert tegn betyr noe. Skriv inn merkingen fra dekket ditt og få bredde, profil, felgdiameter, lastindeks og hastighetskode.">
+<meta name="twitter:url" content="https://dekkalkulator.online/dekk-merking">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://dekkalkulator.online/dekk-merking#webpage",
+    "url": "https://dekkalkulator.online/dekk-merking",
+    "name": "Dekk merking – slik leser du koder og symboler på dekket",
+    "description": "205/55 R16 91V: hvert tegn betyr noe. Skriv inn merkingen fra dekket ditt og få bredde, profil, felgdiameter, lastindeks og hastighetskode.",
+    "inLanguage": "nb-NO",
+    "isPartOf": {
+      "@id": "https://dekkalkulator.online/#website"
     },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Dekk merking",
-      "item": "https://dekkalkulator.online/dekk-merking"
+    "publisher": {
+      "@id": "https://dekkalkulator.online/#organization"
+    },
+    "dateModified": "2026-08-29",
+    "breadcrumb": {
+      "@id": "https://dekkalkulator.online/dekk-merking#breadcrumb"
     }
-  ]
-}
-</script>
+  }
+  </script>
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -171,18 +250,25 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
-  <main>
+  <nav class="bcrumb" aria-label="Brødsmulesti">
+    <ol>
+      <li><a href="/">Dekkalkulator</a></li>
+      <li><span aria-current="page">Dekk merking</span></li>
+    </ol>
+  </nav>
+
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <div class="hero">
         <span class="hero-badge">Gratis dekkverktøy for Norge</span>
-        <h1>Dekk merking — Komplett guide til å lese dekkmerking</h1>
-        <p>Skriv inn merking fra dekket ditt og se hva hvert tall og bokstav betyr — bredde, profil, felgdiameter, load index og hastighetskode forklart på sekunder.</p>
+        <h1>Dekk merking – <span class="hl">Komplett guide til å lese dekkmerking</span></h1>
+        <p>Alt som står støpt inn på dekksiden betyr noe, men bare fire ting avgjør om dekket passer bilen din: dimensjonen, lastindeksen, hastighetskoden og DOT-koden med produksjonsuken. Skriv inn merkingen din under, så får du hvert tegn forklart.</p>
       </div>
 
       <div class="calc">
@@ -203,30 +289,78 @@
         </div>
 
         <div class="winter-box">
-          <h2>Vintermerking — M+S og 3PMSF</h2>
+          <h2>Vintermerking: M+S og 3PMSF</h2>
           <div class="winter-codes">
             <div class="winter-code-item">
               <span class="winter-code-badge">M+S</span>
-              <span class="winter-code-desc"><strong>Mud and Snow</strong> — indikerer at dekket er egnet for gjørmete og snødekte veier. Ikke et fullverdig vinterdekk-symbol i dag — dette er en selvdeklarasjon fra produsenten uten standardisert test.</span>
+              <span class="winter-code-desc"><strong>Mud and Snow</strong> – indikerer at dekket er egnet for gjørmete og snødekte veier. Ikke et fullverdig vinterdekk-symbol i dag: dette er en selvdeklarasjon fra produsenten uten standardisert test.</span>
             </div>
             <div class="winter-code-item">
               <span class="winter-code-badge">3PMSF</span>
-              <span class="winter-code-desc"><strong>Three-Peak Mountain Snowflake</strong> — fjellsymbolet med snøflak. Dekket er testet og godkjent for vinterbruk etter standardisert metode (ISO 11168). Dette er det anbefalte symbolet for norske vinterdekk.</span>
+              <span class="winter-code-desc"><strong>Three-Peak Mountain Snowflake</strong> – fjellsymbolet med snøflak. Dekket er testet og godkjent for vinterbruk etter standardisert metode (ISO 11168). Dette er det anbefalte symbolet for norske vinterdekk.</span>
             </div>
             <div class="winter-code-item">
               <span class="winter-code-badge">Nordic</span>
-              <span class="winter-code-desc"><strong>Nordiske vinterdekk</strong> — har vanligvis mange lameller og er laget for norske og skandinaviske vinterforhold. Alltid merket med 3PMSF og ofte M+S.</span>
+              <span class="winter-code-desc"><strong>Nordiske vinterdekk</strong> – har vanligvis mange lameller og er laget for norske og skandinaviske vinterforhold. Alltid merket med 3PMSF og ofte M+S.</span>
             </div>
           </div>
         </div>
       </div>
 
+
+      <!-- CONTENT: dekk-merking -->
+      <section class="content" style="margin:32px 0;line-height:1.7">
+
+        <h2>De fire merkingene som betyr noe</h2>
+        <p>Et dekk er dekket av tekst, men bare fire ting avgjør om det passer bilen din og om det er lovlig å bruke: <strong>dimensjonen</strong>, <strong>lastindeks og hastighetskode</strong>, <strong>DOT-koden</strong> og <strong>vintermerkingen</strong>. Resten er produktnavn og produksjonsinformasjon.</p>
+
+        <h3>DOT-koden: dekkets fødselsdato</h3>
+        <p>DOT-koden avsluttes med fire siffer i en liten oval. De to første er <strong>uken</strong>, de to siste er <strong>året</strong>. <em>DOT ... 2823</em> betyr uke 28 i 2023.</p>
+        <p>Dette er den ene merkingen som ikke står i vognkortet og som ingen selger nevner av seg selv. Gummi eldes uavhengig av mønsterdybde: et dekk som har stått ubrukt i syv år har fortsatt full profil og merkbart dårligere grep på vått og kaldt underlag. Sjekk koden når du kjøper «nye» dekk på tilbud – lageret kan være gammelt.</p>
+
+        <h3>Vintermerking: M+S er ikke det samme som 3PMSF</h3>
+        <p>De to symbolene blandes rutinemessig, og forskjellen er reell:</p>
+        <ul>
+          <li><strong>M+S</strong> (Mud and Snow) er en <em>egenerklæring</em> fra produsenten. Det finnes ingen test bak den. Et sommerdekk med grov mønsterutforming kan bære merket.</li>
+          <li><strong>3PMSF</strong>: alpesymbolet med tre fjelltopper og et snøfnugg – krever <em>bestått test</em> for grep på snø. Det er den eneste vintermerkingen med en målt terskel bak seg.</li>
+        </ul>
+        <p>Skal du velge på merkingen alene, er 3PMSF det tallet som betyr noe. M+S sier bare at produsenten mener dekket egner seg.</p>
+
+        <h2>EU-dekkmerkingen: etiketten på siden av dekket</h2>
+        <p>Siden mai 2021 gjelder <a href="https://www.goodyear.eu/no_no/consumer/learn/eu-tire-label-explained.html" rel="nofollow noopener" target="_blank">en ny EU-etikett</a> (forordning 2020/740) på alle nye dekk. Den oppgir tre målte egenskaper:</p>
+        <ol>
+          <li><strong>Rullemotstand</strong>: drivstoffeffektivitet, klasse <strong>A til E</strong>. Skalaen ble kortet ned fra sju til fem klasser med den nye etiketten.</li>
+          <li><strong>Våtgrep</strong>: bremselengde på vått underlag, også <strong>A til E</strong>.</li>
+          <li><strong>Støy</strong>: oppgitt både som klasse <strong>A, B eller C</strong> og som faktisk verdi i desibel.</li>
+        </ol>
+        <p>I tillegg kan etiketten bære ikoner for snøgrep (3PMSF) og isgrep. Merk at etiketten sier ingenting om levetid eller slitasje – det finnes foreløpig ingen felles testmetode for det.</p>
+        <p>Det praktiske: av de tre er <strong>våtgrep</strong> det som betyr mest i norsk klima. Forskjellen mellom klasse A og klasse E er flere billengder i en nødbrems.</p>
+
+        <h3>Merkingen som ikke er en merking</h3>
+        <p>Slitasjeindikatorene (TWI) er små gummiklosser i bunnen av mønstersporene, markert med en trekant eller bokstavene TWI på dekkskulderen. Når mønsteret er slitt ned til klossen, er dekket på minstemålet. Det er en fysisk måler, ikke en tekst, og den er lettere å lese enn noe annet på dekket.</p>
+        <p>Vil du oversette resten av dimensjonskoden, forklarer <a href="/dekkdimensjon">dekkdimensjon-siden</a> hvert tegn, og <a href="/hastighetskode-dekk">hastighetskode-tabellen</a> og <a href="/load-index-dekk">lastindeks-tabellen</a> tar de to verdiene bakerst.</p>
+
+        <h2>Kilder</h2>
+        <ul>
+          <li><a href="https://www.goodyear.eu/no_no/consumer/learn/eu-tire-label-explained.html" rel="nofollow noopener" target="_blank">Goodyear</a>: EU-etiketten etter forordning 2020/740, klasser og støyverdier</li>
+          <li><a href="https://www.norgesdekk.no/om-dekk/eu-merking" rel="nofollow noopener" target="_blank">Norgesdekk</a>: EU-merking av dekk</li>
+          <li><a href="https://www.vegvesen.no/" rel="nofollow noopener" target="_blank">Statens vegvesen</a>: krav til dekk og mønsterdybde</li>
+        </ul>
+        <p style="margin-top:12px;font-size:.9rem;color:#6b7280"></p>
+
+      </section>
+
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
+        <p style="margin:0 0 14px;color:#4b5563;font-size:.96rem">Merkingen er lest. Se hva dimensjonen betyr i faktiske millimeter.</p>
+        <a href="/dekkdimensjon" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Les dekkdimensjonen tegn for tegn &rarr;</a>
+      </div>
+
       <div class="related">
         <h2>Relaterte verktøy</h2>
         <div class="rel-grid">
-          <a href="/load-index-dekk">Load index tabell <span class="arrow">&rarr;</span></a>
-          <a href="/hastighetskode-dekk">Hastighetskode tabell <span class="arrow">&rarr;</span></a>
-          <a href="/dekktrykk-tabell">Dekktrykk tabell <span class="arrow">&rarr;</span></a>
+          <a href="/load-index-dekk">Slå opp hvor mange kilo dekket tåler <span class="arrow">&rarr;</span></a>
+          <a href="/hastighetskode-dekk">Se hvilken fart dekket er godkjent for <span class="arrow">&rarr;</span></a>
+          <a href="/dekktrykk-tabell">Finn riktig lufttrykk for dekket ditt <span class="arrow">&rarr;</span></a>
         </div>
       </div>
 
@@ -242,7 +376,7 @@
         </details>
         <details>
           <summary>Kan jeg bruke dekk med annen merking enn originalt?</summary>
-          <p>Du kan bytte dekkstørrelse innenfor visse grenser, men du må alltid opprettholde eller overskride de originale kravene til <a href="/load-index-dekk">load index</a> og <a href="/hastighetskode-dekk">hastighetskode</a>. Du kan for eksempel gå opp i load index og hastighetskode, men aldri ned. Statens vegvesen tillater et rulleomkretsavvik på ±5 % i henhold til STRO-standarden. Sjekk alltid bilen din sin servicehåndbok eller dørkarmen for originale spesifikasjoner.</p>
+          <p>Du kan bytte dekkstørrelse innenfor visse grenser, men du må alltid opprettholde eller overskride de originale kravene til <a href="/load-index-dekk">load index</a> og <a href="/hastighetskode-dekk">hastighetskode</a>. Du kan for eksempel gå opp i load index og hastighetskode, men aldri ned. Grensen er ±5 % avvik i rulleomkrets, etter STRO-normen. Sjekk alltid bilen din sin servicehåndbok eller dørkarmen for originale spesifikasjoner.</p>
         </details>
       </div>
 
@@ -272,7 +406,7 @@
             "name": "Kan jeg bruke dekk med annen merking enn originalt?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Du kan bytte dekkstørrelse innenfor visse grenser, men du må alltid opprettholde eller overskride de originale kravene til load index og hastighetskode. Statens vegvesen tillater et rulleomkretsavvik på ±5 % i henhold til STRO-standarden."
+              "text": "Du kan bytte dekkstørrelse innenfor visse grenser, men du må alltid opprettholde eller overskride de originale kravene til load index og hastighetskode. Grensen er ±5 % avvik i rulleomkrets, etter STRO-normen."
             }
           }
         ]
@@ -293,7 +427,7 @@
       <div class="f-legal" style="margin-top:12px;font-size:.9em">
         <a href="/personvern">Personvern</a> · <a href="/om-oss">Om oss</a> · <a href="/kontakt">Kontakt</a> · <a href="/vilkar">Vilkår</a>
       </div>
-      <div class="f-copy">© 2026 dekkalkulator.online — Gratis dekkalkulator for alle biltyper</div>
+      <div class="f-copy">© 2026 dekkalkulator.online – Gratis dekkalkulator for alle biltyper</div>
     </div>
   </footer>
 
@@ -397,7 +531,7 @@ function renderDecoded(data) {
     '<div class="part-card part-load">' +
       '<div class="part-code">' + data.loadIdx + '</div>' +
       '<div class="part-label">Load index</div>' +
-      '<div class="part-value">' + loadKg + (loadTotal ? '<br><span style="font-size:12px;color:#9ca3af">' + loadTotal + '</span>' : '') + '</div>' +
+      '<div class="part-value">' + loadKg + (loadTotal ? '<br><span style="font-size:12px;color:#4b5563">' + loadTotal + '</span>' : '') + '</div>' +
     '</div>' +
     '<div class="part-card part-speed">' +
       '<div class="part-code">' + data.speedCode + '</div>' +
@@ -412,7 +546,7 @@ function decode() {
   var data = parseMarking(val);
   if (!data) {
     document.getElementById('partsGrid').innerHTML = '<div class="placeholder-msg">Kunne ikke lese merkingen. Prøv formatet <strong>205/55 R16 91H</strong>.</div>';
-    document.getElementById('markingVisual').innerHTML = '<span style="color:#dc2626">Ugyldig format — prøv: 205/55 R16 91H</span>';
+    document.getElementById('markingVisual').innerHTML = '<span style="color:#dc2626">Ugyldig format – prøv: 205/55 R16 91H</span>';
     return;
   }
   renderDecoded(data);
