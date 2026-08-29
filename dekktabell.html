@@ -72,7 +72,7 @@
     .section-spacer + .section-spacer{padding-top:0}
 
     /* ── SECTION LABELS ── */
-    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px;text-align:center}
+    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6b7280;margin-bottom:16px;text-align:center}
 
     /* ── TOOL CARD ── */
     .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
@@ -81,8 +81,8 @@
     /* ── TABS ── */
     .tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px}
     .tabs button{padding:10px 18px;border:1.5px solid #e5e7eb;border-radius:8px;background:#fff;font-size:14px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-    .tabs button:hover{border-color:#6366f1;color:#6366f1}
-    .tabs button.active{background:#6366f1;color:#fff;border-color:#6366f1}
+    .tabs button:hover{border-color:#4f46e5;color:#4f46e5}
+    .tabs button.active{background:#4f46e5;color:#fff;border-color:#4f46e5}
     @media(max-width:640px){
       .tabs button{padding:8px 14px;font-size:13px}
     }
@@ -90,31 +90,31 @@
     /* ── SEARCH ── */
     .search-wrap{margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto}
     .search-wrap input{width:100%;padding:10px 14px 10px 38px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:500;color:#111827;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cline x1='11' y1='11' x2='15' y2='15'/%3E%3C/svg%3E") no-repeat 12px center;transition:border-color .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-    .search-wrap input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
-    .search-wrap input::placeholder{color:#9ca3af}
+    .search-wrap input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .search-wrap input::placeholder{color:#6b7280}
 
     /* ── DIMENSION TABLE ── */
     .dim-table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:10px}
     table.dim-table{width:100%;border-collapse:collapse;font-size:14px;min-width:600px}
-    table.dim-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em;position:sticky;top:0;border-bottom:2px solid #e5e7eb}
+    table.dim-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#374151;font-weight:600;letter-spacing:0.04em;position:sticky;top:0;border-bottom:2px solid #e5e7eb}
     table.dim-table td{padding:8px 12px;border-bottom:1px solid #f3f4f6;white-space:nowrap}
     table.dim-table tbody tr:hover{background:#f0f4ff}
     table.dim-table td:first-child{font-weight:700;color:#111827}
-    .dim-count{text-align:center;font-size:13px;color:#9ca3af;margin-top:12px}
+    .dim-count{text-align:center;font-size:13px;color:#6b7280;margin-top:12px}
 
     /* ── RESULTS TABLE (reused from index) ── */
     table.res{width:100%;border-collapse:collapse}
     table.res th,table.res td{padding:10px 12px;text-align:center;font-size:14px}
-    table.res th{font-weight:600;color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
+    table.res th{font-weight:600;color:#374151;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
     table.res td{border-bottom:1px solid #f3f4f6}
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -123,12 +123,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -139,11 +139,11 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-  </style>
+  .f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -207,7 +207,7 @@
 
         <!-- TABLE -->
         <div class="dim-table-wrap">
-          <table class="dim-table" aria-label="Dekktabell med alle dekkdimensjoner">
+          <table class="dim-table" aria-label="Dekktabell med alle dekkdimensjoner"><caption class="sr-only">Dekktabell med alle dekkdimensjoner</caption>
             <thead>
               <tr>
                 <th>Dimensjon</th>
@@ -443,7 +443,7 @@ function renderTable() {
   }
 
   if (count === 0) {
-    html = '<tr><td colspan="7" style="text-align:center;color:#9ca3af;padding:20px">Ingen dimensjoner funnet' + (searchTerm ? ' for "' + searchTerm + '"' : '') + '</td></tr>';
+    html = '<tr><td colspan="7" style="text-align:center;color:#4b5563;padding:20px">Ingen dimensjoner funnet' + (searchTerm ? ' for "' + searchTerm + '"' : '') + '</td></tr>';
   }
 
   tbody.innerHTML = html;

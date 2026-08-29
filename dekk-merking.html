@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
   <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
   <title>Dekk merking — slik leser du koder og symboler på dekket</title>
@@ -77,10 +101,10 @@
     @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
 
     .decoder-input-wrap{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:24px}
-    .decoder-input-wrap label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
+    .decoder-input-wrap label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
     .decoder-input-wrap input{padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:17px;font-weight:700;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;color:#111827;width:240px;transition:border-color .2s}
-    .decoder-input-wrap input:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
-    .btn-decode{padding:12px 28px;background:#6366f1;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+    .decoder-input-wrap input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .btn-decode{padding:12px 28px;background:#4f46e5;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
     .btn-decode:hover{background:#4f46e5}
 
     .parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px}
@@ -88,17 +112,17 @@
     .part-card .part-code{font-size:28px;font-weight:900;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;line-height:1;margin-bottom:8px}
     .part-card .part-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
     .part-card .part-value{font-size:14px;color:#374151;line-height:1.4}
-    .part-width{background:#eff6ff;border-color:#bfdbfe}.part-width .part-code{color:#1d4ed8}.part-width .part-label{color:#3b82f6}
-    .part-profile{background:#f0fdf4;border-color:#bbf7d0}.part-profile .part-code{color:#15803d}.part-profile .part-label{color:#22c55e}
-    .part-construction{background:#fef9c3;border-color:#fde68a}.part-construction .part-code{color:#92400e}.part-construction .part-label{color:#ca8a04}
-    .part-rim{background:#f5f3ff;border-color:#ddd6fe}.part-rim .part-code{color:#6d28d9}.part-rim .part-label{color:#8b5cf6}
-    .part-load{background:#fff7ed;border-color:#fed7aa}.part-load .part-code{color:#c2410c}.part-load .part-label{color:#f97316}
-    .part-speed{background:#fdf2f8;border-color:#f5d0fe}.part-speed .part-code{color:#86198f}.part-speed .part-label{color:#d946ef}
+    .part-width{background:#eff6ff;border-color:#bfdbfe}.part-width .part-code{color:#1d4ed8}.part-width .part-label{color:#1d4ed8}
+    .part-profile{background:#f0fdf4;border-color:#bbf7d0}.part-profile .part-code{color:#15803d}.part-profile .part-label{color:#15803d}
+    .part-construction{background:#fef9c3;border-color:#fde68a}.part-construction .part-code{color:#92400e}.part-construction .part-label{color:#854d0e}
+    .part-rim{background:#f5f3ff;border-color:#ddd6fe}.part-rim .part-code{color:#6d28d9}.part-rim .part-label{color:#6d28d9}
+    .part-load{background:#fff7ed;border-color:#fed7aa}.part-load .part-code{color:#c2410c}.part-load .part-label{color:#c2410c}
+    .part-speed{background:#fdf2f8;border-color:#f5d0fe}.part-speed .part-code{color:#86198f}.part-speed .part-label{color:#a21caf}
 
     .marking-visual{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:20px;text-align:center;margin-bottom:24px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:22px;font-weight:800;letter-spacing:2px;overflow:hidden;word-break:break-all}
     .marking-visual span{display:inline;padding:2px 4px;border-radius:4px;transition:background .3s}
     .hl-width{background:#bfdbfe;color:#1d4ed8}
-    .hl-sep{color:#9ca3af}
+    .hl-sep{color:#6b7280}
     .hl-profile{background:#bbf7d0;color:#15803d}
     .hl-construction{background:#fde68a;color:#92400e}
     .hl-rim{background:#ddd6fe;color:#6d28d9}
@@ -112,14 +136,14 @@
     .winter-code-badge{font-size:13px;font-weight:800;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;background:#bfdbfe;color:#1d4ed8;padding:4px 8px;border-radius:6px;white-space:nowrap;flex-shrink:0}
     .winter-code-desc{font-size:13px;color:#374151;line-height:1.5}
 
-    .placeholder-msg{text-align:center;color:#9ca3af;padding:32px;font-size:15px}
+    .placeholder-msg{text-align:center;color:#6b7280;padding:32px;font-size:15px}
 
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     .faq{padding:64px 0 0}
@@ -127,12 +151,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
     .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
@@ -142,17 +166,17 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   
 .bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
 .bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
 .bcrumb a{color:#6b7280;text-decoration:none}
 .bcrumb a:hover{text-decoration:underline}
 .bcrumb [aria-current]{color:#111827;font-weight:500}
-</style>
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -180,6 +204,8 @@
 <meta name="twitter:url" content="https://dekkalkulator.online/dekk-merking">
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
@@ -192,7 +218,7 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
@@ -204,7 +230,7 @@
     </ol>
   </nav>
 
-  <main>
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <div class="hero">
@@ -288,9 +314,14 @@
           <li><a href="https://www.norgesdekk.no/om-dekk/eu-merking" rel="nofollow noopener" target="_blank">Norgesdekk</a> — EU-merking av dekk</li>
           <li><a href="https://www.vegvesen.no/" rel="nofollow noopener" target="_blank">Statens vegvesen</a> — krav til dekk og mønsterdybde</li>
         </ul>
-        <p style="margin-top:12px;font-size:.9rem;color:#6b7280">Se <a href="/om-oss">om oss</a> for hvordan vi arbeider.</p>
+        <p style="margin-top:12px;font-size:.9rem;color:#6b7280"></p>
 
       </section>
+
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
+        <p style="margin:0 0 12px;color:#4b5563;font-size:.96rem">Har du lest av koden på dekksiden? Sammenlign den med en ny i dekkalkulatoren.</p>
+        <a href="/" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Slå opp dimensjonen din &rarr;</a>
+      </div>
 
       <div class="related">
         <h2>Relaterte verktøy</h2>
@@ -468,7 +499,7 @@ function renderDecoded(data) {
     '<div class="part-card part-load">' +
       '<div class="part-code">' + data.loadIdx + '</div>' +
       '<div class="part-label">Load index</div>' +
-      '<div class="part-value">' + loadKg + (loadTotal ? '<br><span style="font-size:12px;color:#9ca3af">' + loadTotal + '</span>' : '') + '</div>' +
+      '<div class="part-value">' + loadKg + (loadTotal ? '<br><span style="font-size:12px;color:#4b5563">' + loadTotal + '</span>' : '') + '</div>' +
     '</div>' +
     '<div class="part-card part-speed">' +
       '<div class="part-code">' + data.speedCode + '</div>' +

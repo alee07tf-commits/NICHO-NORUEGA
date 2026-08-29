@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
   <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
   <title>Rulleomkrets kalkulator — regn ut dekkomkrets på sekunder</title>
@@ -55,7 +79,7 @@
     .nav-links{display:flex;gap:4px}
     .nav-links a{font-size:14px;font-weight:500;color:#6b7280;padding:8px 12px;border-radius:6px;transition:color .15s}
     .nav-links a:hover{color:#111827}
-    .nav-links a[aria-current="page"]{color:#6366f1;font-weight:600}
+    .nav-links a[aria-current="page"]{color:#4f46e5;font-weight:600}
     .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#111827}
     .nav-hamburger svg{display:block}
     @media(max-width:768px){
@@ -82,13 +106,13 @@
     @media(max-width:640px){.calc{padding:20px 16px;border-radius:12px}}
 
     .side{padding:20px;border-radius:12px;background:#f8fafc;border:1.5px solid #e2e8f0;max-width:400px;margin:0 auto}
-    .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:#6366f1}
-    .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;background:#6366f1}
+    .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:#4f46e5}
+    .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;background:#4f46e5}
 
     .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
     .input-group select{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;cursor:pointer;appearance:auto;transition:border-color .2s;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-    .input-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .input-group select:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
 
     .tire-label{text-align:center;font-size:20px;font-weight:800;color:#111827;padding:10px;background:#f9fafb;border-radius:8px;margin-top:12px;letter-spacing:0.5px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
 
@@ -98,7 +122,7 @@
 
     /* ── MAIN RESULT ── */
     .main-result{text-align:center;padding:32px 16px;margin-top:24px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:12px}
-    .main-result .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#16a34a;margin-bottom:8px}
+    .main-result .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#15803d;margin-bottom:8px}
     .main-result .value{font-size:48px;font-weight:800;color:#111827;letter-spacing:-0.03em;line-height:1.1;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
     .main-result .unit{font-size:20px;font-weight:600;color:#6b7280;margin-left:4px}
     @media(max-width:640px){
@@ -110,16 +134,16 @@
     .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
     @media(max-width:640px){.results-grid{grid-template-columns:repeat(2,1fr)}}
     .result-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px 12px;text-align:center}
-    .result-card .r-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#9ca3af;margin-bottom:4px}
+    .result-card .r-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;margin-bottom:4px}
     .result-card .r-value{font-size:22px;font-weight:800;color:#111827;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
     .result-card .r-unit{font-size:13px;font-weight:500;color:#6b7280}
 
     /* ── TABLE POPULAR ── */
     .popular-section{margin-top:40px}
-    .section-title{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
+    .section-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
     .pop-table-wrap{border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}
     table.pop-table{width:100%;border-collapse:collapse;font-size:14px}
-    table.pop-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em}
+    table.pop-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:11px;text-transform:uppercase;color:#374151;font-weight:600;letter-spacing:0.04em}
     table.pop-table td{padding:10px 16px;border-bottom:1px solid #f3f4f6}
     table.pop-table tbody tr:last-child td{border-bottom:none}
     table.pop-table tbody tr:hover{background:#f0f4ff}
@@ -130,11 +154,11 @@
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -143,12 +167,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -159,18 +183,18 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   
 .bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
 .bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
 .bcrumb a{color:#6b7280;text-decoration:none}
 .bcrumb a:hover{text-decoration:underline}
 .bcrumb [aria-current]{color:#111827;font-weight:500}
-</style>
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -198,6 +222,8 @@
 <meta name="twitter:url" content="https://dekkalkulator.online/rulleomkrets-kalkulator">
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
   <nav class="nav" aria-label="Hovednavigasjon">
@@ -211,7 +237,7 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
@@ -223,7 +249,7 @@
     </ol>
   </nav>
 
-  <main>
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <!-- HERO -->
@@ -285,13 +311,13 @@
         <div class="popular-section">
           <h2 class="section-title">Rulleomkrets tabell for vanlige dekkdimensjoner</h2>
           <div class="pop-table-wrap">
-            <table class="pop-table" aria-label="Rulleomkrets for populære dekkstørrelser">
+            <table class="pop-table" aria-label="Rulleomkrets for populære dekkstørrelser"><caption class="sr-only">Rulleomkrets for populære dekkstørrelser</caption>
               <thead>
                 <tr>
-                  <th>Dekkstørrelse</th>
-                  <th>Rulleomkrets</th>
-                  <th>Diameter</th>
-                  <th>Omdr./km</th>
+                  <th scope="col">Dekkstørrelse</th>
+                  <th scope="col">Rulleomkrets</th>
+                  <th scope="col">Diameter</th>
+                  <th scope="col">Omdr./km</th>
                 </tr>
               </thead>
               <tbody id="popBody">
@@ -316,7 +342,7 @@
       <section class="content" style="margin:32px 0;line-height:1.7">
 
         <figure style="margin:24px 0;text-align:center">
-          <img src="/img/rulleomkrets-forklart.svg" width="520" height="300" alt="Rulleomkrets forklart: et dekk på 205/55 R16 med 63,19 cm diameter ruller 198,5 cm på én omdreining" style="max-width:100%;height:auto">
+          <img loading="lazy" decoding="async" src="/img/rulleomkrets-forklart.svg" width="520" height="300" alt="Rulleomkrets forklart: et dekk på 205/55 R16 med 63,19 cm diameter ruller 198,5 cm på én omdreining" style="max-width:100%;height:auto">
           <figcaption style="font-size:.85rem;color:#6b7280;margin-top:8px">Rulleomkrets er diameteren ganget med pi: hvor langt dekket faktisk ruller på én omdreining.</figcaption>
         </figure>
         <h2>Hva er rulleomkrets — og hvorfor betyr det noe?</h2>
@@ -353,9 +379,9 @@
 
       </section>
 
-      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #6366f1;border-radius:10px;background:#f8fafc">
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
         <p style="margin:0 0 12px;color:#4b5563;font-size:.96rem">Velg dimensjon, så får du omkrets, diameter og omdreininger per kilometer.</p>
-        <a href="#kalkulator" style="display:inline-block;background:#6366f1;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Regn ut rulleomkretsen &uarr;</a>
+        <a href="#kalkulator" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Regn ut rulleomkretsen &uarr;</a>
       </div>
 
       <!-- RELATED TOOLS -->

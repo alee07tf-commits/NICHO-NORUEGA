@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
   <meta name="google-adsense-account" content="ca-pub-1108897863053429">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    try {
+      if (localStorage.getItem('dk_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1108897863053429"
      crossorigin="anonymous"></script>
   <title>Tommer til cm — Konverter tommer til centimeter gratis</title>
@@ -81,7 +105,7 @@
     .section-spacer + .section-spacer{padding-top:0}
 
     /* ── SECTION LABELS ── */
-    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px;text-align:center}
+    .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6b7280;margin-bottom:16px;text-align:center}
 
     /* ── CALCULATOR ── */
     .calc{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
@@ -95,16 +119,16 @@
     .side-orig{background:#f8fafc;border:1.5px solid #e2e8f0}
     .side-new{background:#f8fdf8;border:1.5px solid #d1fae5}
     .side-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .side-orig .side-label{color:#6366f1}
-    .side-new .side-label{color:#16a34a}
+    .side-orig .side-label{color:#4f46e5}
+    .side-new .side-label{color:#15803d}
     .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0}
-    .side-orig .dot{background:#6366f1}
-    .side-new .dot{background:#22c55e}
+    .side-orig .dot{background:#4f46e5}
+    .side-new .dot{background:#15803d}
 
     .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-    .input-group label{display:block;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .input-group label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
     .input-group select{width:100%;padding:10px 8px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;background:#fff;color:#111827;cursor:pointer;appearance:auto;transition:border-color .2s;font-family:'Inter',system-ui,sans-serif}
-    .input-group select:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .input-group select:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
 
     .tire-label{text-align:center;font-size:20px;font-weight:800;color:#111827;padding:10px;background:#f9fafb;border-radius:8px;margin-top:12px;letter-spacing:0.5px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
 
@@ -114,16 +138,16 @@
 
     /* ── RESULTS TABLE ── */
     .results-section{margin-top:24px}
-    .section-title{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
+    .section-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:12px}
     table.res{width:100%;border-collapse:collapse}
     table.res th,table.res td{padding:10px 12px;text-align:center;font-size:14px}
-    table.res th{font-weight:600;color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
+    table.res th{font-weight:600;color:#374151;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid #f3f4f6}
     table.res td{border-bottom:1px solid #f3f4f6}
     table.res tbody tr:last-child td{border-bottom:none;padding-top:14px}
-    .c-orig{color:#6366f1;font-weight:600}
-    .c-new{color:#16a34a;font-weight:600}
+    .c-orig{color:#4f46e5;font-weight:600}
+    .c-new{color:#15803d;font-weight:600}
     .c-diff{font-weight:700}
-    .pos{color:#16a34a}.neg{color:#dc2626}.zer{color:#9ca3af}
+    .pos{color:#15803d}.neg{color:#dc2626}.zer{color:#6b7280}
 
     /* ── BADGE ── */
     .badge-wrap{text-align:center;padding:16px 0 8px}
@@ -151,19 +175,19 @@
     .alt-filters .input-group select{padding:8px;font-size:13px;border-radius:8px}
     .alt-table-wrap{max-height:320px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:10px}
     table.alt-table{width:100%;border-collapse:collapse;font-size:13px}
-    table.alt-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em;position:sticky;top:0}
+    table.alt-table th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#374151;font-weight:600;letter-spacing:0.04em;position:sticky;top:0}
     table.alt-table td{padding:8px 12px;border-bottom:1px solid #f3f4f6}
     table.alt-table tbody tr:hover{background:#f0f4ff}
-    .alt-legal{color:#16a34a;font-weight:700}
+    .alt-legal{color:#15803d;font-weight:700}
     .alt-illegal{color:#dc2626;font-weight:700}
 
     /* ── RELATED TOOLS ── */
     .related{padding:64px 0}
-    .related h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
+    .related h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;text-align:center}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:900px;margin:0 auto}
     .rel-grid a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:500;color:#111827;transition:all .2s}
-    .rel-grid a:hover{border-color:#6366f1;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
-    .rel-grid a .arrow{color:#6366f1;font-size:16px;flex-shrink:0;transition:transform .2s}
+    .rel-grid a:hover{border-color:#4f46e5;box-shadow:0 4px 12px rgba(99,102,241,0.08);transform:translateY(-1px)}
+    .rel-grid a .arrow{color:#4f46e5;font-size:16px;flex-shrink:0;transition:transform .2s}
     .rel-grid a:hover .arrow{transform:translateX(3px)}
 
     /* ── FAQ ── */
@@ -172,12 +196,12 @@
     details{border-bottom:1px solid #e5e7eb}
     details:last-of-type{border-bottom:none}
     summary{font-size:16px;font-weight:600;color:#111827;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;transition:color .15s}
-    summary:hover{color:#6366f1}
-    summary::after{content:'+';font-size:20px;color:#6366f1;font-weight:700;flex-shrink:0;transition:transform .2s}
+    summary:hover{color:#4f46e5}
+    summary::after{content:'+';font-size:20px;color:#4f46e5;font-weight:700;flex-shrink:0;transition:transform .2s}
     details[open] summary::after{content:'\2212';transform:rotate(180deg)}
     details p{padding:0 0 20px;font-size:15px;color:#4b5563;line-height:1.8}
-    details p a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    details p a:hover{text-decoration-color:#6366f1}
+    details p a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    details p a:hover{text-decoration-color:#4f46e5}
 
     /* ── FOOTER ── */
     .footer{background:#111827;color:#9ca3af;padding:64px 0 32px;margin-top:80px}
@@ -188,7 +212,7 @@
     .f-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:16px}
     .f-col a{display:block;font-size:14px;color:#6b7280;padding:4px 0;transition:color .15s}
     .f-col a:hover{color:#fff}
-    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#4b5563}
+    .f-copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#9ca3af}
 
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
@@ -199,13 +223,13 @@
     .converter-input{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
     .converter-input label{font-size:14px;font-weight:600;color:#4b5563}
     .converter-input input[type="number"]{width:140px;padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:20px;font-weight:700;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;color:#111827;text-align:center;transition:border-color .2s}
-    .converter-input input[type="number"]:focus{outline:none;border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+    .converter-input input[type="number"]:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
     .converter-input .unit-label{font-size:16px;font-weight:700;color:#6b7280}
 
     /* ── RESULT CARD ── */
     .result-card{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:16px;padding:32px;text-align:center;margin-bottom:8px}
     .result-card .result-value{font-size:48px;font-weight:800;color:#166534;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;line-height:1.2}
-    .result-card .result-unit{font-size:18px;font-weight:600;color:#4ade80;margin-left:4px}
+    .result-card .result-unit{font-size:18px;font-weight:600;color:#15803d;margin-left:4px}
     .result-card .result-formula{font-size:14px;color:#6b7280;margin-top:12px}
     @media(max-width:640px){
       .result-card{padding:20px 16px}
@@ -214,29 +238,29 @@
 
     /* ── REVERSE LINK ── */
     .reverse-link{text-align:center;margin-top:16px;margin-bottom:8px}
-    .reverse-link a{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:999px;font-size:14px;font-weight:600;color:#6366f1;transition:all .2s}
+    .reverse-link a{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:999px;font-size:14px;font-weight:600;color:#4f46e5;transition:all .2s}
     .reverse-link a:hover{background:#eef2ff;border-color:#c7d2fe}
 
     /* ── QUICK TABLE ── */
     .quick-table-wrap{margin-top:32px}
-    .quick-table-wrap h2{font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
+    .quick-table-wrap h2{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;text-align:center;margin-bottom:16px}
     table.quick-table{width:100%;border-collapse:collapse;max-width:600px;margin:0 auto}
-    table.quick-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:0.04em}
+    table.quick-table th{background:#f3f4f6;padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;color:#374151;font-weight:600;letter-spacing:0.04em}
     table.quick-table td{padding:10px 16px;font-size:14px;border-bottom:1px solid #f3f4f6}
     table.quick-table tbody tr:nth-child(even){background:#f9fafb}
     table.quick-table tbody tr:hover{background:#f0f4ff}
     table.quick-table td:first-child{font-weight:700;color:#111827}
-    table.quick-table td:last-child{font-weight:600;color:#16a34a;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
-    table.quick-table td a{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
-    table.quick-table td a:hover{text-decoration-color:#6366f1}
+    table.quick-table td:last-child{font-weight:600;color:#15803d;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace}
+    table.quick-table td a{color:#4f46e5;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color .15s}
+    table.quick-table td a:hover{text-decoration-color:#4f46e5}
   
 .bcrumb{max-width:1120px;margin:0 auto;padding:10px 20px 0;font-size:.82rem;color:#6b7280}
 .bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#9ca3af}
+.bcrumb li:not(:last-child)::after{content:"›";margin-left:6px;color:#6b7280}
 .bcrumb a{color:#6b7280;text-decoration:none}
 .bcrumb a:hover{text-decoration:underline}
 .bcrumb [aria-current]{color:#111827;font-weight:500}
-</style>
+.f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -264,6 +288,8 @@
 <meta name="twitter:url" content="https://dekkalkulator.online/tommer-til-cm">
 </head>
 <body>
+<style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
+<a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
   <nav class="nav" aria-label="Hovednavigasjon">
@@ -277,7 +303,7 @@
         <a href="/speedometer-avvik">Speedometeravvik</a>
       </div>
       <button class="nav-hamburger" id="navToggle" aria-label="Meny" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </div>
   </nav>
@@ -289,7 +315,7 @@
     </ol>
   </nav>
 
-  <main>
+  <main id="hovedinnhold" tabindex="-1">
     <div class="wrap">
 
       <!-- HERO -->
@@ -322,11 +348,11 @@
         <!-- QUICK TABLE -->
         <div class="quick-table-wrap">
           <h2>Vanlige tommer til cm verdier</h2>
-          <table class="quick-table" aria-label="Konverteringstabell tommer til cm">
+          <table class="quick-table" aria-label="Konverteringstabell tommer til cm"><caption class="sr-only">Konverteringstabell tommer til cm</caption>
             <thead>
               <tr>
-                <th>Tommer</th>
-                <th>Centimeter</th>
+                <th scope="col">Tommer</th>
+                <th scope="col">Centimeter</th>
               </tr>
             </thead>
             <tbody id="quickTableBody">
@@ -374,6 +400,10 @@
         </ul>
         <p>Trenger du millimeter direkte, gjør <a href="/tommer-til-mm">tommer til mm</a> det samme regnestykket uten mellomsteget. Skal du den andre veien, tar <a href="/cm-til-tommer">cm til tommer</a> og <a href="/millimeter-til-tommer">millimeter til tommer</a> seg av det.</p>
 
+      <figure style="margin:24px 0;text-align:center">
+        <img loading="lazy" decoding="async" src="/img/dekkdimensjon-forklart.svg" width="520" height="400" alt="Dekkdimensjon 205/55 R16 forklart: 205 er dekkbredden i millimeter, 55 er flankehøyden i prosent av bredden og 16 er felgdiameteren i tommer" style="max-width:100%;height:auto">
+        <figcaption style="font-size:.85rem;color:#4b5563;margin-top:8px">Felgdiameteren er tallet etter R — det eneste i dimensjonen som oppgis i tommer.</figcaption>
+      </figure>
         <h2>Hvorfor dekkverdenen blander to målesystemer</h2>
         <p>Den vanligste grunnen til å lete etter denne omregningen i Norge er dekk og felg — og der møter du begge systemene i samme kode. Dimensjonen <strong>205/55 R16</strong> leses slik:</p>
         <ul>
@@ -412,9 +442,9 @@
 
       </section>
 
-      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #6366f1;border-radius:10px;background:#f8fafc">
+      <div class="cta-back" style="margin:30px 0;padding:20px 22px;border:1px solid #e5e7eb;border-left:4px solid #4f46e5;border-radius:10px;background:#f8fafc">
         <p style="margin:0 0 12px;color:#4b5563;font-size:.96rem">Skriv inn antall tommer, så får du centimeter og millimeter samtidig.</p>
-        <a href="#kalkulator" style="display:inline-block;background:#6366f1;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Regn om tommer til cm &uarr;</a>
+        <a href="#kalkulator" style="display:inline-block;background:#4f46e5;color:#fff;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:.95rem">Regn om tommer til cm &uarr;</a>
       </div>
 
       <!-- RELATED TOOLS -->

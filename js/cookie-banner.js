@@ -4,7 +4,7 @@
   // If already decided, apply and exit
   var saved = localStorage.getItem(STORAGE_KEY);
   if (saved === 'accepted') { enableAnalytics(); return; }
-  if (saved === 'rejected') { return; }
+  if (saved === 'rejected') { updateConsent('denied'); return; }
 
   // Inject styles
   var style = document.createElement('style');
@@ -12,10 +12,10 @@
     '#dk-cookie{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -4px 24px rgba(0,0,0,.08);padding:20px 24px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}',
     '#dk-cookie .dk-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}',
     '#dk-cookie .dk-text{flex:1;min-width:220px;font-size:.875rem;color:#374151;line-height:1.5}',
-    '#dk-cookie .dk-text a{color:#6366f1;text-decoration:underline}',
+    '#dk-cookie .dk-text a{color:#4f46e5;text-decoration:underline}',
     '#dk-cookie .dk-actions{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap}',
     '#dk-cookie .dk-btn{padding:10px 20px;border-radius:8px;font-size:.875rem;font-weight:600;cursor:pointer;border:none;white-space:nowrap;transition:opacity .15s}',
-    '#dk-cookie .dk-accept{background:#6366f1;color:#fff}',
+    '#dk-cookie .dk-accept{background:#4f46e5;color:#fff}',
     '#dk-cookie .dk-accept:hover{opacity:.85}',
     '#dk-cookie .dk-reject{background:#f3f4f6;color:#374151}',
     '#dk-cookie .dk-reject:hover{background:#e5e7eb}',
@@ -47,6 +47,7 @@
 
   document.getElementById('dk-reject').addEventListener('click', function () {
     localStorage.setItem(STORAGE_KEY, 'rejected');
+    updateConsent('denied');
     removeBanner();
   });
 
@@ -56,7 +57,17 @@
   }
 
   function enableAnalytics() {
-    // Placeholder: add Google AdSense / Analytics consent here when ready
-    // e.g. window.dataLayer = window.dataLayer || []; gtag('consent', 'update', {...})
+    updateConsent('granted');
+  }
+
+  function updateConsent(state) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('consent', 'update', {
+      'ad_storage': state,
+      'ad_user_data': state,
+      'ad_personalization': state,
+      'analytics_storage': state
+    });
   }
 })();
