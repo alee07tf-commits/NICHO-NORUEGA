@@ -1,0 +1,15 @@
+{
+  "name": "Dekkalkulator",
+  "short_name": "Dekkalkulator",
+  "description": "Regn ut rulleomkrets, speedometeravvik og lovlige alternative dekkdimensjoner.",
+  "lang": "nb-NO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    { "src": "/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

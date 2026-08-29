@@ -11,6 +11,10 @@
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="4wh4FQtJX7fNOy0sA76ZMaf2fyJt34rZE9skWGdvKPk">
   <link rel="canonical" href="https://dekkalkulator.online/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dekkalkulator — sammenlign dekkdimensjoner på 5 sekunder">
   <meta property="og:description" content="Skriv inn dekkstørrelsen og se rulleomkrets, diameter og speedometeravvik med en gang. Sjekk om den nye dimensjonen er lovlig. Gratis, uten registrering.">
@@ -195,6 +199,41 @@
 <meta name="twitter:title" content="Dekkalkulator — sammenlign dekkdimensjoner på 5 sekunder">
 <meta name="twitter:description" content="Skriv inn dekkstørrelsen og se rulleomkrets, diameter og speedometeravvik med en gang. Sjekk om den nye dimensjonen er lovlig. Gratis, uten registrering.">
 <meta name="twitter:url" content="https://dekkalkulator.online/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dekkalkulator.online/#website",
+        "url": "https://dekkalkulator.online/",
+        "name": "Dekkalkulator",
+        "description": "Gratis kalkulatorer for dekkdimensjon, rulleomkrets, speedometeravvik og lovlig avvik.",
+        "inLanguage": "nb-NO",
+        "publisher": { "@id": "https://dekkalkulator.online/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://dekkalkulator.online/#organization",
+        "name": "Dekkalkulator",
+        "url": "https://dekkalkulator.online/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dekkalkulator.online/img/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "founder": { "@type": "Person", "name": "Alejandro Bethencourt Rodriguez" },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "alee07tf@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["nb", "en", "es"]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -421,7 +460,7 @@
         <h2>Vanlige spørsmål om dekkalkulator og dekkdimensjoner</h2>
         <details open>
           <summary>Hvor stort avvik er lovlig i Norge?</summary>
-          <p>Statens vegvesen tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Denne dekkkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik.</p>
+          <p>Statens vegvesen tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Denne dekkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik.</p>
         </details>
         <details>
           <summary>Hvordan leser jeg dekkstørrelsen i kalkulatoren?</summary>
@@ -443,7 +482,7 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"Hvor stort avvik er lovlig i Norge?","acceptedAnswer":{"@type":"Answer","text":"Statens vegvesen tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Denne dekkkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik."}},
+          {"@type":"Question","name":"Hvor stort avvik er lovlig i Norge?","acceptedAnswer":{"@type":"Answer","text":"Statens vegvesen tillater et avvik på inntil ±5 % i rulleomkrets sammenlignet med originaldekket, i henhold til STRO-standarden (Scandinavian Tire and Rim Organization). Denne dekkalkulatoren viser automatisk om dine valgte dekkdimensjoner er innenfor lovlig avvik."}},
           {"@type":"Question","name":"Hvordan leser jeg dekkstørrelsen i kalkulatoren?","acceptedAnswer":{"@type":"Answer","text":"Skriv inn tallene fra dekket ditt, for eksempel 205/55 R16: velg 205 som bredde, 55 som profil og 16 som felg. Kalkulatoren beregner total diameter og rulleomkrets automatisk og viser forskjellen mellom original og nytt dekk."}},
           {"@type":"Question","name":"Påvirker nye dekk speedometeret?","acceptedAnswer":{"@type":"Answer","text":"Ja. Dekk med en annen rulleomkrets gjør at hjulene roterer raskere eller saktere. Større dekk betyr at du kjører raskere enn speedometeret viser. Bruk speedometer avvik kalkulatoren for nøyaktig beregning ved vanlige hastigheter i Norge."}},
           {"@type":"Question","name":"Kan jeg bruke bredere dekk?","acceptedAnswer":{"@type":"Answer","text":"Det avhenger av felgbredden og plassen i hjulhuset. Bruk felg kalkulatoren for å sjekke kompatibilitet, og se dekk og felg tabellen for godkjente kombinasjoner. Generelt kan du gå 10–20 mm bredere uten problemer, men sjekk alltid mot bilen din."}}
