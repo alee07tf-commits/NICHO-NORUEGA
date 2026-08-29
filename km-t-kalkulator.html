@@ -108,7 +108,7 @@
     .quick-speed-btn.active{background:#4f46e5;color:#fff;border-color:#4f46e5}
 
     /* ── HERO RESULT ── */
-    .hero-result{margin-top:32px;padding:32px 24px;background:linear-gradient(135deg,#f8fafc,#f0f4ff);border:2px solid #e5e7eb;border-radius:16px;text-align:center}
+    .hero-result{margin-top:32px;padding:32px 24px;background:#F4F4F2;border:2px solid #e5e7eb;border-radius:16px;text-align:center}
     .hero-result-label{font-size:14px;font-weight:600;color:#6b7280;margin-bottom:8px}
     .hero-result-value{font-size:48px;font-weight:900;letter-spacing:-0.03em;line-height:1.1}
     .hero-result-unit{font-size:24px;font-weight:600;color:#6b7280;margin-left:4px}
@@ -489,15 +489,15 @@ function calculate() {
   if (diff > 0.05) {
     heroSpeedEl.style.color = '#15803d';
     heroResultEl.style.borderColor = '#d1fae5';
-    heroResultEl.style.background = 'linear-gradient(135deg,#f8fdf8,#f0fdf4)';
+    heroResultEl.style.background = '#F4F4F2';
   } else if (diff < -0.05) {
     heroSpeedEl.style.color = '#dc2626';
     heroResultEl.style.borderColor = '#fecaca';
-    heroResultEl.style.background = 'linear-gradient(135deg,#fef2f2,#fff5f5)';
+    heroResultEl.style.background = '#F4F4F2';
   } else {
     heroSpeedEl.style.color = '#6b7280';
     heroResultEl.style.borderColor = '#e5e7eb';
-    heroResultEl.style.background = 'linear-gradient(135deg,#f8fafc,#f0f4ff)';
+    heroResultEl.style.background = '#F4F4F2';
   }
 
   var sign = diff > 0 ? '+' : '';

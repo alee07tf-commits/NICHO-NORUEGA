@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <title>Siden finnes ikke – Dekkalkulator</title>
   <meta name="description" content="Siden du leter etter finnes ikke. Her er dekkalkulatoren og de mest brukte verktøyene for dekkdimensjon, rulleomkrets og speedometeravvik.">
   <meta name="robots" content="noindex, follow">
@@ -176,6 +179,7 @@
     /* ── UTILITIES ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   .f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://dekkalkulator.online/img/og-dekkalkulator.png">
 <meta name="twitter:title" content="Siden finnes ikke – Dekkalkulator">
@@ -184,6 +188,12 @@
 <body>
 <style>.dk-skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#111827;color:#fff;padding:12px 18px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none}.dk-skip:focus{left:0}</style>
 <a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
 <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -203,7 +213,7 @@
     <div class="wrap">
       <div class="page-hero" style="text-align:center;padding:52px 20px 8px">
         <p style="font-size:3.2rem;font-weight:800;color:#4f46e5;margin:0 0 6px;letter-spacing:-.03em">404</p>
-        <h1 style="margin:0 0 10px">Denne siden finnes ikke</h1>
+        <h1 style="margin:0 0 10px">Denne siden <span class="hl">finnes ikke</span></h1>
         <p class="subtitle" style="margin:0 auto;max-width:620px">Adressen er skrevet feil, eller så er siden flyttet. Verktøyene under er de folk bruker mest – start der.</p>
       </div>
 

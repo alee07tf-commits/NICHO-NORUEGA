@@ -108,7 +108,7 @@ select:hover,input:hover{border-color:var(--ink-2)!important}
 select:focus,input:focus{border-color:var(--accent-strong)!important;box-shadow:0 0 0 3px rgba(196,61,24,.13)!important;outline:none}
 
 /* ── paneles de entrada ── */
-.side,.tire-select,.speedo-panel,.filter-bar{background:var(--surface-2)!important;border:1px solid var(--line-2)!important;
+.side,.tire-select,.filter-bar{background:var(--surface-2)!important;border:1px solid var(--line-2)!important;
   border-radius:0!important;padding:20px!important;box-shadow:none!important;color:var(--ink)!important}
 .side-orig{border-top:2px solid var(--ink)!important}
 .side-new{border-top:2px solid var(--accent)!important}
@@ -368,3 +368,28 @@ footer{background:var(--ink)!important;color:#fff!important;margin-top:clamp(64p
   .results-section tbody tr:last-child td:first-child{width:26%}
   .results-section tbody tr:last-child td:last-child{width:auto;min-width:88px}
 }
+
+/* ── panel oscuro del speedometro: conserva su fondo, solo esquinas rectas ── */
+.speedo-panel{border-radius:0!important;box-shadow:none!important}
+.speedo-panel h2{color:rgba(255,255,255,.72)!important}
+.speedo-panel label,.speedo-panel .speedo-actual-label{color:#fff!important}
+.speedo-panel .speedo-pct,.speedo-panel span{color:rgba(255,255,255,.95)!important}
+.speedo-deviation{color:#fff!important;background:rgba(0,0,0,.28)!important;border-radius:0!important}
+.speedo-result{background:rgba(0,0,0,.18)!important;border:1px solid rgba(255,255,255,.14)!important}
+.speedo-result .speedo-actual{color:#fff!important}
+.speedo-panel .speed-btn{background:rgba(255,255,255,.12)!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.28)!important}
+.speedo-panel .speed-btn.active{background:#fff!important;color:var(--ink)!important;border-color:#fff!important}
+.speedo-panel input{background:rgba(255,255,255,.96)!important;color:var(--ink)!important;border-color:transparent!important}
+
+/* ── contraste de detalles ── */
+.rel-grid .arrow,.arrow{color:var(--accent-deep)!important}
+.bcrumb,.bcrumb a{color:var(--muted)!important}
+.bcrumb a:hover{color:var(--accent-deep)!important}
+.f-copy a{color:rgba(255,255,255,.78)!important;text-decoration:underline}
+.f-copy a:hover{color:#fff!important}
+
+/* ── degradados heredados de la paleta anterior ── */
+.speedo-panel{background:linear-gradient(135deg,#111 0%,#1c1c1f 55%,#2a2a2c 100%)!important}
+.speedo-panel .speed-btn.active{background:var(--accent-strong)!important;color:#fff!important;border-color:var(--accent-strong)!important}
+.speedo-deviation{background:rgba(255,255,255,.14)!important}

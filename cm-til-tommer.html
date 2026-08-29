@@ -34,6 +34,9 @@
   <meta name="description" content="Skriv inn centimeter og få tallet i tommer. Én tomme er 2,54 cm, så du deler på 2,54. Tabell for dekk- og felgmål ligger under kalkulatoren.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/cm-til-tommer">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -261,6 +264,7 @@
 .bcrumb a:hover{text-decoration:underline}
 .bcrumb [aria-current]{color:#111827;font-weight:500}
 .f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -314,6 +318,12 @@
 <a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -343,7 +353,7 @@
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Gratis cm til tommer konverter</span>
-        <h1>Cm til tommer – Konverter centimeter til tommer</h1>
+        <h1>Cm til tommer – <span class="hl">Konverter centimeter til tommer</span></h1>
         <p>Del antall centimeter på 2,54, så har du tommer. Omregningen er eksakt begge veier, fordi tommen er definert som nøyaktig 25,4 millimeter. Skriv inn tallet ditt under, så får du svaret og en tabell med de vanligste felgstørrelsene.</p>
       </div>
 

@@ -34,6 +34,9 @@
   <meta name="description" content="Legg inn MC-dimensjonen du har og den du vurderer. Du får ny rulleomkrets, diameter og hvor mange prosent omkretsen endrer seg på hjulet.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dekkalkulator.online/dekk-mc">
+  <link rel="preload" href="/css/dk-design.css" as="style">
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -224,6 +227,7 @@
 .bcrumb a:hover{text-decoration:underline}
 .bcrumb [aria-current]{color:#111827;font-weight:500}
 .f-legal a{color:#c7d2fe}.f-col a{color:#9ca3af}.f-brand p{color:#9ca3af}.hero-badge,.section-label,.sr-title,.td-min,.td-ideal,.td-max,.input-group label,.tire-select-label,.side-label,.result-formula,.table-footer,.summary-card .desc,.sr-detail,.subtitle{color:#4b5563}th{color:#374151!important}table td span[style*="9ca3af"],table td[style*="9ca3af"]{color:#4b5563}.part-label{filter:none}footer a,footer .f-legal a{color:#c7d2fe!important}</style>
+  <link rel="stylesheet" href="/css/dk-design.css">
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -277,6 +281,12 @@
 <a class="dk-skip" href="#hovedinnhold">Hopp til hovedinnhold</a>
 
   <!-- NAV -->
+  <div class="dk-ticker">
+    <div class="wrap">
+      <span class="dk-dot" aria-hidden="true"></span>
+      <span>Gratis · ingen registrering · regner etter STRO-normen</span>
+    </div>
+  </div>
   <nav class="nav" aria-label="Hovednavigasjon">
     <div class="wrap nav-inner">
       <a href="/" class="nav-logo" aria-label="Dekkalkulator hjem">Dekkalkulator</a>
@@ -306,7 +316,7 @@
       <!-- HERO -->
       <div class="hero">
         <span class="hero-badge">Dekkalkulator for MC</span>
-        <h1>Dekk MC – Kalkulator for motorsykkeldekk</h1>
+        <h1>Dekk MC – <span class="hl">Kalkulator for motorsykkeldekk</span></h1>
         <p>Motorsykkeldekk følger samme regnestykke som bildekk, men for- og bakdekk har hver sin dimensjon og må vurderes hver for seg. Legg inn begge under, så får du diameter, rulleomkrets og avviket for hvert hjul.</p>
       </div>
 
