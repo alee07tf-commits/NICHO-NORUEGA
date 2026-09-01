@@ -31,7 +31,7 @@ no mirando.
 | `js/dekk-core.js` no se toca | `git diff --stat HEAD -- js/dekk-core.js` vacío |
 | Los bloques `.calc` / `.tool` conservan sus `id` | el JS se engancha por `id`; si cambia uno, la calculadora deja de calcular |
 | Las tablas se sirven pre-renderizadas en el HTML | comprobación 3 del script |
-| Las 36 URLs son alcanzables desde la home | comprobación 7 |
+| Las 25 URLs son alcanzables desde la home | comprobación 7 |
 | 0 fallos de contraste WCAG AA | comprobación 5 |
 | CLS = 0 | toda imagen con `width` y `height` |
 
@@ -126,7 +126,7 @@ sobre la que tenías abierta.
 |---|---|
 | No se compran enlaces | El techo del sitio son 10-51 €/mes. Un enlace de 200 € tarda 8-20 meses en pagarse |
 | No se hacen tests A/B | ~30 clics orgánicos al mes. El tamaño de muestra devuelve años |
-| No se invierte en el clúster `N-tommer-i-cm` | 1.520 impresiones y casi cero clics en posiciones 6,7-9,7. Google responde en la SERP. **Su `title` corto es correcto: es la respuesta** |
+| ~~No se invierte en el clúster `N-tommer-i-cm`~~ **REABIERTA Y REVERTIDA (30-08-2026)** | Ver §9. Las 11 URLs se consolidan con 301 en `/tommer-til-cm` |
 | No se persigue el 100 % de indexación | 36 URLs bien indexadas valen más que 60 a medias |
 | No se persigue `dekkalkulator.no` | Es navegacional de marca ajena |
 
@@ -138,7 +138,7 @@ sobre la que tenías abierta.
   está preparado en `js/cookie-banner.js`; falta el ID `G-` y los eventos
   `kalkulator_bruk` y `klikk_ut`.
 - **Unidades de anuncio**: hay 0 `<ins class="adsbygoogle">` en el sitio. El
-  script de AdSense está en las 36 páginas, pero **solo monetiza si Auto Ads
+  script de AdSense está en las 25 páginas, pero **solo monetiza si Auto Ads
   está activo en la cuenta**. Decisión del dueño.
 - **Rich Results Test** de Google: necesita la URL en producción. Pásale la home
   y `/dekkdimensjon` después de cada despliegue.
@@ -148,16 +148,58 @@ sobre la que tenías abierta.
 ## 8. Estructura
 
 ```
-*.html                    36 URLs vivas (sitemap.xml) + 13 orígenes de 301 + 404
+*.html                    25 URLs vivas (sitemap.xml) + 24 orígenes de 301 + 404
 css/dk-design.css         capa de diseño, sobrescribe sin borrar
 js/dekk-core.js           motor de las calculadoras — NO TOCAR
 js/cookie-banner.js       consentimiento (Consent Mode v2)
 fonts/                    Instrument Serif + Inter variable, subseteadas
 scripts/verificar.mjs     las 15 comprobaciones
-vercel.json               13 redirecciones 301 + cabeceras de caché y seguridad
+vercel.json               24 redirecciones 301 + cabeceras de caché y seguridad
 docs/                     playbook de nicho reutilizable
 ```
 
-Las 13 páginas que no están en el sitemap son orígenes de redirección 301
+Las 24 páginas que no están en el sitemap son orígenes de redirección 301
 declarados en `vercel.json`. Siguen en disco: si la regla desapareciera, vuelve
 el contenido duplicado.
+
+---
+
+## 9. Consolidación del clúster `N-tommer-i-cm` (30-08-2026)
+
+**Qué pasó.** AdSense rechazó el sitio con «Contenido de poco valor». El dato es
+nuevo, y es el que justifica reabrir la decisión de §6 — que hasta ahora decía
+mantener las 11 URLs porque su title corto era la respuesta.
+
+**Por qué eran indefendibles.** No por duplicadas: medidas con Jaccard sobre
+5-gramas daban 16,6 % de similitud entre sí (las páginas normales del sitio, 2,5 %).
+El problema es que **no tenían razón de existir**:
+
+- 9 de las 11 no tenían ni un control de entrada. Eran texto estático.
+- Respondían a una multiplicación por 2,54, que Google resuelve en la propia SERP.
+- Su contenido **ya estaba entero** en `/tommer-til-cm`, que tiene la tabla
+  completa de 10" a 22" y además calculadora.
+- El manual de nichos las clasifica como error crítico nº 6: «minitools triviales
+  que Gemini resuelve en una respuesta», y fallan su gate call-to-click.
+
+**Qué se hizo.**
+
+1. Las 11 URLs salen del sitemap (36 → 25) y entran como 301 a `/tommer-til-cm`
+   (13 → 24 redirecciones). Los ficheros **siguen en disco**, como los otros 13.
+2. La tabla de `/tommer-til-cm` gana una columna «Typisk bruk» con las
+   descripciones **que ya afirmaba el propio sitio** — las de 10-13" venían de
+   las páginas del clúster, las de 14-20" de su propia lista. 21" y 22" quedan
+   con «–» porque no había dato: no se inventó ninguno.
+3. Los 84 enlaces internos al clúster desaparecen. El único bloque que perdía
+   una salida («Relaterte verktøy») recibe `/dekk-felg-tabell` en su lugar.
+
+**Verificado:** 15/15 antes y 15/15 después, 25/25 alcanzables, 0 enlaces a URL
+redirigida, `js/dekk-core.js` intacto.
+
+**Lo que NO se tocó y sigue pendiente**, como cambios aislados posteriores:
+
+- `/rulleomkrets-traktordekk` es la única página de contenido sin herramienta
+  (1.224 palabras, 2 tablas). No es contenido de poco valor, pero en un sitio
+  call-to-click le falta la calculadora. Requiere tocar el marcado de un bloque
+  `.calc`, que es otro tipo de cambio.
+- GA4 sigue sin instalar (§7).
+

@@ -66,6 +66,61 @@
       "source": "/dekk-kalkulator-bil",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/10-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/11-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/12-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/13-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/14-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/15-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/16-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/17-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/18-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/19-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
+    },
+    {
+      "source": "/20-tommer-i-cm",
+      "destination": "/tommer-til-cm",
+      "permanent": true
     }
   ],
   "headers": [

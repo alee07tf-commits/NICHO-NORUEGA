@@ -199,7 +199,7 @@ await browser.close();
   }
   for (const [k, v] of titles) if (v.length > 1) malos.push(`title duplicado en ${v.join(', ')}`);
   for (const [k, v] of descs) if (v.length > 1) malos.push(`meta duplicada en ${v.join(', ')}`);
-  malos.length ? fail(`metadatos:\n   - ${malos.join('\n   - ')}`) : ok('metadatos correctos en las 36');
+  malos.length ? fail(`metadatos:\n   - ${malos.join('\n   - ')}`) : ok(`metadatos correctos en las ${LIVE.length}`);
 }
 
 // ── 9. datos estructurados ──────────────────────────────────────────────────
